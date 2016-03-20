@@ -1,5 +1,7 @@
 This repo is meant for the mentors' use. If you're a student, goooo awwaayyyyyyy.
 
+I'll be updating this regularly as I sort through more stuff.
+
 PRs welcome, folks. And issues/bug reports/suggestions. Come at me. Brah.
 
 See also:
