@@ -1,8 +1,9 @@
-This repo is meant for the mentors' use. If you're a student, goooo awwaayyyyyyy.
+This repo is meant for mentors' use.
 
-No, seriously. this is for mentors' use. All these problems have solutions in them.
-If you want to learn anything, wait for a mentor to give you problems, and then try
-to solve them.
+Master branch contains a bunch of files with problems in them.
+
+There's a solution branch that has all the same files with solutions (most of them have
+multiple solutions).
 
 I'll be updating this regularly as I sort through more stuff.
 
