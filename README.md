@@ -1,6 +1,7 @@
-This repo is meant for the mentors' use. If you're a student, goooo awwaayyyyyyy.
+This repo is meant for mentors' use.
 
-Urgh, okay, you're still here. This branch contains a bunch of files with problems in them.
+Master branch contains a bunch of files with problems in them.
+
 There's a solution branch that has all the same files with solutions (most of them have
 multiple solutions).
 
