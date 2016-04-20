@@ -19,6 +19,10 @@ let xor = (val1, val2) => {
   }
 }
 
+if ((foo && !bar) || (!foo && bar)) {
+  // quux, baz
+}
+
 // ternary operator?
 var xor = function(thingOne, thingTwo){
   if(thingOne ? !thingTwo : thingTwo) {
