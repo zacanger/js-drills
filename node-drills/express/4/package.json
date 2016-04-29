@@ -1,0 +1,27 @@
+{
+  "name": "quotes-api",
+  "version": "0.1.0",
+  "description": "express drills",
+  "main": "",
+  "scripts": {
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zacanger/node-drills.git"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": {
+    "name": "Zac Anger",
+    "email": "zac@zacanger.com",
+    "url": "http://zacanger.com"
+  },
+  "license": "WTFPL",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4"
+  },
+  "devDependencies": {}
+}
