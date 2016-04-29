@@ -1,22 +1,26 @@
 #!/usr/bin/env node
 
-var fs       = require('fs')
-  , from     = process.argv[2]
-  , to       = process.argv[3]
-  , readFrom = fs.createReadStream(from)
-  , writeTo  = fs.createWriteStream(to)
+// rewrite `cp(1)` in node!
+
+const
+  fs       = require('fs')
+, from     = process.argv[2]
+, to       = process.argv[3]
+, readFrom = fs.createReadStream(from)
+, writeTo  = fs.createWriteStream(to)
 
 console.log(from, '===>', to)
 
-readFrom.on('data', function(chunk){
+readFrom.on('data', chunk => {
   writeTo.write(chunk)
 })
-readFrom.on('end', function(){
+readFrom.on('end', () => {
   writeTo.end()
 })
-readFrom.on('error', function(err){
+readFrom.on('error', err => {
   console.log('error!', err)
 })
-writeTo.on('error', function(err){
+writeTo.on('error', err => {
   console.log('error!', err)
 })
+
