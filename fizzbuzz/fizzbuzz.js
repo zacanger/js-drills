@@ -1,3 +1,5 @@
+// this (or a slight variation on this) is easily the most common solution
+
 function fizz_buzz(num){
   if (num % 15 == 0) {
     console.log('FizzBuzz')
@@ -9,7 +11,8 @@ function fizz_buzz(num){
     console.log(num)
   }
 }
-for (var i = 0; i <= 100; i++) {
+
+for (let i = 0; i <= 100; i++) {
   fizz_buzz(i)
 }
 
