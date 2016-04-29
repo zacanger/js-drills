@@ -18,10 +18,10 @@ const
   fs   = require('fs')
 , args = process.argv.slice(2)
 
-if(!args[0]){
+if (!args[0]) {
   console.error('please specify file(s) to catenate')
 } else {
-  for(let i = 0; i < args.length; i++){
+  for (let i = 0; i < args.length; i++) {
     fs.createReadStream(args[i]).pipe(process.stdout)
   }
 }
@@ -36,7 +36,7 @@ if(!args[0]){
 const fs = require('fs')
 
 function cat(result, file){
-  var
+  let
     stdout = ''
   , stderr = ''
 
@@ -53,14 +53,14 @@ function nl(str){
   return str.length > 0 && str[str.length -1] !== '\n' ? str + '\n': str
 }
 function doCat(files){
-  var results = files.reduce(cat, {stdout : '', stderr : ''})
+  Let results = files.reduce(cat, {stdout : '', stderr : ''})
   return {stdout : nl(results.stdout), stderr : nl(results.stderr)}
 }
-var results = doCat(process.argv.slice(2))
-if(results.stderr.length){
+let results = doCat(process.argv.slice(2))
+if (results.stderr.length) {
   process.stderr.write(results.stderr)
 }
-if(results.stdout.length){
+if (results.stdout.length) {
   process.stdout.write(results.stdout)
 }
 process.exit(results.stderr.length ? 1 : 0)
