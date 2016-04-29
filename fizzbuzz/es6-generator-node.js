@@ -1,4 +1,4 @@
-'use strict'
+#!/usr/bin/env node
 
 const max = process.argv[2]
 
@@ -18,6 +18,7 @@ let FizzBuzz = function* (){
   }
 }()
 
-for (var n of FizzBuzz){
+for (let n of FizzBuzz){
   console.log(n)
 }
+
