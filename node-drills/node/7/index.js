@@ -1,4 +1,4 @@
-// write `cat(1)` in node!
+// rewrite `cat(1)` in node!
 
 //
 // this is a really basic example; it doesn't handle errors, and only works for first file
