@@ -2,21 +2,33 @@
 
 // rock-paper-scissors
 
-var
+const
   express    = require('express')
 , bodyParser = require('body-parser')
 , app        = express()
 , port       = process.env.PORT || 3000
 , options    = ['rock', 'paper', 'scissors']
 
+function determineWinner (human, computer) {
+  if (human === 'rock' && computer === 'scissors') {
+    return 'human'
+  } else if (human === 'scissors' && computer === 'paper') {
+    return 'human'
+  } else if (human === 'paper' && computer === 'rock') {
+    return 'human'
+  } else {
+    return 'computer'
+  }
+}
 
-app.use(bodyParser.json())
+app
+.use(bodyParser.json())
 
-app.post('/play', function (req, res) {
+.post('/play', (req, res) => {
   if (!req.body.choice) {
     return res.status(500).json('make a choice!')
   }
-  var
+  let
     humanChoice    = req.body.choice
   , index          = Math.floor(Math.random() * options.length)
   , computerChoice = options[index]
@@ -31,21 +43,9 @@ app.post('/play', function (req, res) {
   res.json(result)
 })
 
-function determineWinner (human, computer) {
-  if (human === 'rock' && computer === 'scissors') {
-    return 'human'
-  } else if (human === 'scissors' && computer === 'paper') {
-    return 'human'
-  } else if (human === 'paper' && computer === 'rock') {
-    return 'human'
-  } else {
-    return 'computer'
-  }
-}
-
-app.listen(port, function (e) {
-  if (e) {
-    return console.error(e)
+.listen(port, err => {
+  if (err) {
+    return console.error(err)
   }
   console.log('listening on port:', port)
 })

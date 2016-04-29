@@ -1,9 +1,5 @@
 #!/usr/bin/env node
 
-'use strict'
-
-// npm i -S express
-
 const
   path    = require('path')
 , http    = require('http')

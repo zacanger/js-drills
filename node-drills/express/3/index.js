@@ -1,35 +1,37 @@
-var express    = require('express')
-  , bodyparser = require('body-parser')
-  , items      = ['this thing', 'that thing', 'the other thing', '\'sup?']
-  , app        = express()
-  , port       = 9999
+const
+  express    = require('express')
+, bodyparser = require('body-parser')
+, items      = ['this thing', 'that thing', 'the other thing', '\'sup?']
+, app        = express()
+, port       = process.env.PORT || 9999
 
-app.use(bodyparser.json())
+app
+.use(bodyparser.json())
 
-app.get('/items', function(req, res, next) {
+.get('/items', (req, res) => {
   console.log(req.body)
   res.send(items)
 })
 
-app.post('/items', function(req, res, next) {
-  items.push(req.body.name);
-  console.log(req.body);
-  res.send(items);
-});
+.post('/items', (req, res) => {
+  items.push(req.body.name)
+  console.log(req.body)
+  res.send(items)
+})
 
-app.put('/items', function(req, res, next) {
-  var newPosition = req.body.position
+.put('/items', (req, res) => {
+  let newPosition    = req.body.position
   items[newPosition] = req.body.newName
   res.send(items)
 })
 
-app.delete('/items/:id', function(req, res, next) {
+.delete('/items/:id', (req, res) => {
   console.log(req.params)
   items.splice(req.params.id, 1)
   res.send(items)
 })
 
-app.listen(port, function() {
-  console.log('listening on,' port)
+.listen(port, () => {
+  console.log('listening on', port)
 })
 
