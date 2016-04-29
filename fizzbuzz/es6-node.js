@@ -1,13 +1,16 @@
-'use strict'
+#!/usr/bin/env node
 
 const max = +process.argv[2]
+
 let FizzBuzz = {
   [Symbol.iterator]() {
     let num = 1
     return {
       next() {
         if (num > max) {
-          return { done: true }
+          return {
+            done : true
+          }
         }
         let value = num
         if (value % 15 === 0) {
@@ -18,13 +21,16 @@ let FizzBuzz = {
           value = 'Buzz'
         }
         num++
-        return { done: false, value: value }
+        return {
+          done  : false
+        , value : value
+        }
       }
     }
   }
 }
 
-for(var n of FizzBuzz){
-	console.log(n)
+for (let n of FizzBuzz) {
+  console.log(n)
 }
 
