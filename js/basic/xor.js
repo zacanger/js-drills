@@ -25,7 +25,7 @@ if ((foo && !bar) || (!foo && bar)) {
 
 // ternary operator?
 var xor = function(thingOne, thingTwo){
-  if(thingOne ? !thingTwo : thingTwo) {
+  if (thingOne ? !thingTwo : thingTwo) {
     return true
   }
   return false

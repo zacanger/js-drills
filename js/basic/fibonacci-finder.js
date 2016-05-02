@@ -7,21 +7,22 @@
 
 // iterative
 function fibIt(n){
-  var arr = [0,1];
-  for(var i = 2; i <= n + 1; i++){
-    arr.push(arr[i - 1] + arr[i - 2]);
-    if(i === n + 1){
-      return arr[i];
-      break;
+  var arr = [0,1]
+  for (var i = 2; i <= n + 1; i++) {
+    arr.push(arr[i - 1] + arr[i - 2])
+    if (i === n + 1) {
+      return arr[i]
+      break
     }
   }
 }
 
 // recursive
 function fibRec(n){
-  if(n < 2){
+  if (n < 2) {
     return n
   } else {
-    return fibRec(n - 2) + fibRec(n - 1);
-  };
+    return fibRec(n - 2) + fibRec(n - 1)
+  }
 }
+
