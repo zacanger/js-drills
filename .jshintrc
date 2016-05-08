@@ -1,0 +1,43 @@
+{
+  "asi"           : true
+, "boss"          : true
+, "browserify"    : true
+, "debug"         : true
+, "eqnull"        : true
+, "esversion"     : 6
+, "freeze"        : true
+, "funcscope"     : true
+, "futurehostile" : true
+, "indent"        : 2
+, "jasmine"       : true
+, "jquery"        : true
+, "lastsemic"     : true
+, "laxcomma"      : true
+, "loopfunc"      : true
+, "maxlen"        : 180
+, "multistr"      : true
+, "noarg"         : true
+, "node"          : true
+, "noempty"       : false
+, "nonbsp"        : true
+, "nonew"         : true
+, "nonstandard"   : true
+, "phantom"       : true
+, "prototypejs"   : true
+, "qunit"         : true
+, "quotmark"      : "single"
+, "scripturl"     : true
+, "shadow"        : true
+, "singleGroups"  : true
+// , "strict"        : true
+, "sub"           : true
+, "supernew"      : true
+, "undef"         : true
+, "unused"        : true
+, "globals"       : {}
+, "shelljs"       : true
+, "typed"         : true
+, "worker"        : true
+, "yui"           : true
+}
+
