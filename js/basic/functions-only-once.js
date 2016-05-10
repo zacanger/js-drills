@@ -42,3 +42,23 @@ function once(fn, context){
   }
 }
 
+export default function once (fn) {
+  var f = function () {
+    if (f.called) {
+      return f.value
+    }
+    f.called = true
+    return f.value = fn.apply(this, arguments)
+  }
+  f.called = false
+  return f
+}
+// and
+import once from 'once'
+function foo (cb) {
+  cb = once(cb)
+  if (!cb.called) {
+    // do things
+  }
+}
+
