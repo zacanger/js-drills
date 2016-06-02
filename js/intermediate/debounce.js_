@@ -1,0 +1,21 @@
+// throttle execution of another function
+
+module.exports = (func, wait, immediate) => {
+  let timeout
+  return () => {
+    const
+      context = this
+    , args    = arguments
+    , later   = () => {
+      func.apply(this, args)
+    }
+
+    if (immediate) {
+      func.apply(context, args)
+    } else {
+      clearTimeout(timeout)
+      timeout = setTimeout(later, wait)
+    }
+  }
+}
+
