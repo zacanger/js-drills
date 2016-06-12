@@ -10,39 +10,57 @@
 // function to be executed immediately if set to true. Otherwise
 // the function will run at the end of the timeout period.
 
+// test your code
+const
+  text   = () => 'good'
+, inner  = debounce(text, 4000)
+, inner2 = debounce(text, 2000, true)
+, inner3 = debounce(text, 3000, false)
+
 function debounce(cb, x, execute) {
-  var flag = true;
-  var timeId;
+  var flag = true
+  var timeId
   function resetFlag() {
     timeId = setTimeout(function() {
-      flag = true;
-    }, x);
-  };
+      flag = true
+    }, x)
+  }
 
   return function() {
     if (execute) {
-      return cb();
+      return cb()
     }
 
     if (flag) {
-      flag = false;
-      resetFlag();
-      return cb();
+      flag = false
+      resetFlag()
+      return cb()
     } else {
-      flag = false;
-      clearTimeout(timeId);
-      resetFlag();
-      return 'too soon';
+      flag = false
+      clearTimeout(timeId)
+      resetFlag()
+      return 'too soon'
     }
-  };
-};
-
-
-
-// test your code
-function test() {
-  return 'gooood. goooooooood';
+  }
 }
-var inner = debounce(test, 4000);
-var inner2 = debounce(test, 2000, true);
-var inner3 = debounce(test, 3000, false);
+
+
+module.exports = (func, wait, immediate) => {
+  let timeout
+  return () => {
+    const
+      context = this
+    , args    = arguments
+    , later   = () => {
+      func.apply(this, args)
+    }
+
+    if (immediate) {
+      func.apply(context, args)
+    } else {
+      clearTimeout(timeout)
+      timeout = setTimeout(later, wait)
+    }
+  }
+}
+
