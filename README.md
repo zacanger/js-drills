@@ -21,7 +21,7 @@ There's a reason for this repo's name.
 * You'll touch on ES2015 going through these. It's time to exercies your Googling skillz!
   * Read up on `let`, `const`, and arrow functions.
   * You may need to upgrade Node. I highly recommend using `n` for this.
-    * `npm i -g n ; n latest ; npm i -g npm`
+    * `npm i -g n ; n latest ; npm i -g npm@next` (might as well get the cool new features!)
 * Remember that programming in Node should almost always be done asynchronously.
   * `require`s are synchronous; almost everything else should be using callbacks.
 
@@ -55,6 +55,8 @@ Have fun!
 
 * For the moment, just imagine there's an `index.html` with a div you can target,
   and your build system is already taken care of for you.
+* [WebpackBin](http://webpackbin) is a good environment for testing out React ideas
+  (it's like a JSBin that lets you use modules).
 
 ## Updated semi-regularly.
 
