@@ -2,7 +2,7 @@
 
 // document.ready w/o jq
 document.onreadystatechange = function(){
-  if(document.readyState == 'complete'){
+  if (document.readyState == 'complete') {
     // do all the stuff here
   }
 }
@@ -14,4 +14,3 @@ document.addEventListener('DOMContentLoaded', function(){
 
 // or, smaller, with older (IE) support
 function r(f){/in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
-

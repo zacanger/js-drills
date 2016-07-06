@@ -11,12 +11,12 @@ const logger = {
   }
 }
 
+// old js
 var logger = {
   info  : function (msg) {
     console.log('INFO: ' + msg)
   },
-, error : function (err) {
+  error : function (err) {
     console.error('ERROR: ' + err)
   }
 }
-

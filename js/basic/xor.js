@@ -2,16 +2,16 @@
 // xor(false, false) // => false
 // xor(true, false)  // => true
 
-// perf.
+// this is beautiful
 const xor = (a, b) => !a != !b
 
 // the above, just in more words
-function xor(x, y){
-  return(!x != !y)
+function xor (x, y) {
+  return (!x != !y)
 }
 
 // verbosely
-let xor = (val1, val2) => {
+const xor = (val1, val2) => {
   if (val1 && val2 || !val1 && val2) {
     return false
   } else {
@@ -24,7 +24,7 @@ if ((foo && !bar) || (!foo && bar)) {
 }
 
 // ternary operator?
-var xor = function(thingOne, thingTwo){
+const xor = (thingOne, thingTwo) => {
   if (thingOne ? !thingTwo : thingTwo) {
     return true
   }
@@ -35,4 +35,3 @@ var xor = function(thingOne, thingTwo){
 function XOR (x, y) {
   return (x ? 1 : 0) ^ (y ? 1 : 0)
 }
-

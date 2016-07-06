@@ -5,9 +5,9 @@
 // console.log(doubles) // [2, 4, 6]
 
 const map = (arr, mapper, ctx) => {
-  const ret = []
+  const foo = []
   for (let i = 0; i < arr.length; i++) {
-    ret.push(mapper.call(ctx, arr[i], i, arr))
+    foo.push(mapper.call(ctx, arr[i], i, arr))
   }
-  return ret
+  return foo
 }

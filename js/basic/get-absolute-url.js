@@ -2,13 +2,12 @@
 // getAbsoluteUrl('/foo') // => http://example.com/foo
 
 var getAbsoluteUrl = (function() {
-	var a
-	return function(url) {
+  var a
+  return function(url) {
     if (!a) {
       a = document.createElement('a')
     }
-		a.href = url
-		return a.href
-	}
+    a.href = url
+    return a.href
+  }
 })()
-

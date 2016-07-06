@@ -3,11 +3,13 @@
 // reimplement this (in ES5).
 
 function format(){
-  var args    = [].slice.call(arguments)
-    , initial = args.shift()
+  var
+    args    = [].slice.call(arguments)
+  , initial = args.shift()
+
   function replacer(text, replacement){
     return text.replace('%s', replacement)
   }
+
   return args.reduce(replacer, initial)
 }
-
