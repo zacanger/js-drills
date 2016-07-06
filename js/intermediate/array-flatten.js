@@ -31,6 +31,15 @@ const recursively = array => {
 // do it like this
 const inOneLine = a => Array.isArray(a) ? [].concat(...a.map(inOneLine)) : a
 
+// this is the old js version of the above one-liner
+function moreLines(a) {
+  var newArr
+  if (Array.isArray(a)) {
+    return (newArr = []).concat.apply(newArr, a.map(moreLines))
+  }
+  return a
+}
+
 // don't do this even more than you shouldn't do that one up there
 function grossWay(input) {
   var flattened = []
@@ -42,15 +51,34 @@ function grossWay(input) {
   }
 }
 
-// this is acceptable
-function thisIsBetter(input){
+// this won't work all the way down
+function nah(input){
   var flattened = input.reduce(function(a, b){
     return a.concat(b)
   }, [])
 }
 
-// this is also acceptable
-function betterStill(input){
+// neither will this
+function nope(input){
   var res = Array.prototype.concat.apply([],input)
   return res
 }
+
+//
+function flatten (arr) {
+  const flat = [].concat(...arr)
+  return flat.some(Array.isArray) ? flatten(flat) : flat;
+}
+
+//
+function flatten(array) {
+  return array.reduce((previous, current) =>
+      Array.isArray(current)
+    ? [...previous, ...flatten(current)]
+    : [...previous, current]
+    , []
+  )
+}
+
+//
+const flattened = arg.reduce((a, b) => a.concat(b))
