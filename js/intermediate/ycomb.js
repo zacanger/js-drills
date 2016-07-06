@@ -12,3 +12,5 @@ function Y(X){
   })
 }
 
+// this might be right?
+const a = b => (p => b(x => (p(p)(x)))(p => b(x => (p(p)(x)))))
