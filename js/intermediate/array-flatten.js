@@ -1,5 +1,6 @@
 // take array with possible nested arrays ; flatten it
 
+// this is gross don't ever do this
 const iteratively = array => {
   for (let i = 0, l = array.length; i < l; i += 1) {
     if (Array.isArray(array[i])) {
@@ -17,6 +18,7 @@ const iteratively = array => {
   return array
 }
 
+// this is better
 const recursively = array => {
   return array.reduce((previous, current) => {
     return previous.concat(
@@ -26,9 +28,29 @@ const recursively = array => {
   }, [])
 }
 
-module.exports = {
-  iteratively,
-recursively}
+// do it like this
+const inOneLine = a => Array.isArray(a) ? [].concat(...a.map(inOneLine)) : a
 
-//
-const flatten = a => Array.isArray(a) ? [].concat(...a.map(flatten)) : a
+// don't do this even more than you shouldn't do that one up there
+function grossWay(input) {
+  var flattened = []
+  for (var i = 0; i < input.length; ++i) {
+    var current = input[i]
+    for (var j = 0; j < current.length; ++j) {
+      flattened.push(current[j])
+    }
+  }
+}
+
+// this is acceptable
+function thisIsBetter(input){
+  var flattened = input.reduce(function(a, b){
+    return a.concat(b)
+  }, [])
+}
+
+// this is also acceptable
+function betterStill(input){
+  var res = Array.prototype.concat.apply([],input)
+  return res
+}
