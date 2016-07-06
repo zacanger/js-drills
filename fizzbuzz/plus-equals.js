@@ -11,4 +11,3 @@ for (let i = 1; i <= 100; i++)(function(i){
 
   console.log(output || i)
 })(i)
-

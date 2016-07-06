@@ -5,4 +5,3 @@ for (let i = 1; i <= 100; i++) {
   , truetrue  : 'FizzBuzz'
   }[(i % 3 == 0) + '' + ( i % 5 == 0)] || i)
 }
-

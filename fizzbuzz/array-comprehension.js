@@ -7,4 +7,3 @@ console.log(
     (++i % 3 ? '' : 'fizz') + (i % 5 ? '' : 'buzz') || i]
   .join('\n')
 )
-

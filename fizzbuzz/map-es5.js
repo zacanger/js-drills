@@ -5,4 +5,3 @@
     (n % 5 ? n : 'Buzz') :
     (n % 5 ? 'Fizz' : 'FizzBuzz')
 }).join(' ')
-

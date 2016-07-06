@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const max = +process.argv[2]
+const max = +process.argv[2] || 100
 
 let FizzBuzz = {
   [Symbol.iterator]() {
@@ -33,4 +33,3 @@ let FizzBuzz = {
 for (let n of FizzBuzz) {
   console.log(n)
 }
-

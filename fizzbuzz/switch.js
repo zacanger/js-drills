@@ -18,4 +18,3 @@ const fb = n => {
 const nums = Array.apply(null, Array(100)).map(() => Math.round(Math.random() * 100) + 1)
 
 nums.map(fb)
-

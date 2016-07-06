@@ -13,4 +13,3 @@ function fizzbuzz(num, fizz, buzz) {
 }
 
 fizzbuzz(100, 3, 5)
-

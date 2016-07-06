@@ -36,4 +36,3 @@ const
 , fizzbuzz = replaceEvery(15, 'fizzbuzz', buzz)
 
 console.log(...fizzbuzz)
-

@@ -18,4 +18,3 @@ let fb = FizzBuzz()
 for (let i = 0; i < 100; i++) {
   console.log(fb.next().val)
 }
-

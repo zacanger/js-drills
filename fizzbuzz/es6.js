@@ -11,4 +11,3 @@ const fizzBuzz = () => {
     console.log(output || i)
   }
 }
-

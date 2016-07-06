@@ -14,4 +14,3 @@ const fbTest = n => {
 const fizzBuzz = n => range(n).map(x => fbTest(x + 1)).join(', ')
 
 console.log(fizzBuzz(100))
-

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const max = process.argv[2]
+const max = process.argv[2] || 100
 
 let FizzBuzz = function* (){
   let num = 1
@@ -21,4 +21,3 @@ let FizzBuzz = function* (){
 for (let n of FizzBuzz){
   console.log(n)
 }
-

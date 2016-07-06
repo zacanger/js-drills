@@ -29,4 +29,3 @@
     print.call(this, counter)
   }
 })(this)
-

@@ -24,4 +24,3 @@ for (let b = 1; b <= 1000; b++) {
   }
   console.log(c ? c : b)
 }
-

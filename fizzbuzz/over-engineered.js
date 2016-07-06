@@ -44,4 +44,3 @@ function print(str) {
 }
 
 fizzbuzz()
-

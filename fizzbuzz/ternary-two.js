@@ -7,4 +7,3 @@ for (i = 1; i <= 100; i++) {
   o === '' ? o = i : o
   console.log(o)
 }
-

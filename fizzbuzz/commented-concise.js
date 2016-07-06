@@ -24,4 +24,3 @@ for (           // open our loop (which will have no body)
     i           // no? just return i, then
   )             // end log
 )               // end loop
-

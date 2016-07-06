@@ -18,4 +18,3 @@ const fizzBuzz = num => {
 }
 
 fizzBuzz(1)
-

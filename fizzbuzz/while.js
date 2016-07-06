@@ -12,4 +12,3 @@ while (counter < 100) {
     console.log(counter)
   }
 }
-
