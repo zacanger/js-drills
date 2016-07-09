@@ -98,7 +98,6 @@ const bubbleSort = nums => {
   snapshot(nums)
 }
 
-
 //
 function bubbleSort(arr) {
   for (let j = 0; j < arr.length; j++) {
@@ -112,4 +111,27 @@ function bubbleSort(arr) {
     }
   }
   return arr
+}
+
+//
+const bubbleSort = (array) => {
+  if (arguments.length === 0 || !Array.isArray(array)) {
+    throw new Error()
+  }
+  let hasSwapped = true
+  while(hasSwapped) {
+    hasSwapped = false
+    for (let i = 0; i < array.length - 1; i++) {
+      let temp = array[i]
+      if (array[i] > array[i + 1]) {
+        array[i] = array[i + 1]
+        array[i + 1] = temp
+        hasSwapped = true
+      }
+    }
+    if (!hasSwapped) {
+      return array
+    }
+  }
+  return array
 }

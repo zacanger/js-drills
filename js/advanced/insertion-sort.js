@@ -11,3 +11,20 @@ const insertionSort = nums => {
     }
   }
 }
+
+
+
+const insertionSort = array => {
+  if (array.length === 0 || !Array.isArray(array)) {
+    throw new Error()
+  }
+  for (let i = 1; i < array.length; i++) {
+    var tester = array[i], j = i
+    while (j > 0 && tester <= array[j - 1]) {
+      array[j] = array[j - 1]
+      j--
+    }
+    array[j] = tester
+  }
+  return array
+}
