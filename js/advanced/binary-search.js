@@ -1,5 +1,67 @@
 // implement a binary search
 
+// (simple solution)
+function binSearch(key, arr){
+  var low = 0
+    , hi  = arr.length - 1
+
+  while(low <= hi){
+
+    var mid = ~~((low + hi) / 2)
+      , val = arr[mid]
+
+    if(val < key){
+      low = mid + 1
+    } else if(val > key){
+      hi = mid - 1
+    } else {
+      return mid
+    }
+  }
+  return null
+}
+
+//
+var binarySearch = function (array, searchValue) {
+  var len = array.length
+  if (len <= 0) {
+    return null
+  }
+
+  var midIdx = Math.floor(len / 2)
+  var midValue = array[midIdx]
+
+  if (searchValue === midValue) {
+    return midIdx
+  }
+  if (searchValue < midValue) {
+    return binarySearch(array.slice(0, midIdx), searchValue)
+  }
+
+  var greaterThan = binarySearch(array.slice(midIdx + 1), searchValue)
+  return (greaterThan !== null) ? 1 + midIdx + greaterThan : greaterThan
+}
+
+//
+const binarySearch = (array, target) => {
+  let
+    startIndex = 0
+  , endIndex   = array.length - 1
+  , midIndex   = Math.floor((startIndex + endIndex) / 2)
+
+  while (array[midIndex] !== target && startIndex < endIndex) {
+    if (target > array[midIndex]) {
+      startIndex = midIndex + 1
+    } else if (target < array[midIndex]) {
+      endIndex = midIndex - 1
+    }
+    midIndex = Math.floor((startIndex + endIndex) / 2)
+  }
+  return (array[midIndex] !== target) ? null : midIndex
+}
+
+
+// this is too much.
 var binaryOps = {}
 
 binaryOps.upsert = function (array, item, compare, update) {
@@ -255,4 +317,3 @@ binaryOps.insertAtIndex = function (array, index, item) {
 }
 
 if (typeof module !== 'undefined' && module.exports) module.exports = binaryOps
-
