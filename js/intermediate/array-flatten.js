@@ -116,3 +116,21 @@ function flatten (array) {
   }
   return flatArray
 }
+
+// this way is ugly-looking but actually very fast
+module.exports = function flatten(arr) {
+  return flat(arr, [])
+}
+function flat (arr, res) {
+  var len = arr.length
+    , i   = -1
+  while (len--) {
+    var cur = arr[++i]
+    if (Array.isArray(cur)) {
+      flat(cur, res)
+    } else {
+      res.push(cur)
+    }
+  }
+  return res
+}
