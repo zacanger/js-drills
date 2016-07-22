@@ -1,0 +1,504 @@
+/*
+ * zeess (super creative name, i know)
+ * a little boilerplate/tiny kinda framework thing
+ * inspiration and cues from the work of jxnblk.com, mrmrs.io,
+ * feint.me, and getskeleton.com
+ * don't be a dick. dbad-license.org
+ */
+
+@charset  "utf-8";
+@viewport { width: device-width; }
+@at-root { @-moz-viewportwidth: device-width; }
+@-ms-viewport { width: device-width; }
+@-o-viewport { width: device-width; }
+@-webkit-viewport { width: device-width; }
+
+/* A little reset… */
+html,body{height:100%;width:100%;}
+html,body,ul,ol,li,form,fieldset,legend{margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6,p{margin-top:0;}
+fieldset,img{border:0;}
+legend{color:#000;}
+li{list-style: none; }
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+table{border-collapse:collapse;border-spacing:0;}
+caption,th,td{text-align:left;vertical-align:top;font-weight:normal;}
+input,textarea,select{font-size:110%;line-height:1.1;}
+abbr,acronym{border-bottom:.1em dotted;cursor:help;}
+
+
+/* …and then, some styling. */
+
+/* classless (applies directly to elements) */
+
+*,:before,:after {
+  box-sizing: inherit;
+  outline: 0 !important;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-stretch: normal;
+}
+
+/* 1.5rem = 15px */
+html {
+  box-sizing: border-box;
+  outline: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-size: 62.5%;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-size: 1.5em;
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: "Merriweather", "Cardo", serif;
+  color: #303330;
+  background: #f6f6f0;
+  padding: 1rem;
+  max-width: 900px;
+  margin-left: 2rem;
+}
+
+iframe { border: 0; }
+
+/* semanticky things */
+section {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  width: 900px;
+}
+
+article {
+  background: #f2f2f0;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  padding: 2rem;
+}
+
+header { margin-bottom: 2rem; }
+
+footer { margin-top: 2rem; }
+
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 { margin-top: 2rem; margin-bottom: 1rem; font-weight: 400; }
+h1 { font-size: 4.0rem; line-height: 1.2;  letter-spacing: -.1rem;  }
+h2 { font-size: 3.6rem; line-height: 1.25; letter-spacing: -.1rem;  }
+h3 { font-size: 3.2rem; line-height: 1.3;  letter-spacing: -.1rem;  }
+h4 { font-size: 2.4rem; line-height: 1.35; letter-spacing: -.08rem; }
+h5 { font-size: 1.8rem; line-height: 1.5; letter-spacing: -.05rem; text-transform: uppercase; }
+h6 { font-size: 1.6rem; line-height: 1.6; letter-spacing: 0; text-transform: uppercase; }
+
+small { font-size: 1.3rem; }
+em,i { font-style: italic }
+strong, b { font-weight: 600 }
+
+/* Links */
+a { -webkit-transition:color .4s;transition:color .4s;color: #265C83; }
+a:link,a:visited { color: #265C83; }
+a:hover { color: #7FDBFF; }
+a:active { -webkit-transition:color .3s;transition:color .3s;color: #007BE6; }
+
+/* Lists, nav, and spacing */
+p, ul, ol, dl, blockquote, hr, pre, table, form, fieldset, figure, address { margin-bottom: 2rem; }
+
+ul { list-style: circle inside; }
+
+ul { padding-left: 1rem; margin-top: 0; }
+
+ul ul { margin: 1.5rem 0 1.5rem 3rem; font-size: 80%; }
+
+li { margin-bottom: 1rem; }
+
+nav { text-align: center; }
+
+nav ul {
+  list-style: none;
+  margin-left: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin-left: .8rem;
+  margin-right: .8rem;
+}
+
+nav ul li:first-child { margin-left: 0; }
+
+nav ul li:last-child { margin-right: 0; }
+
+ol,ul { margin-left: 2rem; }
+
+li ol, li ul { margin-bottom: 0; }
+
+p { margin-top: 1rem; }
+p, ul { margin-bottom: 2.5rem; }
+
+
+/* hr is _very important_. */
+hr {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  border-width: 0;
+  border-top: 1px solid #EDC5E8; }
+
+/* pre, code, etc. */
+/* being extra nice to people who have nice typefaces */
+
+pre, code, kbd, samp, var, output {
+  font-family: "Fira Code", "Hasklig", "Hack", "Fantasque Sans Mono", Menlo, Monaco, Consolas, monospace;
+  font-size: 1.4rem;
+}
+
+pre {
+  border-left: 1.8px solid #96bbe2;
+  line-height: 1.2;
+  margin-top: 0.6rem;
+  overflow: auto;
+  padding-left: 0.6rem;
+}
+
+pre code {
+  background: none;
+  border: 0;
+  line-height: 1.2;
+  padding: 0;
+}
+
+code {
+  background: #ededed;
+  border: 1.8px solid #ccc;
+  border-radius: 2px;
+  display: inline-block;
+  line-height: 1.2;
+  padding: 3px 6px 2px;
+}
+
+
+/* tabley stuff */
+th { font-weight: 600; }
+
+td,th {
+  border-bottom: 1px solid #ccc;
+  padding: 0.8rem; 1.2rem;
+}
+
+thead th {
+  border-bottom-width: 2px;
+  padding-bottom: 0.6rem;
+}
+
+table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+
+/* inputs and things are really just awful */
+[hidden] { display: none !important; }
+
+[role="button"] { cursor: pointer; }
+
+label {
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+input::-moz-focus-inner, button::-moz-focus-inner { display: none; }
+
+input:-webkit-autofill { color: #fff !important; }
+
+textarea {
+  resize: vertical;
+  vertical-align: top;
+}
+
+button, input, textarea, select { -webkit-font-smoothing: inherit; }
+
+a, area, button, [role="button"],
+input, label, select, summary, textarea {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+input, textarea, select, button {
+  display: block;
+  padding: 0.6rem;
+}
+
+input[type="submit"], input[type="reset"], button {
+  background: #f2f2f2;
+  border-radius: 2px;
+  color: #8c8c8c;
+  cursor: pointer;
+  display: inline;
+  margin-bottom: 1.2rem;
+  margin-right: 0.4rem;
+  padding: 0.4rem 1.4rem;
+  text-align: center;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover, button:hover {
+  background: #d9d9d9;
+  color: #000;
+}
+
+input[type="submit"][disabled], input[type="reset"][disabled], button[disabled] {
+  background: #e6e6e6;
+  color: #b3b3b3;
+}
+
+input[type="submit"], button[type="submit"] {
+  background: #367ac3;
+  color: #fff;
+}
+
+input[type="submit"]:hover, button[type="submit"]:hover {
+  background: #255587;
+  color: #bfbfbf;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="url"],
+input[type="phone"], input[type="tel"], input[type="number"], input[type="datetime"],
+input[type="date"], input[type="month"], input[type="color"], input[type="time"],
+input[type="search"], input[type="range"], input[type="file"], input[type="datetime-local"],
+select, textarea {
+  border: 1px solid #ccc;
+  margin-bottom: 1.2rem;
+  padding: 0.4rem 0.6rem;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  float: left;
+  line-height: 1.8;
+  margin-right: 0.6rem;
+  margin-top: 0.8rem;
+}
+
+
+/* img */
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* Media queries? Okay, fine… */
+@media (max-width: 767px) {
+  body { padding: 18px; }
+
+  article {
+    border-radius: 0;
+    margin: -18px;
+    padding: 18px;
+  }
+
+  textarea, input, select { max-width: 100%; }
+
+  fieldset { min-width: 0; }
+
+  section { width: auto; }
+
+  fieldset,x:-moz-any-link { display: table-cell; }
+}
+
+@media (min-width: 550px) {
+  h1 { font-size: 4.0rem; }
+  h2 { font-size: 3.6rem; }
+  h3 { font-size: 2.2rem; }
+  h4 { font-size: 2.4rem; }
+  h5 { font-size: 1.8rem; }
+  h6 { font-size: 1.6rem; }
+}
+
+
+@media print {
+  pre, blockquote {
+    border: 1px solid #999 !important;
+    page-break-inside: avoid !important;
+  }
+
+  tr, img { page-break-inside: avoid !important; }
+
+  img { max-width: 100% !important; }
+
+  @page { margin: .5cm !important; }
+
+  p, h2, h3 {
+    orphans: 3 !important;
+    widows: 3 !important;
+  }
+
+  h2, h3 { page-break-after: avoid !important; }
+
+  thead { display: table-header-group !important; }
+
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    text-shadow: none !important;
+    -webkit-filter: none !important;
+    filter: none !important;
+  }
+
+  p a[href]:after { content: " (" attr(href) ")" !important; }
+
+  p abbr[title]:after { content: " (" attr(title) ")" !important; }
+
+  p a[href^="javascript:"]:after,p a[href^="#"]:after { content: "" !important; }
+
+  p a, p abbr {
+    word-wrap: break-word !important;
+    text-decoration: underline !important;
+  }
+}
+
+/* grid
+ * use just by nesting. each time you use a .split, it'll just
+ * be half the size of its parent.
+ */
+
+.split {
+  width: 50%;
+  float: left;
+  display: inline;
+  *margin-right: -1px;
+}
+
+
+/* grid with flex */
+.row { display: flex; }
+.col { flex: 1; }
+.row { flex-direction: column; }
+.col { flex: 0 0 auto; }
+.col-tenth { flex: 0 0 10%; }
+.col-fifth { flex: 0 0 20%; }
+.col-quarter { flex: 0 0 25%; }
+.col-third { flex: 0 0 33.3333334%; }
+.col-half { flex: 0 0 50%; }
+
+/* other classes */
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.link-noline { text-decoration: none; }
+
+.webkit-link-disable {
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-select: none;           /* non-prefixed version, currently */
+}
+
+/* For hiding things, but not from screen readers */
+.a11y-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* <img src="foo.jpg" class="fade"> <p class="fade">asdf</p> */
+.fade {
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+}
+.fade:hover {
+  opacity: 0.5;
+}
+
+/* tooltips! usage:
+<ul>
+<a href="javascript:void(0)" class="tooltip"><li>foo</li><span>stuff</span></a>
+<a href="javascript:void(0)" class="tooltip"><li>bar</li><span>things</span></a>
+</ul> */
+.tooltip { outline: none; background: #333; color: #ddd; }
+.tooltip strong { line-height: 0.8; }
+.tooltip:hover { text-decoration: none; }
+.tooltip span {
+  z-index: 10;
+  display: none;
+  padding: .8em 1em;
+  margin-top: -70px;
+  margin-left: 28px;
+  width: 40px;
+  line-height: 1.2;
+}
+.tooltip:hover span {
+  display: inline;
+  position: absolute;
+  color: #ddd;
+  border: 1px solid #ccc;
+  background: #313131;
+}
+.callout {
+  z-index: 20;
+  position: absolute;
+  top: 30px;
+  border: 0;
+  left: -12px;
+}
+.tooltip span {
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px #BBB;
+}
+
+/* there's a reason for this, i promise you. */
+.z-img { float: left; margin: 0 1rem 1rem 0; }
+
+/* Here down: put your project-specific styles */
+
+/* blinking cuz why not */
+@-webkit-keyframes blinker {
+  from { opacity: 1.0; } to { opacity: 0.0; }
+}
+.blink {
+  -webkit-animation-name: blinker;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+  -webkit-animation-duration: 1s;
+}
+@keyframes blinker {
+  from { opacity: 1.0; } to { opacity: 0.0; }
+}
+.blink {
+  animation-name: blinker;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+  animation-duration: 1s;
+}
