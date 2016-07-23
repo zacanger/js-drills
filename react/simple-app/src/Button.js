@@ -1,17 +1,23 @@
 import React, {PropTypes} from 'react'
 
-export default class Button extends React.Component {
-  constructor (props) {
-    super(props)
-  }
+// you could use a class or a function, here. both are below.
 
-  render () {
-    return (
-      <button onClick={this.props.reset}>
-        hi?
-      </button>
-    )
-  }
-}
+// export default class Button extends React.Component {
+// constructor (props) {
+// super(props)
+// }
+//
+// render () {
+// return (
+// <button onClick={this.props.onClick}>
+// clear
+// </button>
+// )
+// }
+// }
 
-Button.propTypes = { changename : PropTypes.func }
+const Button = props => <button onClick={props.onClick}>clear</button>
+
+Button.propTypes = { onClick : PropTypes.func }
+
+export default Button

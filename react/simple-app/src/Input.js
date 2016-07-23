@@ -1,20 +1,32 @@
 import React, {PropTypes} from 'react'
 
-export default class Input extends React.Component {
-  constructor (props) {
-    super(props)
-  }
+// you could use either a class or a function
 
-  render () {
-    return (
-      <input
-        onChange={this.props.onChange}
-        style={{ width : 200 }}
-        type="text"
-        placeholder="Name, please."
-      />
-    )
-  }
-}
+// export default class Input extends React.Component {
+  // constructor (props) {
+    // super(props)
+    // }
+  //
+  // render () {
+    // return (
+      // <input
+        // onChange={this.props.onChange}
+        // style={{ width : 200 }}
+        // type="text"
+        // placeholder="Name, please."
+        // />
+    // )
+    // }
+  // }
 
-Input.propTypes = { changeName : PropTypes.func }
+const Input = props =>
+  <input
+    onChange={props.onChange}
+    style={{ width : 200 }}
+    type="text"
+    placeholder="Name, please."
+  />
+
+Input.propTypes = { onChange : PropTypes.func }
+
+export default Input

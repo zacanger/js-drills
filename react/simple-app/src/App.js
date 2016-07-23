@@ -13,7 +13,7 @@ export default class App extends React.Component {
     this.setState({ name : e.target.value })
   }
 
-  reset () {
+  clear () {
     this.setState({ name : '' })
   }
 
@@ -22,7 +22,7 @@ export default class App extends React.Component {
       <div>
         <Greeting name={this.state.name} />
         <Input onChange={this.changeName.bind(this)} />
-        <Button onClick={this.reset.bind(this)} />
+        <Button onClick={this.clear.bind(this)} />
       </div>
     )
   }
