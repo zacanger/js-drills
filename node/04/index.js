@@ -15,7 +15,6 @@ let local = repl.start(' |> ')
 
 
 // or
-
 const
   net  = require('net')
 , repl = require('repl')
@@ -50,4 +49,3 @@ net.createServer((socket) => {
     socket.end()
   })
 }).listen(port)
-

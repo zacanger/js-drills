@@ -43,7 +43,6 @@ const
     }
   })
 })
-
 server.listen(port)
 console.log(`chat server running on ${port}`)
 
@@ -78,4 +77,3 @@ const
 
 server.listen(port)
 console.log(`server listening on ${port}`)
-

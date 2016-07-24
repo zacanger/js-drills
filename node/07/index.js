@@ -49,19 +49,15 @@ function cat(result, file){
   }
   return {stdout : stdout, stderr : stderr}
 }
-function nl(str){
-  return str.length > 0 && str[str.length -1] !== '\n' ? str + '\n': str
-}
-function doCat(files){
-  Let results = files.reduce(cat, {stdout : '', stderr : ''})
+const nl = str => str.length > 0 && str[str.length -1] !== '\n' ? str + '\n': str
+const doCat = files => {
+  let results = files.reduce(cat, {stdout : '', stderr : ''})
   return {stdout : nl(results.stdout), stderr : nl(results.stderr)}
 }
-let results = doCat(process.argv.slice(2))
-if (results.stderr.length) {
-  process.stderr.write(results.stderr)
-}
-if (results.stdout.length) {
-  process.stdout.write(results.stdout)
-}
-process.exit(results.stderr.length ? 1 : 0)
 
+let results = doCat(process.argv.slice(2))
+
+if (results.stderr.length) { process.stderr.write(results.stderr) }
+if (results.stdout.length) { process.stdout.write(results.stdout) }
+
+process.exit(results.stderr.length ? 1 : 0)

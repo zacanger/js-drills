@@ -14,4 +14,3 @@ module.exports = log
 // test
 let debug = true
 log('this is a test\n')
-

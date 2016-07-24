@@ -67,4 +67,3 @@ input.on('data', key => {
 })
 
 draw()
-

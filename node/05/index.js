@@ -11,4 +11,3 @@ http.createServer((request, response) => {
   response.write('hello')
   response.end()
 }).listen(port)
-

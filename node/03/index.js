@@ -11,16 +11,7 @@ const
 
 console.log(from, '===>', to)
 
-readFrom.on('data', chunk => {
-  writeTo.write(chunk)
-})
-readFrom.on('end', () => {
-  writeTo.end()
-})
-readFrom.on('error', err => {
-  console.log('error!', err)
-})
-writeTo.on('error', err => {
-  console.log('error!', err)
-})
-
+readFrom.on('data', chunk => { writeTo.write(chunk) })
+readFrom.on('end', () =>     { writeTo.end() })
+readFrom.on('error', err =>  { console.log('error!', err) })
+writeTo.on('error', err =>   { console.log('error!', err) })

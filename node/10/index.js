@@ -45,4 +45,3 @@ function rpc (arg) {
 }
 
 rpc(process.argv[2])
-
