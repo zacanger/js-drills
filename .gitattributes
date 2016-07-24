@@ -133,5 +133,5 @@ Procfile text
 *.yml text
 
 *.pdf diff=astextplain
-*.PDF	diff=astextplain
+*.PDF diff=astextplain
 
