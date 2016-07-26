@@ -8,3 +8,4 @@
 // if you want to execute this.
 // bonus: check the API docs for `net`, and figure out how you could
 // connect to this REPL remotely.
+// bonus bonus: figure out how to start the repl and load in source files
