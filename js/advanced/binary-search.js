@@ -61,7 +61,7 @@ const binarySearch = (array, target) => {
 }
 
 
-// this is too much.
+// from here down is one more solution. it's overkill.
 var binaryOps = {}
 
 binaryOps.upsert = function (array, item, compare, update) {
