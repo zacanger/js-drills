@@ -23,4 +23,3 @@ export const s2cc = str => (
     match[1].toUpperCase())
   )
 )
-export default s2cc
