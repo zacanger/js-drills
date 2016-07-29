@@ -34,3 +34,16 @@ function factorial (num) {
   return num * factorial(num - 1)
 }
 
+
+// using a generator
+function * factorial (n) {
+  let result = 1
+  for (let i = 1; i <= n; i++) {
+    result *= i
+    yield result
+  }
+}
+// and then
+for (let f of factorial(number)) {
+  console.log(f) // or whatever
+}
