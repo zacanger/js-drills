@@ -134,3 +134,18 @@ function flat (arr, res) {
   }
   return res
 }
+
+// using a generator
+function * flatten (arr) {
+  if (Array.isArray(arr)) {
+    for (let i = 0; i < arr.length; i++) {
+      yield * flatten(arr[i])
+    }
+  } else {
+    yield arr
+  }
+}
+// and then
+for (let f of flatten(arr)) {
+  console.log(f) // or whatever
+}
