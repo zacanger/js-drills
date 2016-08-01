@@ -14,4 +14,10 @@ app.disable('x-powered-by')
 app.get('/', (req, res) => {
   res.send('hi')
 })
+// you could also do:
+app.set('x-powered-by', false)
+// or if you wanted to get fancy
+app.use((req, res, next) => {
+  res.setHeader('x-powered-by', 'something custom')
+})
 app.listen(port)
