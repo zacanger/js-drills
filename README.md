@@ -30,20 +30,17 @@ Here's an example of a very simple Node program, using modern ECMAScript.
 ```javascript
 'use strict'
 
-const
-  net    = require('net')
-, port   = 5678
-, server = net.createServer(connection => {
-  // do stuff
-})
-server.listen(port)
-console.log(`server listening on ${port}`)
+const port = process.argv[2] || process.env.PORT || 5678
+const { createServer } = require('http')
+
+createServer((req, res) => {
+  res.end('hi', 200)
+}).listen(port)
 ```
 
 This is a lot of new material all at once. Do what you're comfortable doing.
 If you're looking for something to do over interim week, maybe do some research
-and try to finish the rest. If you power through them all, I'd definitely
-recommend [trying this project](https://github.com/r-walsh/es6-profiles).
+and try to finish the rest.
 
 Have fun!
 
