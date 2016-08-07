@@ -12,7 +12,6 @@ There's a reason for this repo's name.
 
 ## Node and Express
 
-* In each directory, you'll find an `index.js` with instructions.
 * There _will_ be things in here that are completely unfamiliar. I strongly suggest
   keeping [this](https://nodejs.org/api/) open at first.
 * There's a directory of bare Node (no Express/Koa/Hapi/whatever framework) problems.
