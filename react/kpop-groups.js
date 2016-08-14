@@ -25,9 +25,8 @@ const GROUPS = [
   {name : '2NE1'             , colour : '#ff69b4' , members : ['Bom', 'Dara', 'CL', 'Minzy'] }
 , {name : '4Minute'          , colour : '#a474b2' , members : ['Jihyun', 'Gayoon', 'Jiyoon', 'Hyuna', 'Sohyun'] }
 , {name : 'f(x)'             , colour : '#d5035a' , members : ['Victoria', 'Amber', 'Luna', 'Krystal', 'Sulli'] }
-, {name : 'Miss A'           , colour : '#aaaaaa' , members : ['Fei', 'Min', 'Suzy', 'Jia'] }
+, {name : 'Miss A'           , colour : '#aaaaaa' , members : ['Fei', 'Min', 'Suzy', 'Jia'] } // miss a doesn't have an official colour
 , {name : 'Brown Eyed Girls' , colour : '#e2c221' , members : ['JeA', 'Miryo', 'Narsha', 'Ga-In'] }
 ]
 
 // code goes here
-
