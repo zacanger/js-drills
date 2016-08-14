@@ -21,33 +21,51 @@
 //
 // each group (and its enclosing div) should be its own component
 
-const GROUPS = [
+const groups = [
   {name : '2NE1'             , colour : '#ff69b4' , members : ['Bom', 'Dara', 'CL', 'Minzy'] }
 , {name : '4Minute'          , colour : '#a474b2' , members : ['Jihyun', 'Gayoon', 'Jiyoon', 'Hyuna', 'Sohyun'] }
 , {name : 'f(x)'             , colour : '#d5035a' , members : ['Victoria', 'Amber', 'Luna', 'Krystal', 'Sulli'] }
-, {name : 'Miss A'           , colour : '#aaaaaa' , members : ['Fei', 'Min', 'Suzy', 'Jia'] }
+, {name : 'Miss A'           , colour : '#aaaaaa' , members : ['Fei', 'Min', 'Suzy', 'Jia'] } // miss a doesn't have an official colour
 , {name : 'Brown Eyed Girls' , colour : '#e2c221' , members : ['JeA', 'Miryo', 'Narsha', 'Ga-In'] }
 ]
 
 // code goes here
 
+// as a function
+const GroupList = props => (
+  <div>
+    {props.groups.map(data => <Group key={name} data={data} />)}
+  </div>
+)
+// as a class
 class GroupList extends React.Component {
   render() {
     return (
       <div>
-        {this.props.groups.map(data => <Group data={data} />)}
+        {this.props.groups.map(data => <Group key={name} data={data} />)}
       </div>
     )
   }
 }
 
+// as a function
+const Group = props => (
+  <div>
+    <h1 style={{color: props.data.colour}}>{props.data.name}</h1>
+    <ul>
+      {props.data.players.map(member => <li key={member}>{member}</li>)}
+    </ul>
+  </div>
+)
+
+// as a class
 class Group extends React.Component {
   render() {
     return (
       <div>
-        <h1 style={{colour : this.props.data.colour}}>{this.props.data.name}</h1>
+        <h1 style={{color : this.props.data.colour}}>{this.props.data.name}</h1>
         <ul>
-          {this.props.data.players.map(member => <li>{member}</li> )}
+          {this.props.data.players.map(member => <li key={member}>{member}</li>)}
         </ul>
       </div>
     )
@@ -55,6 +73,6 @@ class Group extends React.Component {
 }
 
 ReactDOM.render(
-  <GroupList groups={GROUPS} />
+  <GroupList groups={groups} />
 , document.getElementById('root')
 )
