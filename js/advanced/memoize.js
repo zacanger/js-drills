@@ -41,7 +41,6 @@ export function memoize = function(fn) {
   }
 }
 
-
 function memoize (fn) {
   var cache = {}
   return function (n) {
