@@ -1,24 +1,28 @@
 <!doctype html>
-<html lang="en"
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>make this footer stay where it's supposed to be</title>
     <style type="text/css">
-      html, body {height: 100%;}
-      .wrapper {min-height: 100%;}
-      .main {overflow:auto;
-      	padding-bottom: 150px;}  /* must be same height as the footer */
-      .footer {position: relative;
+      html, body { height: 100%; }
+      .wrapper { min-height: 100%; }
+      .main {
+        overflow: auto;
+        padding-bottom: 150px;
+      }  /* must be same height as the footer */
+      .footer {
+        position: relative;
       	margin-top: -150px; /* negative value of footer height */
       	height: 150px;
-      	clear:both;}
+        clear: both;
+    }
       /*Opera Fix*/
       body:before {
-      	content:"";
-      	height:100%;
-      	float:left;
-      	width:0;
-      	margin-top:-32767px;/
+      	content: "";
+      	height: 100%;
+      	float: left;
+      	width: 0;
+      	margin-top: -32767px;
       }
     </style>
   </head>
@@ -46,4 +50,3 @@
     </div>
   </body>
 </html>
-

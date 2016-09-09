@@ -1,4 +1,4 @@
-// How would you recreate the Pinterest layout (dynamic grid layout)
+/* How would you recreate the Pinterest layout (dynamic grid layout) */
 #wrapper {
   width: 90%;
   max-width: 1100px;
@@ -53,4 +53,3 @@
     column-count: 4;
   }
 }
-
