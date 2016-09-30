@@ -11,3 +11,11 @@ const map = (arr, mapper, ctx) => {
   }
   return foo
 }
+
+const map = (fn, arr) => {
+  let newArr = []
+  for (let i = 0; i < arr.length; ++i) {
+    newArr[i] = fn(arr[i])
+  }
+  return newArr
+}
