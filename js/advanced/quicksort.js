@@ -22,7 +22,7 @@ function quicksort(arr){
     swap(arr, i + 1, r)
     return i + 1
   }
-  function sort(arr, 1, r){
+  function sort(arr, l, r){
     var p
     if(l < r){
       p = partition(arr, l, r)
@@ -86,4 +86,22 @@ const quickSort = nums => {
     }
   }
   return [...quickSort(left), pivot, ...quickSort(right)]
+}
+
+//
+function quikSrt (a) {
+  if (a.length < 2) return a
+  const l = []
+  const r = []
+  const b = [a[0]]
+  for (let i = 1; i < a.length; i ++) {
+    if (a[i] > a[0]) {
+      r.push(a[i])
+    } else if (a[i] < a[0]) {
+      l.push(a[i])
+    } else {
+      b.push(a[0])
+    }
+  }
+  return quikSrt(l).concat(b).concat(quikSrt(r))
 }

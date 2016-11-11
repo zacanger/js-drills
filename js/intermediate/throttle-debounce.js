@@ -1,6 +1,6 @@
 // write functions for debounce and throttle
 
-function debounce(fn, delay) {
+function debounce (fn, delay) {
   var timer = null
   return function () {
     var context = this, args = arguments
@@ -11,7 +11,7 @@ function debounce(fn, delay) {
   }
 }
 
-function throttle(fn, threshhold) {
+function throttle (fn, threshhold) {
   threshhold || (threshhold = 250)
   var last, deferTimer
 
@@ -34,3 +34,27 @@ function throttle(fn, threshhold) {
   }
 }
 
+function throttle (fn, ms) {
+  let
+    lastCalled
+  , timeout
+  , ctx
+  , args
+
+  return function () {
+    if (!lastCalled || (new Date() - lastCalled > ms && !timeout)) {
+      lastCalled = new Date()
+      return fn.apply(this, arguments)
+    } else {
+      ctx = this
+      args = [].slice.call(arguments)
+      if (!timeout) {
+        timeout = setTimeout(() => {
+          lastCalled = new Date()
+          fn.apply(ctx, args)
+          timeout = null
+        }, ms)
+      }
+    }
+  }
+}

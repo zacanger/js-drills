@@ -107,6 +107,23 @@ var merge = function (left, right) {
 }
 
 //
+const merge = (left, right) => {
+  const results = []
+  while (left.length && right.length) {
+    if (left[0] <= right[0]) {
+      results.push(left.shift())
+    } else {
+      results.push(right.shift())
+    }
+  }
+  while(left.length) {
+    results.push(left.shift())
+  }
+  while(right.length) {
+    results.push(right.shift())
+  }
+  return results
+}
 const mergeSort = nums => {
   if (nums.length < 2) {
     return nums
@@ -118,20 +135,23 @@ const mergeSort = nums => {
   return merge(mergeSort(left), mergeSort(right))
 }
 
-const merge = (left, right) => {
-  const results = []
-  while (left.length && right.length) {
-    if (left[0] <= right[0]) {
-      results.push(left.shift())
-    }else {
-      results.push(right.shift())
+//
+function mergeSort (arr) {
+  function merge (a, b) {
+    let r = []
+    while (a.length && b.length) {
+      if (a[0] < b[0]) {
+        r.push(a.shift())
+      } else {
+        ret.push(b.shift())
+      }
     }
+    r = r.concat(a).concat(b)
+    return r
   }
-  while(left.length) {
-    results.push(left.shift())
-  }
-  while(right.length) {
-    results.push(right.shift())
-  }
-  return results
+  if (arr.length < 2) return arr
+  return merge(
+    mergeSort(arr.slice(0, arr.length / 2))
+  , mergeSort(arr.slice(arr.length /2))
+  )
 }
