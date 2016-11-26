@@ -4,44 +4,45 @@
 // we'll want to run it like `./rock-paper-scissors.js rock`
 // (or paper, or scissors, obviously).
 
-var round = 0
+const rpc = arg => {
+  const choices = ['Rock', 'Paper', 'Scissors']
+  const title = arg
+  arg = arg.toLowerCase()
+  const random = () => Math.floor(Math.random() * 3)
+  const ans = choices[random()]
 
-function rpc (arg) {
-  var choices = ['Rock', 'Paper', 'Scissors']
-    , random  = function(){return Math.floor(Math.random() * 3)}
-    , title   = arg
-    , ans     = choices[random()]
+  if (arg === ans.toLowerCase()) {
+    return `Tie! ${title} vs. ${ans}.`
+  }
+  if (ans === 'Paper') {
+    if (arg === 'rock') {
+      return `${title} lost to ${ans}.`
+    }
 
- arg = arg.toLowerCase()
+    if (arg === 'scissors') {
+      return `${title} beat ${ans}.`
+    }
+  }
 
- if (arg === ans.toLowerCase()) {
-   console.log ('Tie! ' + title + ' vs. ' + ans)
- }
+  if (ans === 'Rock') {
+    if (arg === 'paper') {
+      return `${title} beat ${ans}.`
+    }
 
- if (ans === 'Paper') {
-   if (arg === 'rock')
-     console.log (title + ' lost to ' + ans)
-   if (arg === 'scissors') {
-     console.log (title + ' beat ' + ans)
-   }
- }
+    if (arg === 'scissors') {
+      return `${title} lost to ${ans}.`
+    }
+  }
 
- if (ans === 'Rock') {
-   if (arg === 'paper') {
-     console.log (title + ' beat ' + ans)
-   }
-   if (arg === 'scissors')
-     console.log (title + ' lost to ' + ans)
- }
+  if (ans === 'Scissors') {
+    if (arg === 'rock') {
+      return `${title} beat ${ans}.`
+    }
 
- if (ans === 'Scissors') {
-   if (arg === 'rock') {
-     console.log (title + ' beat ' + ans)
-   }
-   if (arg === 'paper') {
-     console.log (title + ' lost to ' + ans)
-   }
- }
+    if (arg === 'paper') {
+      return `${title} lost to ${ans}.`
+    }
+  }
 }
 
-rpc(process.argv[2])
+console.log(rpc(process.argv[2]))

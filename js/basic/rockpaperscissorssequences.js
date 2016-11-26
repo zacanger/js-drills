@@ -38,3 +38,23 @@ var rockPaperScissors = function (numRounds) {
     return acc
   }, [])
 }
+rockPaperScissors(3)
+
+//
+var rockPaperScissors2 = function () {
+  var numRounds = 3
+  var combinations = 0
+  var result = []
+  var throwOptions = ['rock', 'paper', 'scissors']
+  for (var i = 0; i < numRounds; i++) {
+    for (var j = 0; j < numRounds; j++) {
+      for (var k = 0; k < throwOptions.length; k++) {
+        result.push([throwOptions[i], throwOptions[j], throwOptions[k]])
+        combinations++
+      }
+    }
+  }
+  console.log('Number of combinations: ' + combinations)
+  return result
+}
+rockPaperScissors2()
