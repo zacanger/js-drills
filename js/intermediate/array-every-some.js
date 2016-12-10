@@ -19,20 +19,16 @@ const checkUsers = users => (
   submittedUsers => (
     submittedUsers.every(maybeUser =>
       users.some(validUser =>
-        validUser.id === maybeUser.id
-      )
-    )
-  )
-)
+        validUser.id === maybeUser.id))))
 
 // Test it
 const checkIfValid = checkUsers(goodUsers) // checkUsers is your function
-console.log('Should return true:', checkIfValid([
-  { id: 1 }
-, { id: 123 }
-]))
+console.log('Should return true:'
+  , checkIfValid([
+    { id: 1 }
+  , { id: 123 }]))
 
-console.log('Should return false:', checkIfValid([
-  { id: 5 }
-, { id: 999 }
-]))
+console.log('Should return false:'
+  , checkIfValid([
+    { id: 5 }
+  , { id: 999 }]))
