@@ -21,6 +21,22 @@ function binSearch(key, arr){
   return null
 }
 
+function binarySearch (arr, el) {
+  function inner (low, hi) {
+    const mid = Math.floor((low + hi) * 0.5)
+    if (el === arr[mid]) {
+      return el
+    }
+    if (el < arr[mid]) {
+      return inner(low, mid)
+    } else {
+      return inner(mid, hi)
+    }
+  }
+  inner(0, arr.length - 1)
+}
+
+
 //
 var binarySearch = function (array, searchValue) {
   var len = array.length
