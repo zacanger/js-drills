@@ -56,4 +56,9 @@ Have fun!
 
 ## Updated semi-regularly.
 
-## PRs, bug repots, and suggestions welcome.
+## Contributing
+
+PRs, issues, and suggestions welcome.
+
+If contributing code, please ensure you are following the editorconfig and eslintrc.
+Your code will be reformatted if not.
