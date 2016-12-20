@@ -1,5 +1,4 @@
 // ycombinator. do it.
-
 function Y(X){
   return (function(procedure){
     return X(function(arg){
@@ -12,5 +11,5 @@ function Y(X){
   })
 }
 
-// this might be right?
-const a = b => (p => b(x => (p(p)(x)))(p => b(x => (p(p)(x)))))
+// or
+const l = f => (p => f(a => p(p)(a)))(p => f(a => p(p)(a)))
