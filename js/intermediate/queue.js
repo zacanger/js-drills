@@ -1,5 +1,4 @@
 // Implement a basic queue
-
 const Queue = function () {
   this.storage = {}
   this.everAdded = 0
@@ -25,4 +24,26 @@ Queue.prototype.dequeue = function () {
 
 Queue.prototype.size = function () {
   return this.currentSize
+}
+
+const Q = () => {
+  const instance = {}
+  const storage = {}
+  let front = 0
+  let back = 0
+
+  instance.size = () => back - front
+
+  instance.enqueue = (val) => {
+    storage[back++] = val
+  }
+
+  instance.dequeue = () => {
+    instance.size() && front++
+    const res = storage[front]
+    delete storage[front]
+    return res
+  }
+
+  return instance
 }
