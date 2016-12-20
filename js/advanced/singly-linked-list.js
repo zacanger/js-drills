@@ -1,5 +1,4 @@
 // implement a singly-linked list
-
 const createNode = (val) => {
   const node = {}
   node.value = val
@@ -47,4 +46,44 @@ SinglyLinkedList.prototype.contains = function (tar) {
 
 SinglyLinkedList.prototype.size = function () {
   return this.currentSize
+}
+
+//
+const Node = (val) => {
+  const n = {}
+  n.value = val
+  n.next = null
+  return n
+}
+const LL = () => {
+  const list = {}
+  list.head = null
+  list.tail = null
+
+  list.addToTail = (val) => {
+    if (list.head === null) {
+      list.head = Node(val)
+      list.tail = list.head
+    } else {
+      list.tail.next = Node(val)
+      list.tail = list.tail.next
+    }
+  }
+
+  list.removeHead = () => {
+    const tmp = list.head.value
+    list.head = list.head.next
+    return tmp
+  }
+
+  list.contains = (tgt) => {
+    let cur = list.head
+
+    while (cur) {
+      if (cur.value === tgt) return true
+      cur = cur.next
+    }
+    return false
+  }
+  return list
 }
