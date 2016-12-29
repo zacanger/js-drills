@@ -19,3 +19,17 @@ const map = (fn, arr) => {
   }
   return newArr
 }
+
+const map = (arr, fn) => {
+  if (arr == null) return []
+
+  let len = arr.length
+  let res = new Array(len)
+  let i = -1
+
+  while (++i < len) {
+    res[i] = fn(arr[i], i, arr)
+  }
+
+  return res
+}
