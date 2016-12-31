@@ -44,3 +44,26 @@ const Stack = () => {
 
   return instance
 }
+
+// using a class
+class Stack {
+  constructor () {
+    this.list = []
+    this.length = 0
+  }
+
+  push (val) {
+    this.length++
+    this.list.push(val)
+  }
+
+  pop () {
+    if (this.length === 0) return
+    this.length--
+    return this.list.pop()
+  }
+
+  peek () {
+    return this.list[this.length - 1]
+  }
+}

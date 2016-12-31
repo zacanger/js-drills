@@ -26,6 +26,7 @@ Queue.prototype.size = function () {
   return this.currentSize
 }
 
+//
 const Q = () => {
   const instance = {}
   const storage = {}
@@ -46,4 +47,27 @@ const Q = () => {
   }
 
   return instance
+}
+
+// with a class
+class Queue {
+  constructor () {
+    this.list = []
+    this.length = 0
+  }
+
+  enqueue (v) {
+    this.length++
+    this.list.push(v)
+  }
+
+  dequeue () {
+    if (this.length === 0) return
+    this.length--
+    return this.list.shift()
+  }
+
+  peek () {
+    return this.list[0]
+  }
 }
