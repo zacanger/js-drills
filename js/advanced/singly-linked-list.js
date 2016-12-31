@@ -87,3 +87,52 @@ const LL = () => {
   }
   return list
 }
+
+//
+class LinkedList {
+  constructor () {
+    this.head = null
+    this.length = 0
+  }
+
+  get (pos) {
+    if (pos >= this.length) {
+      throw new Error('Position outside range.')
+    }
+    let curr = this.head
+    for (let i = 0; i < pos; i++) {
+      curr = curr.next
+    }
+    return curr
+  }
+
+  add (val, pos) {
+    const node = {
+      value: val,
+      next: null
+    }
+    if (pos === 0) {
+      node.next = this.head
+      this.head = node
+    } else {
+      const prev = this.get(pos - 1)
+      const curr = prev.next
+      node.next = curr
+      prev.next = node
+    }
+    this.length++
+  }
+
+  remove (pos) {
+    if (!this.head) {
+      throw new Error('Empty.')
+    }
+    if (pos === 0) {
+      this.head = this.head.next
+    } else {
+      const prev = this.get(pos - 1)
+      prev.next = prev.next.next
+    }
+    this.length--
+  }
+}
