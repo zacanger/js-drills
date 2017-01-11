@@ -6,6 +6,7 @@ let a = 1
 let b = 2
 
 // your code here
+
 a = b - a
 b = b - a
 a = a + b
