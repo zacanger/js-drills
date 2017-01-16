@@ -1,4 +1,6 @@
 // implement Set
+// it should have add, contains, and remove methods
+
 const setPrototype = {}
 
 const Set = function () {
@@ -20,4 +22,25 @@ setPrototype.contains = function (a) {
 setPrototype.remove = function (a) {
   const i = this._storage.indexOf(a)
   this._storage.splice(i, 1)
+}
+
+//
+class Set {
+  constructor () {
+    this.storage = []
+  }
+
+  add (a) {
+    if (!this.storage.includes(a)) {
+      this.storage.push(a)
+    }
+  }
+
+  contains (a) {
+    return this.storage.includes(a)
+  }
+
+  remove (a) {
+    this.storage.splice(this.storage.indexOf(a), 1)
+  }
 }
