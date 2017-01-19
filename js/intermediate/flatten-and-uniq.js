@@ -11,3 +11,7 @@ const original = [
 // your code here
 
 const res = [...new Set(original.map(({ a }) => a))]
+
+//
+const uniq = (val, idx, self) => self.indexOf(val) === idx
+const res = original.map(({ a }) => a).filter(uniq)
