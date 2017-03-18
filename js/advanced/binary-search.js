@@ -1,5 +1,44 @@
 // implement a binary search
 
+// fast and small solution
+const binarySearch = (haystack, needle, comparator, low, high) => {
+  let mid
+  let cmp
+
+  if (low === undefined) {
+    low = 0
+  } else {
+    low = low | 0
+    if (low < 0 || low >= haystack.length) {
+      throw new Error('invalid low')
+    }
+  }
+
+  if (high === undefined) {
+    high = haystack.length - 1
+  } else {
+    high = high | 0
+    if (high < low || high >= haystack.length) {
+      throw new Error('invalid high')
+    }
+  }
+
+  while (low <= high) {
+    mid = low + (high - low >> 1)
+    cmp = +comparator(haystack[mid], needle, mid, haystack)
+
+    if (cmp < 0.0) {
+      low = mid + 1
+    } else if (cmp > 0.0) {
+      high = mid - 1
+    } else {
+      return mid
+    }
+  }
+
+  return ~low
+}
+
 // (simple solution)
 function binSearch(key, arr){
   var low = 0
