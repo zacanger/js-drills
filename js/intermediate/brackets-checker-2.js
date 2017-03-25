@@ -42,3 +42,25 @@ console.log(brackets(strFail))
 console.log(brackets(funcPass))
 console.log(brackets(funcFail))
 
+//
+const brackets = (b) => {
+  const bs = {
+    ')':'(',
+    ']':'[',
+    '}':'{'
+  }
+
+  const s = []
+
+  for (let i = 0; i < b.length; i++) {
+    if ([ '{', '[', '(' ].includes(b[i])) {
+      s.push(b[i])
+    } else if (s[s.length - 1] === bs[b[i]]) {
+      s.pop()
+    } else {
+      return false
+    }
+  }
+
+  return s.length === 0
+}
