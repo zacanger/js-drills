@@ -44,3 +44,56 @@ class Set {
     this.storage.splice(this.storage.indexOf(a), 1)
   }
 }
+
+// how imperative can you get?
+function findIndex (items, size, item) {
+  for (let i = 0; i <= size; i++) {
+    if (items[i] === item) {
+      return i + 1
+    }
+  }
+  return null
+}
+
+function Set () {
+  this.size = 0
+  this.items = []
+}
+
+Set.prototype.add = function (item) {
+  this.items[this.size] = item
+  this.size++
+}
+
+Set.prototype.isEmpty = function () {
+  return this.size <= 0
+}
+
+Set.prototype.contains = function (item) {
+  if (findIndex(this.items, this.size, item)) {
+    return true
+  }
+  return false
+}
+
+Set.prototype.remove = function (item) {
+  let index = findIndex(this.items, this.size, item)
+  let tempSet = []
+
+  if (index) {
+    let i = 0
+    index--
+    while (i < index) {
+      tempSet[i] = this.items[i]
+      i++
+    }
+
+    for (let j = index + 1; j < this.size; j++) {
+      tempSet[i] = this.items[j]
+      i++
+    }
+
+    this.items = tempSet
+    this.size--
+  }
+}
