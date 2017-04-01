@@ -30,3 +30,6 @@ const Y = function (f) {
 const factorial = Y((a) =>
   (x) => x === 0 ? 1 : x * a(x - 1)
 )
+
+//
+const Y = (f) => ((x) => x(x))((x) => f((y) => x(x)(y)))
