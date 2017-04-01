@@ -1,5 +1,23 @@
 // implement a binary search
 
+const binSearch = (ls, i) => {
+  let min = 0
+  let max = ls.length
+  let mid
+
+  while (min <= max) {
+    mid = Math.floor((min + max) / 2)
+
+    if (ls[mid] === i) {
+      return mid
+    } else {
+      ls[mid] < i ? min = mid : max = mid
+    }
+  }
+
+  return -1
+}
+
 // fast and small solution
 const binarySearch = (haystack, needle, comparator, low, high) => {
   let mid
