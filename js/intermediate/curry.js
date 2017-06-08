@@ -18,7 +18,6 @@ function curry (fn) {
   }
 }
 
-
 // Prototype's version?
 Function.prototype.curry = function(){
   var fn   = this
@@ -163,3 +162,24 @@ var autoCurry = (function(){
   }
 
 }())
+
+
+//
+const curry = (fn) => {
+  const originalArguments = fn
+    .toString()
+    .match(/\(.*?\)/)[0]
+    .replace(/[()]/gi, '')
+    .replace(/\s/gi, '')
+    .split(',')
+    .filter((x) => x)
+
+  const makeCurriedFunc = (...args) => {
+    const givenArguments = [ ...args ] || []
+    return givenArguments.length < originalArguments.length
+      ? (...rest) => makeCurriedFunc(...givenArguments, ...rest)
+      : fn(...givenArguments)
+  }
+
+  return (...args) => makeCurriedFunc(...args)
+}

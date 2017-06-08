@@ -17,3 +17,10 @@ module.exports = (array, order) => {
   return array
 }
 
+const reorder = (arr, order) => {
+  let res = []
+  order.forEach((i) => {
+    res.push(arr[i])
+  })
+  return res
+}
