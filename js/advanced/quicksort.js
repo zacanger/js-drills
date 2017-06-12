@@ -105,3 +105,16 @@ function quikSrt (a) {
   }
   return quikSrt(l).concat(b).concat(quikSrt(r))
 }
+
+const qs = (arr) => {
+  const lte = (a) => (b) => a <= b
+  const gt = (a) => (b) => a > b
+  const filter = [].filter
+  if (arr.length === 0) {
+    return []
+  }
+  const [ x, ...xs ] = arr
+  const smallerOrEqual = filter.call(xs, lte(x))
+  const larger = filter.call(xs, gt(x))
+  return [ ...qs(smallerOrEqual), x, ...qs(larger) ]
+}
