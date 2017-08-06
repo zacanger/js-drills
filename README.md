@@ -2,6 +2,8 @@
 
 Toy problems and drills!
 
+Unmaintained now.
+
 There's a reason for this repo's name.
 
 ## JS and CSS
@@ -53,8 +55,6 @@ Have fun!
   and your build system is already taken care of for you.
 * [WebpackBin](http://webpackbin) is a good environment for testing out React ideas
   (it's like a JSBin that lets you use modules).
-
-## Updated semi-regularly.
 
 ## Contributing
 
