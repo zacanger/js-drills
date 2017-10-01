@@ -5,6 +5,39 @@
 // console.log(curried((2)(2))) // => 4
 
 // your code here
+
+// NOTE: I've seen sooo many cool solutions to this one!
+// Several of them are included here.
+// My personal favorite is the first one, which is the implementation
+// in my own utility library, zeelib (it's on npm if anyone's interested)
+
+const curry = (fn) => {
+  const getFunctionArguments = (fn) => {
+    if (typeof fn !== 'function') {
+      throw new TypeError(`Expected argument to be a function! Received a ${typeof fn}.`)
+    }
+    const functionAsString = fn.toString()
+    if (functionAsString) {
+      const m = functionAsString.match(/\(.*?\)/)
+      if (m && m[0]) {
+        const args = m[0] // match everything between brackets
+          .replace(/[()]/gi, '') // remove brackets
+          .replace(/\s/gi, '') // remove all whitespace
+          .split(',') // split on the commas
+        return args.filter((a) => a) // remove possible empty string from the result
+      }
+    }
+  }
+  const originalArguments = getFunctionArguments(fn) || []
+  const makeCurriedFunc = (...args) => {
+    const givenArguments = args || []
+    return givenArguments.length < originalArguments.length
+      ? (...rest) => makeCurriedFunc(...givenArguments, ...rest)
+      : fn(...givenArguments)
+  }
+  return (...args) => makeCurriedFunc(...args)
+}
+
 function curry (fn) {
   return innerCurry([])
   function innerCurry (args) {
@@ -47,7 +80,7 @@ Function.prototype.curry = function(){
   if (arguments.length < 1) {
     return this
   }
-  var __ method = this
+  var __method = this
     , args      = toArray(arguments)
   return function(){
     return __method.apply(this, args.concat(toArray(arguments)))
