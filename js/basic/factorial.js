@@ -47,3 +47,6 @@ function * factorial (n) {
 for (let f of factorial(number)) {
   console.log(f) // or whatever
 }
+
+// pure lambda expression
+((f) => f(f))((f) => (n) => n === 0 ? 1 : n * f(f)(n - 1))
