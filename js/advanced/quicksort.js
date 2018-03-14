@@ -118,3 +118,17 @@ const qs = (arr) => {
   const larger = filter.call(xs, gt(x))
   return [ ...qs(smallerOrEqual), x, ...qs(larger) ]
 }
+
+export default (() => {
+  const sort = (xs, cmp) => {
+    if (xs.length < 1) return xs
+    const [ x, ...rest ] = xs
+    return [
+      ...sort(rest.filter((v) => cmp(v, x) < 0), cmp),
+      x,
+      ...sort(rest.filter((v) => cmp(v, x) >= 0), cmp)
+    ]
+  }
+
+  return (xs, cmp = (a, b) => a - b) => sort(xs, cmp)
+}())
