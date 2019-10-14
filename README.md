@@ -2,8 +2,6 @@
 
 Toy problems and drills!
 
-Unmaintained now.
-
 There's a reason for this repo's name.
 
 ## JS and CSS
