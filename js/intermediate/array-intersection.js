@@ -1,5 +1,5 @@
- // write fn that takes two arrays and returns
- // array with their intersection
+// write fn that takes two arrays and returns
+// array with their intersection
 
 module.exports = (firstArray, secondArray) => {
   const hash = {}
@@ -14,4 +14,3 @@ module.exports = (firstArray, secondArray) => {
 
   return intersection
 }
-

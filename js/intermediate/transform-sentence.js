@@ -32,4 +32,3 @@ function LetterChanges (str) {
   }
   return transform
 }
-

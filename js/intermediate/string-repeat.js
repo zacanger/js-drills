@@ -13,4 +13,3 @@ module.exports = (string, count) => {
   }
   return result
 }
-

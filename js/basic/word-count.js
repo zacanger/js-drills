@@ -3,7 +3,6 @@
 // spaces. example:
 // countWords('Built in methods are your friend!') // => 6
 
-function countWords(str){
+function countWords (str) {
   return str.split(' ').length
 }
-

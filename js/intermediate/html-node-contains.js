@@ -15,4 +15,3 @@ const contains = (parent, child) => {
 }
 
 module.exports = contains
-

@@ -2,7 +2,7 @@
 
 var
   size = 5
-, cb   = ''
+var cb = ''
 
 for (var i = 1; i <= size; i++) {
   var charp = false
@@ -20,7 +20,6 @@ for (var i = 1; i <= size; i++) {
       } else {
         cb += '#'
       }
-
     } else {
       if (j % 2 === 0) {
         cb += '#'
@@ -33,4 +32,3 @@ for (var i = 1; i <= size; i++) {
 }
 
 console.log(cb)
-

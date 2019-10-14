@@ -19,7 +19,7 @@ export const l2cc = str => (
 
 // convert snake_case to camelCase
 export const s2cc = str => (
-  str.replace (/(\_\w)/g, match => (
+  str.replace(/(\_\w)/g, match => (
     match[1].toUpperCase())
   )
 )

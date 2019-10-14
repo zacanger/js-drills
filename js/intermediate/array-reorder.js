@@ -18,7 +18,7 @@ module.exports = (array, order) => {
 }
 
 const reorder = (arr, order) => {
-  let res = []
+  const res = []
   order.forEach((i) => {
     res.push(arr[i])
   })

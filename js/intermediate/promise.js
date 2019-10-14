@@ -13,4 +13,3 @@ const upperProm = str => new Promise((res, rej) => {
     }
   }, 1000)
 })
-

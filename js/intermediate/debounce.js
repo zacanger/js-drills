@@ -12,21 +12,21 @@
 
 // test your code
 const
-  text   = () => 'good'
-, inner  = debounce(text, 4000)
-, inner2 = debounce(text, 2000, true)
-, inner3 = debounce(text, 3000, false)
+  text = () => 'good'
+const inner = debounce(text, 4000)
+const inner2 = debounce(text, 2000, true)
+const inner3 = debounce(text, 3000, false)
 
-function debounce(cb, x, execute) {
+function debounce (cb, x, execute) {
   var flag = true
   var timeId
-  function resetFlag() {
-    timeId = setTimeout(function() {
+  function resetFlag () {
+    timeId = setTimeout(function () {
       flag = true
     }, x)
   }
 
-  return function() {
+  return function () {
     if (execute) {
       return cb()
     }
@@ -44,14 +44,13 @@ function debounce(cb, x, execute) {
   }
 }
 
-
 module.exports = (func, wait, immediate) => {
   let timeout
   return () => {
     const
       context = this
-    , args    = arguments
-    , later   = () => {
+    const args = arguments
+    const later = () => {
       func.apply(this, args)
     }
 
@@ -63,4 +62,3 @@ module.exports = (func, wait, immediate) => {
     }
   }
 }
-

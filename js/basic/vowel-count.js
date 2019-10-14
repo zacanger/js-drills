@@ -2,7 +2,7 @@
 // vowels that the string contains. don't count `y`. example:
 // vowels('Hey, how are you?') // => 6
 
-function vowels(str){
+function vowels (str) {
   var vowels = 0
   for (var i = 0; i < str.length; i++) {
     switch (str[i].toLowerCase()) {
@@ -24,4 +24,3 @@ function vowels(str){
   }
   return vowels
 }
-

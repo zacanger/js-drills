@@ -5,6 +5,6 @@ a.map(parseInt) // [10, NaN, 2]
 
 a.map(n => parseInt(n, 10))
 // or in old js:
-a.map(function(n) {
+a.map(function (n) {
   return parseInt(n, 10)
 })

@@ -23,4 +23,3 @@ const insertAtIndices = (phrase, word, indices) => {
   })
   return phrase
 }
-

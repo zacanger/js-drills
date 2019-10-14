@@ -34,4 +34,3 @@ function map (collection, callback) {
 map([1, 2, 3], function (value) { // returns [2,3,4]
   return value += 1
 })
-

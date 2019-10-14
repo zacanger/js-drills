@@ -25,4 +25,3 @@ function sum (arr) {
   }
   return count
 }
-

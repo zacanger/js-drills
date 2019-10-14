@@ -3,7 +3,7 @@
 // Given these two arrays, find which element is missing in the second array.
 
 // There are most concise ways to write this; this solution avoids nested loops.
-function findMissing(arr1, arr2) {
+function findMissing (arr1, arr2) {
   var hash1 = {}
   var hash2 = {}
   for (var i = 0; i < arr1.length; i++) {
@@ -20,4 +20,3 @@ function findMissing(arr1, arr2) {
     }
   }
 }
-

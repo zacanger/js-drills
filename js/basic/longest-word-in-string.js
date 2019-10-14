@@ -50,7 +50,6 @@ var longest2 = function (sent) {
   return longestWords
 }
 
-
 function findLongestWord (str) {
   str = str.split(' ')
   var longest = str.reduce(function (a, b) {

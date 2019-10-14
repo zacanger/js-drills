@@ -6,8 +6,7 @@ import axios from 'axios'
 
 const getZen = cb => {
   axios.get('https://api.github.com/zen')
-  .then(res => {
-    cb(res.data)
-  })
+    .then(res => {
+      cb(res.data)
+    })
 }
-

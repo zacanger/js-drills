@@ -2,7 +2,7 @@
 // example:
 // repeat('foo', 2) // foo foo
 
-function repeat(str, num) {
+function repeat (str, num) {
   var newStr = ''
   if (num <= 0) {
     return newStr

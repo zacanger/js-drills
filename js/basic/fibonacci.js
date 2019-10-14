@@ -1,7 +1,7 @@
-function nFib(len, n, res) {
+function nFib (len, n, res) {
   var temp = n
   if (!arguments[2]) {
-    res = [0,1]
+    res = [0, 1]
   }
   if (len === res.length) {
     return res
@@ -17,14 +17,13 @@ function nFib(len, n, res) {
   return nFib(len, n, res)
 }
 
-function fib(len, res) {
+function fib (len, res) {
   if (!arguments[1]) {
-    res = [0,1]
+    res = [0, 1]
   }
   if (len === res.length) {
     return res
   }
-  res.push(res[res.length-1] + res[res.length-2])
+  res.push(res[res.length - 1] + res[res.length - 2])
   return fib(len, res)
 }
-

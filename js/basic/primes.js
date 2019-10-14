@@ -22,24 +22,23 @@
 // optimised, tho (because we know that, with the
 // exception of 2, all even numbers are straight-up disqualified):
 var numPrimes = 1
-  , sumPrimes = 2
-  , i         = 3
-function isPrime(num){
-  if(num % 2 === 0){
+var sumPrimes = 2
+var i = 3
+function isPrime (num) {
+  if (num % 2 === 0) {
     return false
   }
-  for(var x = 3; x <= Math.round(num/2); x += 2){
-    if(num % x === 0){
+  for (var x = 3; x <= Math.round(num / 2); x += 2) {
+    if (num % x === 0) {
       return false
     }
     return true
   }
 }
-while(numPrimes < 1000){
-  if(isPrime(i)){
+while (numPrimes < 1000) {
+  if (isPrime(i)) {
     sumPrimes += 1
     numPrimes++
   }
   i++
 }
-

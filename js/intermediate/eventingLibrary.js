@@ -8,7 +8,7 @@
 // z.trigger('growingOlder')
 
 const mixEvents = (obj) => {
-  let eventsMap = {}
+  const eventsMap = {}
 
   obj.on = (eventName, cb) => {
     eventsMap[eventName] = eventsMap[eventName] || []

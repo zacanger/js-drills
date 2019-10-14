@@ -3,7 +3,7 @@
 
 // Find the sum of all the multiples of 3 or 5 below 1000.
 
-function threeAndFive(limit) {
+function threeAndFive (limit) {
   var sum = 0
   for (var i = 0; i < limit; i++) {
     if (!(i % 3) || !(i % 5)) {
@@ -15,4 +15,3 @@ function threeAndFive(limit) {
 
 // threeAndFive(1000);
 // Should return 233168
-

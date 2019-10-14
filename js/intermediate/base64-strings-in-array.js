@@ -4,21 +4,21 @@
 // Each string should only be encoded once!
 
 var strings = [
-  'Like a Rolling Stone'
-, 'Satisfaction'
-, 'Imagine'
-, 'What\'s Going On'
-, 'Respect'
-, 'Good Vibrations'
-, 'Johnny B. Goode'
-, 'Hey Jude'
-, 'Smells Like Teen Spirit'
-, 'What\'d I Say'
-, 'Satisfaction'
-, 'Imagine'
-, 'Imagine'
-, 'Good Vibrations'
-, 'Hey Jude'
+  'Like a Rolling Stone',
+  'Satisfaction',
+  'Imagine',
+  'What\'s Going On',
+  'Respect',
+  'Good Vibrations',
+  'Johnny B. Goode',
+  'Hey Jude',
+  'Smells Like Teen Spirit',
+  'What\'d I Say',
+  'Satisfaction',
+  'Imagine',
+  'Imagine',
+  'Good Vibrations',
+  'Hey Jude'
 ]
 
 // code here

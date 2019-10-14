@@ -26,4 +26,3 @@ var swap = function (array, i, j) {
   array[i] = array[j]
   array[j] = temp
 }
-

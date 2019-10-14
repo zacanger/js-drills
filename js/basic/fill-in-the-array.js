@@ -7,12 +7,11 @@
 function fillInTheArray (numbers) {
   var
     first = numbers[0]
-  , last  = numbers[numbers.length - 1]
-  , arr   = []
+  var last = numbers[numbers.length - 1]
+  var arr = []
 
   for (var i = first; i <= last; i++) {
     arr.push(i)
   }
   return arr
 }
-

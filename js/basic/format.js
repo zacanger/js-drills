@@ -2,12 +2,12 @@
 // `console.log('some stuff and %s', things)`
 // reimplement this (in ES5).
 
-function format(){
+function format () {
   var
-    args    = [].slice.call(arguments)
-  , initial = args.shift()
+    args = [].slice.call(arguments)
+  var initial = args.shift()
 
-  function replacer(text, replacement){
+  function replacer (text, replacement) {
     return text.replace('%s', replacement)
   }
 

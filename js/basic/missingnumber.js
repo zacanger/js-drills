@@ -10,7 +10,7 @@ const oneMissingNumber = (arr) => {
 }
 
 // More complex, handles multiple missing numbers.
-function missingNumber(arr) {
+function missingNumber (arr) {
   var counter
   var hash = {}
   for (var i = 0; i < arr.length; i++) {
@@ -45,4 +45,3 @@ missingNumber(set2) // returns 1117
 missingNumber(set3) // returns 99
 missingNumber(set4) // returns 3
 missingNumber(set5) // returns '87 or 107'
-

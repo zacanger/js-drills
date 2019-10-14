@@ -1,6 +1,6 @@
 // Recreate the `.bind` method on the Function prototype.
 
-Function.prototype.newBind = function() {
+Function.prototype.newBind = function () {
   var _this = this
   var context = arguments[0]
   var args = []
@@ -8,7 +8,7 @@ Function.prototype.newBind = function() {
     args.push(arguments[i])
   }
 
-  return function() {
+  return function () {
     var innArgs = []
     for (var i = 1; i < arguments.length; i++) {
       innerArgs.push(arguments[i])
@@ -17,4 +17,3 @@ Function.prototype.newBind = function() {
     return _this.call(context, args.concat(innerArgs))
   }
 }
-

@@ -8,7 +8,7 @@
 function compose () {
   const args = Array.prototype.slice.call(arguments)
   return function (val) {
-    return args.reduceRight(function(memo, func) {
+    return args.reduceRight(function (memo, func) {
       return func(memo)
     }, val)
   }
@@ -17,7 +17,7 @@ function compose () {
 function pipe () {
   const args = Array.prototype.slice.call(arguments)
   return function (val) {
-    return args.reduce(function(memo, func) {
+    return args.reduce(function (memo, func) {
       return func(memo)
     }, val)
   }

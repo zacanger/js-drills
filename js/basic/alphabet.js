@@ -2,7 +2,6 @@
 // its letters in alphabetal order. assume there will be no punctuation or
 // numbers. example: `alphabet('hello')` // => 'ehllo'
 
-function alphabet(str){
+function alphabet (str) {
   return str.split('').sort().join('')
 }
-

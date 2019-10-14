@@ -6,8 +6,8 @@
 // * nthFibonacci(4); // => 5
 
 // iterative
-function fibIt(n){
-  var arr = [0,1]
+function fibIt (n) {
+  var arr = [0, 1]
   for (var i = 2; i <= n + 1; i++) {
     arr.push(arr[i - 1] + arr[i - 2])
     if (i === n + 1) {
@@ -18,11 +18,10 @@ function fibIt(n){
 }
 
 // recursive
-function fibRec(n){
+function fibRec (n) {
   if (n < 2) {
     return n
   } else {
     return fibRec(n - 2) + fibRec(n - 1)
   }
 }
-

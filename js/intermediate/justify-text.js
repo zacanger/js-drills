@@ -8,14 +8,14 @@ const words = 'This is an example of text justification.'.split(' ')
 console.log(justify(words, 16))
 
 const justify = (words, len) => {
-  let
+  const
     lines = []
-  , newLine = ''
-  , i = 0
-  , currentCount = 0
-  , leftOver = 0
-  , spacesInBetween = 0
-  , spaces = ''
+  let newLine = ''
+  let i = 0
+  let currentCount = 0
+  let leftOver = 0
+  let spacesInBetween = 0
+  let spaces = ''
 
   while (i < words.length) {
     if (currentCount + words[i].length <= len) {

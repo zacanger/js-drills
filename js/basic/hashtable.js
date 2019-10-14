@@ -10,7 +10,7 @@ export default class HashTable {
   hashKey (k) {
     let hash = 0
     for (let i = 0; i < k.length; i++) {
-      let code = k.charCodeAt(i)
+      const code = k.charCodeAt(i)
       hash = ((hash << 5) - hash) + code | 0
     }
     return hash

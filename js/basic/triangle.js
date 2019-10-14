@@ -7,7 +7,7 @@ for (let i = txt.length; i >= 0; i--) {
 
 // or, taking an argument for size
 const num = process.argv[2]
-let str   = ''
+let str = ''
 for (let i = num; i >= 1; i--) {
   str += '#'
   console.log(str)

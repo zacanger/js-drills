@@ -23,4 +23,3 @@ function sumPrimes (num) {
     return a + b
   })
 }
-

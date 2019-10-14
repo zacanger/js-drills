@@ -32,7 +32,7 @@ export default class List {
   unshift (val) {
     let prev = val
     for (let addr = 0; addr < this.length; addr++) {
-      let curr = this.memory[addr]
+      const curr = this.memory[addr]
       this.memory[addr] = prev
       prev = curr
     }

@@ -1,11 +1,11 @@
-function prepend(elem, list){
+function prepend (elem, list) {
   var tList = {}
   tList.value = elem
   tList.rest = list
   return tList
 }
 
-function nth(list, number){
+function nth (list, number) {
   var array = listToArray(list)
   if (array[number] !== 'undefined') {
     return array[number]
@@ -14,20 +14,20 @@ function nth(list, number){
   }
 }
 
-function nthRecursive(list, number){
-  if(list.rest === null){
+function nthRecursive (list, number) {
+  if (list.rest === null) {
     return list.value
   } else {
-    if(number === 0){
+    if (number === 0) {
       return list.value
     }
     return nthRecursive(list.rest, number - 1)
   }
 }
 
-function arrayToList(array){
+function arrayToList (array) {
   var list = null
-  for(var i = array.length - 1; i >= 0; i--){
+  for (var i = array.length - 1; i >= 0; i--) {
     var temp = {
       value: array[i],
       rest: list
@@ -37,9 +37,9 @@ function arrayToList(array){
   return list
 }
 
-function listToArray(list){
+function listToArray (list) {
   var array = []
-  for(var node = list; node; node = node.rest){
+  for (var node = list; node; node = node.rest) {
     array.push(node.value)
   }
   return array
@@ -55,4 +55,3 @@ console.log(nth(arrayToList([10, 20, 30]), 1))
 // → 20
 console.log(nthRecursive(arrayToList([10, 20, 30]), 1))
 // → 20
-
