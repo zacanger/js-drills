@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
-const
-  http = require('http')
-, port = 4444
+const http = require('http')
+const port = 4444
 
 http.createServer((req, res) => {
   res.end('ok', 200)

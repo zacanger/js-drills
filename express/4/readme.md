@@ -5,8 +5,8 @@ Feel free to hard-code them in somewhere, like:
 
 ```javascript
 let quotes = [
-  {author : "Person McPersonly"  , "text" : "I frequently like to person around."}
-, {author : "Something Humanoid" , "text" : "What are you looking at?"}
+  { author: "Person McPersonly", "text": "I frequently like to person around." },
+ { author: "Something Humanoid", "text": "What are you looking at?" }
 ]
 ```
 
@@ -21,7 +21,7 @@ time-saver. Here's are two usage examples:
 
 ```
 // ES5.1
-app.listen(port, function(){
+app.listen(port, function (){
   console.log('listening on port ' + port)
 })
 
@@ -31,13 +31,12 @@ app.listen(port, () => {
 })
 
 // ES5.1
-var returner = function(returnMe){
+var returner = function (returnMe) {
   return returnMe
 }
 
 // ES2015
-var returner = returnMe => returnMe
+var returner = (returnMe) => returnMe
 ```
 
 [And a good blog post on what's new with arrow functions](https://www.nczonline.net/blog/2013/09/10/understanding-ecmascript-6-arrow-functions/).
-

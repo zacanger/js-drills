@@ -7,17 +7,17 @@
 const http = require('http')
 const host = process.argv[2]
 const opts = {
-  host
-, port : 80
-, path : '/'
+  host,
+  port: 80,
+  path: '/'
 }
 
-http.get(opts, res => {
+http.get(opts, (res) => {
   if (res.statusCode === 200) {
     console.log(`${host} is up`)
   } else {
     console.log(`${host} is down`)
   }
-}).on('error', err => {
+}).on('error', (err) => {
   console.warn(`Error: ${err.message}`)
 })

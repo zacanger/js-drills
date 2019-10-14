@@ -14,9 +14,8 @@ require('fs').createReadStream(process.argv[2]).pipe(process.stdout)
 
 'use strict'
 
-const
-  fs   = require('fs')
-, args = process.argv.slice(2)
+const fs   = require('fs')
+const args = process.argv.slice(2)
 
 if (!args[0]) {
   console.error('please specify file(s) to catenate')
@@ -35,10 +34,9 @@ if (!args[0]) {
 
 const fs = require('fs')
 
-function cat(result, file){
-  let
-    stdout = ''
-  , stderr = ''
+function cat (result, file) {
+  let stdout = ''
+  const stderr = ''
 
   try {
     stdout = result.stdout + fs.readFileSync(file, 'utf8')
@@ -49,8 +47,8 @@ function cat(result, file){
   }
   return {stdout : stdout, stderr : stderr}
 }
-const nl = str => str.length > 0 && str[str.length -1] !== '\n' ? str + '\n': str
-const doCat = files => {
+const nl = (str) => str.length > 0 && str[str.length -1] !== '\n' ? str + '\n': str
+const doCat = (files) => {
   let results = files.reduce(cat, {stdout : '', stderr : ''})
   return {stdout : nl(results.stdout), stderr : nl(results.stderr)}
 }

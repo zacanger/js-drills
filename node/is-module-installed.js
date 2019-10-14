@@ -1,6 +1,6 @@
 // write a function that checks to see if a module is locally installed
 
-const isInstalled = pkgName => {
+const isInstalled = (pkgName) => {
   try {
     require.resolve(pkgName)
     return true
@@ -8,4 +8,5 @@ const isInstalled = pkgName => {
     return false
   }
 }
+
 export default isInstalled

@@ -4,7 +4,7 @@
 
 // either of these will work
 
-const home  = process.env[(process.platform === 'win32') ? 'USERPROFILE' : 'HOME']
+const home = process.env[(process.platform === 'win32') ? 'USERPROFILE' : 'HOME']
 const home2 = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE
 
 console.log(home, home2)

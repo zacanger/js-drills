@@ -14,7 +14,7 @@ const done = () => {
   process.exit()
 }
 
-process.stdin.on('data', text => {
+process.stdin.on('data', (text) => {
   console.log('received data:', inspect(text))
   if (text === 'quit\n') {
     done()

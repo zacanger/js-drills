@@ -4,10 +4,9 @@
 // bonus: allow JSON
 // don't use any third-party libs (just core node)
 
-const
-  http = require('http')
-, dns  = require('dns')
-, port = process.env.PORT || 5000
+const http = require('http')
+const dns = require('dns')
+const port = process.env.PORT || 5000
 
 http.createServer((req, res) => {
   let ip
@@ -22,16 +21,16 @@ http.createServer((req, res) => {
   function handleResponse (error, domains) {
     switch (req.headers.accept) {
       case 'application/json':
-        const data = {'ip' : ip}
+        const data = { ip: ip }
         if (!error && domains.length > 1) {
           data.hostname = domains[0]
         }
-        res.writeHead(200, {'content-type' : 'application/json'})
+        res.writeHead(200, { 'content-type': 'application/json' })
         res.write(JSON.stringify(data))
         res.end()
         break
       default:
-        res.writeHead(200, {'content-type' : 'text/plain'})
+        res.writeHead(200, { 'content-type': 'text/plain' })
         res.write(ip)
         res.end()
     }

@@ -1,11 +1,10 @@
 #!/usr/bin/env node
 
-const
-  net  = require('net')
-, repl = require('repl')
-, port = 5100
+const net = require('net')
+const repl = require('repl')
+const port = 5100
 
-net.createServer(socket => {
+net.createServer((socket) => {
   let remote = repl.start(' |> ', socket)
 }).listen(port)
 
@@ -15,25 +14,24 @@ let local = repl.start(' |> ')
 
 
 // or
-const
-  net  = require('net')
-, repl = require('repl')
-, port = process.env.PORT || 5000
+const net = require('net')
+const repl = require('repl')
+const port = process.env.PORT || 5000
 
 let connections = 0
 
 repl.start({
-  prompt : 'stdrepl|> '
-, input  : process.stdin
-, output : process.stdout
+  prompt: 'stdrepl|> ',
+  input: process.stdin,
+  output: process.stdout
 })
 
 net.createServer(socket => {
   connections += 1
   repl.start({
-    prompt : 'nixsockrepl|> '
-  , input  : socket
-  , output : socket
+    prompt: 'nixsockrepl|> ',
+    input: socket,
+    output: socket
   }).on('exit', () => {
     socket.end()
   })
@@ -42,9 +40,9 @@ net.createServer(socket => {
 net.createServer((socket) => {
   connections += 1
   repl.start({
-    prompt : 'tcpsockrepl|> '
-  , input  : socket
-  , output : socket
+    prompt: 'tcpsockrepl|> ',
+    input: socket,
+    output: socket
   }).on('exit', () => {
     socket.end()
   })
@@ -94,12 +92,11 @@ for (let i = 2; i < process.argv.length; i++){
 // chmod +x thisFile.js
 // ./thisFile.js someOtherFile.js
 
-const
-  temp         = require('temp')
-, fs           = require('fs')
-, repl         = require('repl').start('> ')
-, lastContents = {}
-, inputFile    = process.argv[2]
+const temp = require('temp')
+const fs = require('fs')
+const repl = require('repl').start('> ')
+const lastContents = {}
+const inputFile = process.argv[2]
 
 const hasChanged = (file, newData) => {
   let oldData = lastContents[file]
@@ -117,7 +114,7 @@ const hasChanged = (file, newData) => {
   return false
 }
 
-const reload = file => {
+const reload = (file) => {
   fs.readFile(file, (err, data) => {
     if (err) {
       throw err
@@ -150,7 +147,7 @@ const reload = file => {
   })
 }
 
-const start = file => {
+const start = (file) => {
   reload(file)
   fs.watchFile(file, reload.bind(null, file))
 }

@@ -4,7 +4,7 @@
 // we'll want to run it like `./rock-paper-scissors.js rock`
 // (or paper, or scissors, obviously).
 
-const rpc = arg => {
+const rpc = (arg) => {
   const choices = ['Rock', 'Paper', 'Scissors']
   const title = arg
   arg = arg.toLowerCase()

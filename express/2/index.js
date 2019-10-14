@@ -1,20 +1,19 @@
 #!/usr/bin/env node
 
-const
-  path    = require('path')
-, http    = require('http')
-, express = require('express')
-, app     = express()
-, port    = process.env.PORT || 3000
-, server  = http.createServer(app)
+const path = require('path')
+const http = require('http')
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 3000
+const server = http.createServer(app)
 
 app.set('port', port)
 
-function onServerListening(){
+const onServerListening = ()=> {
   console.log(`Listening on ${ app.get('port') }`)
 }
 
-function onServerError(error){
+const onServerError = (error) => {
   console.log(error)
 }
 
@@ -25,4 +24,3 @@ server.on('error', onServerError)
 app.get('/', (req, res) => {
   res.send('Hello ES6!')
 })
-
