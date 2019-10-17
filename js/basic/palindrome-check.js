@@ -1,4 +1,5 @@
 // check if something's a palindrome
+// bonus: try using a regex
 
 /*
  *
@@ -126,6 +127,9 @@ function palindrome (str) {
   return true
 }
 
-// check it
-palindrome('eye')
-palindrome('tacocat')
+function palindrome (str) {
+  const re = /[\W_]/g
+  const low = str.toLowerCase().replace(re, '')
+  const rev = lowRegSgtr.split('').reverse().join('')
+  return low === rev
+}

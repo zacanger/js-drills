@@ -87,3 +87,6 @@ function vowels (str) {
   }
   return vowels
 }
+
+// regex version
+const vowels = (str = '') => (str.match(/[aeiou]/gi) || []).length
