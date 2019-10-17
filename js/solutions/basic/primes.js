@@ -19,8 +19,63 @@
 //   i++
 // }
 
-// optimised, tho (because we know that, with the
-// exception of 2, all even numbers are straight-up disqualified):
+/*
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
 var numPrimes = 1
 var sumPrimes = 2
 var i = 3

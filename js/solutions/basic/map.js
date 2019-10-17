@@ -4,6 +4,57 @@
 // const doubles = map(numbers, number => number * 2)
 // console.log(doubles) // [2, 4, 6]
 
+/*
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
 const map = (arr, mapper, ctx) => {
   const foo = []
   for (let i = 0; i < arr.length; i++) {

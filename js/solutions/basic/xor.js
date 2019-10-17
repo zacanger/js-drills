@@ -2,7 +2,75 @@
 // xor(false, false) // => false
 // xor(true, false)  // => true
 
-// this is beautiful
+/*
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
 const xor = (a, b) => !a != !b
 
 // the above, just in more words
@@ -23,7 +91,7 @@ if ((foo && !bar) || (!foo && bar)) {
   // quux, baz
 }
 
-// ternary operator?
+// ternary operator
 const xor = (thingOne, thingTwo) => {
   if (thingOne ? !thingTwo : thingTwo) {
     return true

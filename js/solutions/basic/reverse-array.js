@@ -1,7 +1,90 @@
-// write a function that reverses the contents of an array bonus points:
+// write a function that reverses the contents of an array
+// bonus points:
 // try reversing it in place (without creating a new array). example:
 // reverseArray([1, 8, 39, null, 2, 9, 'bob'])[0] // should equal => 'bob'
 
+/*
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
+const reverse = a => a.reverse()
+
+//
 var reverseArray = function (array) {
   var result = []
   while (array.length > 0) {
@@ -10,6 +93,7 @@ var reverseArray = function (array) {
   return result
 }
 
+//
 var reverseArray = function (array) {
   var start = 0
   var end = array.length - 1
