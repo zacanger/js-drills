@@ -1,5 +1,5 @@
 for (let i = 1; i <= 100; i++)(function(i){
-  var output = ''
+  let output = ''
 
   if (i % 3 == 0) {
     output += 'Fizz'

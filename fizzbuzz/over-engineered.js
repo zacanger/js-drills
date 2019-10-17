@@ -1,7 +1,6 @@
 function fizzbuzz() {
-  let
-    i      = 1
-  , result = []
+  let i = 1
+  let result = []
 
   ;(function loop() {
     let str = ''

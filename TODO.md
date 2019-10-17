@@ -1,5 +1,4 @@
 migration:
 
-fizzbuzz
 js
 react
