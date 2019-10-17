@@ -26,3 +26,102 @@ triangle(5)
 * * * * *
 
 */
+
+/*
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
+function triangle (n) {
+  if (n === 1 || n === 0) return n
+  return n + triangle(n - 1)
+}
+
+function triangleBuilder (n) {
+  let arr = []
+  for (var i = n; i >= 0; i--) {
+    let lineArr = []
+    const spaces = i
+    const stars = n - i
+    let spaceArr = []
+    for (var j = 0; j < spaces; j++) {
+      spaceArr.push(' ')
+    }
+    spaceArr = spaceArr.join('')
+    let stArr = []
+    for (var k = 0; k < stars; k++) {
+      stArr.push('* ')
+    }
+    stArr = stArr.join('')
+    lineArr.push(spaceArr)
+    lineArr.push(stArr)
+    lineArr.push(' \n')
+    lineArr = lineArr.join('')
+    arr.push(lineArr)
+  }
+  arr = arr.join('')
+  return arr
+}
+
+console.log(triangleBuilder(5))

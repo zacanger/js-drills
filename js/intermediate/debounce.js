@@ -11,3 +11,128 @@
 // the function will run at the end of the timeout period.
 
 // test your code
+const text = () => 'good'
+const inner = debounce(text, 4000)
+const inner2 = debounce(text, 2000, true)
+const inner3 = debounce(text, 3000, false)
+
+/*
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
+function debounce (cb, x, execute) {
+  var flag = true
+  var timeId
+  function resetFlag () {
+    timeId = setTimeout(function () {
+      flag = true
+    }, x)
+  }
+
+  return function () {
+    if (execute) {
+      return cb()
+    }
+
+    if (flag) {
+      flag = false
+      resetFlag()
+      return cb()
+    } else {
+      flag = false
+      clearTimeout(timeId)
+      resetFlag()
+      return 'too soon'
+    }
+  }
+}
+
+module.exports = (func, wait, immediate) => {
+  let timeout
+  return () => {
+    const context = this
+    const args = arguments
+    const later = () => {
+      func.apply(this, args)
+    }
+
+    if (immediate) {
+      func.apply(context, args)
+    } else {
+      clearTimeout(timeout)
+      timeout = setTimeout(later, wait)
+    }
+  }
+}

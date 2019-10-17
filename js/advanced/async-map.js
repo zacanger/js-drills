@@ -22,3 +22,63 @@
 //    // the second function had a shorter timeout.
 //    console.log(results); // ['one', 'two']
 // })
+
+/*
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
+const asyncMap = (tasks, callback) => {
+  const resultsArray = []
+  let resultsCount = 0
+
+  for (let i = 0; i < tasks.length; i++) {
+    ;(i => {
+      tasks[i]((val) => {
+        resultsArray[i] = val
+        resultsCount++
+        if (resultsCount === tasks.length) {
+          callback(resultsArray)
+        }
+      })
+    })(i)
+  }
+}

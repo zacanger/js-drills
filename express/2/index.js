@@ -1,10 +1,100 @@
-// write another express server!
-// have this one send something to the front-end (a string, maybe 'hello es6!')
-// oh, and try to use an es6 feature or two.
-// node can use most es6 things out of the box, as long as you have `'use strict'`
-// at the top of the script
-// the package.json has _not_ been provided this time around.
-// `const` is like `var`. check out ttps://mathiasbynens.be/notes/es6-const
-// to understand the difference between `const` and a constant in other languages.
-// `let` is like `var`, but block-scoped instead of function-scoped.
-// bonus: let the user (you) set the port this server will be using
+// Try writing a basic API server.
+// You'll need express and body-parser
+// Have a GET, POST, PUT, an DELETE,
+// and use a mock database (you can just use an array or object)
+
+/*
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
+const express = require('express')
+const bodyparser = require('body-parser')
+const items = ['this thing', 'that thing', 'the other thing', '\'sup?']
+const app = express()
+const port = process.env.PORT || 9999
+
+app.use(bodyparser.json())
+
+app.get('/items', (req, res) => {
+  console.log(req.body)
+  res.send(items)
+})
+
+app.post('/items', (req, res) => {
+  items.push(req.body.name)
+  console.log(req.body)
+  res.send(items)
+})
+
+app.put('/items', (req, res) => {
+  let newPosition = req.body.position
+  items[newPosition] = req.body.newName
+  res.send(items)
+})
+
+app.delete('/items/:id', (req, res) => {
+  console.log(req.params)
+  items.splice(req.params.id, 1)
+  res.send(items)
+})
+
+app.listen(port, () => {
+  console.log('listening on', port)
+})

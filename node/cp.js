@@ -8,3 +8,68 @@
 // grabbing arguments at the third index.
 // let's assume you're just copying one file to another. to run this you might do:
 // `./index.js somefile aCopyOfThatFile`
+
+/*
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
+#!/usr/bin/env node
+
+const fs = require('fs')
+const from = process.argv[2]
+const to = process.argv[3]
+const readFrom = fs.createReadStream(from)
+const writeTo = fs.createWriteStream(to)
+
+console.log(from, '===>', to)
+
+readFrom.on('data', (chunk) => { writeTo.write(chunk) })
+readFrom.on('end', () => { writeTo.end() })
+readFrom.on('error', (err) => { console.log('error!', err) })
+writeTo.on('error', (err) => { console.log('error!', err) })

@@ -5,5 +5,99 @@ const original = [
   { a: 'foo', b: 101 }
 ]
 
-// result should be:
-[ 'foo', 'bar' ]
+// result should be: [ 'foo', 'bar' ]
+
+/*
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
+const res = [...new Set(original.map(({ a }) => a))]
+
+//
+const uniq = (val, idx, self) => self.indexOf(val) === idx
+const res = original.map(({ a }) => a).filter(uniq)
