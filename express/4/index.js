@@ -1,59 +1,72 @@
-'use strict'
+// write an express server that removes the x-powered-by header
+// it doesn't need to send anything specific
+
+/*
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
 
 const express = require('express')
-const bodyParser = require('body-parser')
-const port = process.env.PORT || 3000
+const port = 8000
 const app = express()
 
-const quotes = [
-  { author: 'someone', text: 'this is a bunch of words' },
-  { author: 'asdfghjkl', text: 'hi hi hi hi hi' },
-  { author: 'qwerty', text: 'dvorak' },
-  { author: 'koolaidman', text: 'oOOHHhhh yeahhh' }
-]
-
-app
-  .use(bodyParser.json())
-
-  .get('/', (req, res) => {
-    res.json(quotes)
-  })
-
-  .get('/quote/random', (req, res) => {
-    const
-      rand = ~~(Math.random() * quotes.length)
-    const quote = quotes[rand]
-    res.json(quote)
-  })
-
-  .get('/quote/:id', (req, res) => {
-    if (quotes.length <= req.params.id || req.params.id < 0) {
-      res.status(404).send('no quote found!')
-    }
-    const quote = quotes[req.params.id]
-    res.json(quote)
-  })
-
-  .post('/quote', (req, res) => {
-    if (!req.body.hasOwnProperty('author') || !req.body.hasOwnProperty('text')) {
-      res.status(400).send('please provide author and text!')
-    }
-    const newQuote = {
-      author: req.body.author,
-      text: req.body.text
-    }
-    quotes.push(newQuote)
-    res.json(true)
-  })
-
-  .delete('/quote/:id', (req, res) => {
-    if (quotes.length <= req.params.id) {
-      res.status(404).send('no quote here to delete!')
-    }
-    quotes.splice(req.params.id, 1)
-    res.json(true)
-  })
-
-  .listen(port, () => {
-    console.log(`listening on ${port}`)
-  })
+app.disable('x-powered-by')
+// in older versions (pre 3) of express, this would be:
+// app.use((req, res, next) => {
+// res.removeHeader('x-powered-by')
+// next()
+// })
+app.get('/', (req, res) => {
+  res.send('hi')
+})
+// you could also do:
+app.set('x-powered-by', false)
+// or if you wanted to get fancy
+app.use((req, res, next) => {
+  res.setHeader('x-powered-by', 'something custom')
+})
+app.listen(port)

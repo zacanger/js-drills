@@ -1,34 +1,89 @@
+// write a server that will run a game of rock-paper-scissors
+// be able to send a post request (to, for example, '/play') with a choice
+// of rock, paper, or scissors, and have the server respond with whether
+// you've won or lost against the computer.
+// you'll need express and body-parser for this.
+
+/*
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
 const express = require('express')
-const bodyparser = require('body-parser')
-const items = ['this thing', 'that thing', 'the other thing', '\'sup?']
+const bodyParser = require('body-parser')
 const app = express()
-const port = process.env.PORT || 9999
+const port = process.env.PORT || 3000
+const options = ['rock', 'paper', 'scissors']
 
-app.use(bodyparser.json())
+const determineWinner = (human, computer) => {
+  if (human === 'rock' && computer === 'scissors') {
+    return 'human'
+  } else if (human === 'scissors' && computer === 'paper') {
+    return 'human'
+  } else if (human === 'paper' && computer === 'rock') {
+    return 'human'
+  } else {
+    return 'computer'
+  }
+}
 
-app.get('/items', (req, res) => {
-  console.log(req.body)
-  res.send(items)
-})
+app.use(bodyParser.json())
 
-app.post('/items', (req, res) => {
-  items.push(req.body.name)
-  console.log(req.body)
-  res.send(items)
-})
+app.post('/play', (req, res) => {
+  if (!req.body.choice) {
+    return res.status(500).json('make a choice!')
+  }
 
-app.put('/items', (req, res) => {
-  let newPosition = req.body.position
-  items[newPosition] = req.body.newName
-  res.send(items)
-})
+  const humanChoice = req.body.choice
+  const index = Math.floor(Math.random() * options.length)
+  const computerChoice = options[index]
+  let result
 
-app.delete('/items/:id', (req, res) => {
-  console.log(req.params)
-  items.splice(req.params.id, 1)
-  res.send(items)
+  if (req.body.choice === computerChoice) {
+    result = 'tie'
+  } else {
+    result = determineWinner(humanChoice, computerChoice)
+  }
+  console.log(computerChoice)
+  res.json(result)
 })
 
 app.listen(port, () => {
-  console.log('listening on', port)
+  console.log('listening on port:', port)
 })

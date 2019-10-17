@@ -1,26 +1,100 @@
-#!/usr/bin/env node
+// Try writing a basic API server.
+// You'll need express and body-parser
+// Have a GET, POST, PUT, an DELETE,
+// and use a mock database (you can just use an array or object)
 
-const path = require('path')
-const http = require('http')
+/*
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
 const express = require('express')
+const bodyparser = require('body-parser')
+const items = ['this thing', 'that thing', 'the other thing', '\'sup?']
 const app = express()
-const port = process.env.PORT || 3000
-const server = http.createServer(app)
+const port = process.env.PORT || 9999
 
-app.set('port', port)
+app.use(bodyparser.json())
 
-const onServerListening = ()=> {
-  console.log(`Listening on ${ app.get('port') }`)
-}
+app.get('/items', (req, res) => {
+  console.log(req.body)
+  res.send(items)
+})
 
-const onServerError = (error) => {
-  console.log(error)
-}
+app.post('/items', (req, res) => {
+  items.push(req.body.name)
+  console.log(req.body)
+  res.send(items)
+})
 
-server.listen(app.get('port'))
-server.on('listening', onServerListening)
-server.on('error', onServerError)
+app.put('/items', (req, res) => {
+  let newPosition = req.body.position
+  items[newPosition] = req.body.newName
+  res.send(items)
+})
 
-app.get('/', (req, res) => {
-  res.send('Hello ES6!')
+app.delete('/items/:id', (req, res) => {
+  console.log(req.params)
+  items.splice(req.params.id, 1)
+  res.send(items)
+})
+
+app.listen(port, () => {
+  console.log('listening on', port)
 })
