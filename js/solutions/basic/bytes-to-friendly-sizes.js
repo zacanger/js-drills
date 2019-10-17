@@ -1,5 +1,53 @@
 // convert long numbers to friendly, readable sizes
 
+/*
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
 function bytesToSize (bytes) {
   var size = ['Bytes', 'KB', 'MB', 'GB', 'TB']
   if (bytes === 0) { return '0 Bytes' }

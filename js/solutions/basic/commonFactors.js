@@ -6,6 +6,55 @@
 // so the common factors of 12 and 18 are 6, 3, 2, 1
 // another example: console.log(commonFactors(20, 25)) // => [5, 1]
 
+/*
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
 function commonFactors (num1, num2) {
   var factors = []
   var max

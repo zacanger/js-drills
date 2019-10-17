@@ -1,5 +1,51 @@
 // reverse an array
 
+/*
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
+const r = a => a.reverse()
+
 function reverseArray (array) {
   var inverseArr = []
   for (var i = array.length - 1; i >= 0; i--) {
