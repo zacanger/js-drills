@@ -6,9 +6,8 @@ There's a reason for this repo's name.
 
 ## JS and CSS
 
-* The master branch is a bunch of files with problems in them.
-* The solutions branch has all the same files, but with solutions
-  (some of them with mulitple solutions).
+Possible solutions are included in the same files as the questions,
+after long empty comments. Don't jump to the bottom and cheat!
 
 ## Node and Express
 
@@ -16,7 +15,6 @@ There's a reason for this repo's name.
   keeping [this](https://nodejs.org/api/) open at first.
 * There's a directory of bare Node (no Express/Koa/Hapi/whatever framework) problems.
 * There's a handful of Express drills.
-* The Mongo directory contains some reading material and problems for MongoDB and Mongoose.
 * You'll touch on ES2015 going through these. It's time to exercies your Googling skillz!
   * Read up on `let`, `const`, and arrow functions.
   * You may need to upgrade Node. I highly recommend using `n` for this.
@@ -42,10 +40,6 @@ If you're looking for something to do over interim week, maybe do some research
 and try to finish the rest.
 
 Have fun!
-
-## Mongo
-
-* Still working on this.
 
 ## React
 
