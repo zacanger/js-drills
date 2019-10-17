@@ -1,4 +1,3 @@
 migration:
 
 js
-react
