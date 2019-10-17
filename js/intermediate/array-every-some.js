@@ -15,11 +15,8 @@ const goodUsers = [
 ]
 
 // Your function here.
-const checkUsers = users =>
-  submittedUsers => (
-    submittedUsers.every(maybeUser =>
-      users.some(validUser =>
-        validUser.id === maybeUser.id)))
+const checkUsers = users => submittedUsers => (
+submittedUsers.every(maybeUser => users.some(validUser => validUser.id === maybeUser.id)))
 
 // Test it
 const checkIfValid = checkUsers(goodUsers) // checkUsers is your function

@@ -1,14 +1,15 @@
 const allComb = (arrays) => {
-  var result = []
-  arrays[0].map(function inner(i, val){
-    var iter    = i
-      , current = val
-    return function(x){
+  const result = []
+  arrays[0].map(function inner (i, val) {
+    const iter = i
+    const current = val
+
+    return function (x) {
       var next = current + x
-      if (iter) = arrays.length - 1){
+      if (iter === arrays.length - 1) {
         result.push(next)
       } else {
-        arrays[i+1].map(inner(i + 1, next))
+        arrays[i + 1].map(inner(i + 1, next))
       }
     }
   }(0, ''))

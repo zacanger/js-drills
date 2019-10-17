@@ -13,4 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 // or, smaller, with older (IE) support
-function r (f) { /in/.test(document.readyState) ? setTimeout('r(' + f + ')', 9) : f() }
+function r (f) {
+  /in/.test(document.readyState) ? setTimeout('r(' + f + ')', 9) : f()
+}

@@ -12,7 +12,7 @@ const promisify = (...args) => {
     })
   })
   Promise.all(promiseArray)
-  .then(callback)
+    .then(callback)
 }
 
 const asyncify = (...args) => {
@@ -20,7 +20,7 @@ const asyncify = (...args) => {
 
   async.parallel(
     args
-  , callback
+    , callback
   )
 }
 
@@ -30,8 +30,6 @@ const oldschoolify = (...args) => {
 }
 
 module.exports = {
-, promisify
-, asyncify
-  oldschoolify
-}
-
+  promisify,
+  asyncify,
+oldschoolify}

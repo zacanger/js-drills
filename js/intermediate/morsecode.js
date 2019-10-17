@@ -4,7 +4,7 @@
 const fs = require('fs')
 
 function show_props (obj, moresC, objName) {
-  result = ''
+  let result = ''
 
   for (const prop in obj) {
     if (moresC == obj[prop]) {

@@ -5,8 +5,8 @@ const original = [
   { a: 'foo', b: 101 }
 ]
 
-// result should be:
-[ 'foo', 'bar' ]
+  // result should be:
+  [ 'foo', 'bar' ]
 
 // your code here
 

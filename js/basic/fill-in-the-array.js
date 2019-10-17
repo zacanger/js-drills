@@ -5,8 +5,7 @@
 // Assume the array will be sorted.
 
 function fillInTheArray (numbers) {
-  var
-    first = numbers[0]
+  var first = numbers[0]
   var last = numbers[numbers.length - 1]
   var arr = []
 

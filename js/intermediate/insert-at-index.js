@@ -18,7 +18,7 @@ const insertAtIndices = (phrase, word, indices) => {
   // takes indices array, reverses.
   // map just performs the passed in function for each element in that array.
   indices.reverse().map(val => {
-  // does the same sort of slicing and inserting as above.
+    // does the same sort of slicing and inserting as above.
     phrase = phrase.slice(0, val) + word + phrase.slice(val)
   })
   return phrase

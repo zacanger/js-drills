@@ -24,29 +24,28 @@ var timeAngle = function (time) {
   if (minuteAngle > hourAngle) return minuteAngle - hourAngle
 }
 
-function clockFace(time){
+function clockFace (time) {
   time = time.split(':')
-  var hour   = Number(time[0])
-    , min    = Number(time[1])
-    , hrAng  = (hour * 30) + (min * .5)
-    , minAng = (min * 6)
-  if(hrAng >= 360){
+  var hour = Number(time[0]),
+    min = Number(time[1]),
+    hrAng = (hour * 30) + (min * .5),
+    minAng = (min * 6)
+  if (hrAng >= 360) {
     hrAng -= 360
   }
-  if(minAng >= 360){
+  if (minAng >= 360) {
     minAng -= 360
   }
-  if(hrAng - minAng > 180 || minAng - hrAng > 180){
-    if(hrAng >= minAng){
+  if (hrAng - minAng > 180 || minAng - hrAng > 180) {
+    if (hrAng >= minAng) {
       return 180 - ((hrAng - minAng) - 180)
     }
-    if(minAng > hrAng){
+    if (minAng > hrAng) {
       return 180 - ((minAng - hrAng) - 180)
     }
   }
-  if(hrAng >= minAng){
+  if (hrAng >= minAng) {
     return hrAng - minAng
   }
-  if(minANg > hrAng) return minAng - hrAng
+  if (minANg > hrAng) return minAng - hrAng
 }
-

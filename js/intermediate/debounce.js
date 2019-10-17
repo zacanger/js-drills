@@ -11,8 +11,7 @@
 // the function will run at the end of the timeout period.
 
 // test your code
-const
-  text = () => 'good'
+const text = () => 'good'
 const inner = debounce(text, 4000)
 const inner2 = debounce(text, 2000, true)
 const inner3 = debounce(text, 3000, false)
@@ -47,8 +46,7 @@ function debounce (cb, x, execute) {
 module.exports = (func, wait, immediate) => {
   let timeout
   return () => {
-    const
-      context = this
+    const context = this
     const args = arguments
     const later = () => {
       func.apply(this, args)

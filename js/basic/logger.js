@@ -3,20 +3,19 @@
 // method two: logs err to console with ERROR: prefixed
 
 const logger = {
-  info (msg) {
+  info(msg) {
     console.log(`INFO: ${msg}`)
-  }
-, error (err) {
+  }, error(err) {
     console.error(`ERROR: ${err}`)
   }
 }
 
 // old js
 var logger = {
-  info  : function (msg) {
+  info: function (msg) {
     console.log('INFO: ' + msg)
   },
-  error : function (err) {
+  error: function (err) {
     console.error('ERROR: ' + err)
   }
 }

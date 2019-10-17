@@ -3,15 +3,14 @@
 // them (example: '++d+===+c++==a'). the result should be true if each letter
 // is surrounded by a +. assume the string has at least one letter.
 // examples of input strings:
-const
-  str1 = '++d+===+c++==a'   // false
-, str2 = '++d+===+c++=+a+'  // true
-, str3 = 'F++d+===+c++=+a+' // false
-, str4 = '+F++d+===+c++=+a' // false
+const str1 = '++d+===+c++==a', // false
+  str2 = '++d+===+c++=+a+', // true
+  str3 = 'F++d+===+c++=+a+', // false
+  str4 = '+F++d+===+c++=+a' // false
 
-function thing(str){
-  var alphabet = 'abcdefghijklmnopqrstuvwxyz'
-    , newStr   = str.toLowerCase()
+function thing (str) {
+  var alphabet = 'abcdefghijklmnopqrstuvwxyz',
+    newStr = str.toLowerCase()
   for (var i = 0; i < newStr.length; i++) {
     if (alphabet.indexOf(newStr[i]) !== -1 && (i === 0 || i === newStr.length - 1)) {
       return false
@@ -23,14 +22,13 @@ function thing(str){
   return true
 }
 
-
 // using regex
 const isLetter = c => c.length === 1 && c.match(/[a-zA-Z]/i)
 const simpleSymbols = str => {
   let flag = false
   for (let i = 1; i < str.length; i++) {
     if (isLetter(str[i])) {
-      if (str[i-1] === '+' && str[i+1] === '+') {
+      if (str[i - 1] === '+' && str[i + 1] === '+') {
         flag = true
       } else {
         return false
@@ -51,15 +49,14 @@ function simpleSymbols (str) {
 }
 
 // using a hash
-function symbols(str){
-  let
-    letters = 'abcdefghijklmnopqrstuvwxyz'
-  , hash    = {}
+function symbols (str) {
+  let letters = 'abcdefghijklmnopqrstuvwxyz',
+    hash = {}
   for (var i = 0; i < letters.length; i++) {
     hash[letters[i]] = true
   }
   for (var i = 0; i < str.length; i++) {
-    if (hash[str[i]] && (str[i-1] !== '+' || str[i+1] !== '+')) {
+    if (hash[str[i]] && (str[i - 1] !== '+' || str[i + 1] !== '+')) {
       return false
     }
   }
@@ -67,11 +64,10 @@ function symbols(str){
 }
 
 // another one using a hash
-function symb(str) {
-  let
-    alphabet = 'abcdefghijklmnopqrstuvwxyz'
-  , hash     = {}
-  , newStr   = str.toLowerCase()
+function symb (str) {
+  let alphabet = 'abcdefghijklmnopqrstuvwxyz',
+    hash = {},
+    newStr = str.toLowerCase()
   for (var i = 0; i < alphabet.length; i++) {
     hash[alphabet[i]] = true
   }
@@ -85,4 +81,3 @@ function symb(str) {
   }
   return true
 }
-

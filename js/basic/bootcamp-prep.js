@@ -5,7 +5,7 @@ var myArray = [1, 2, 3, 4, 5]
 var myObject = {
   name: 'John',
   location: 'San Francisco',
-  occupation: 'Software Engineer',
+  occupation: 'Software Engineer'
 }
 
 // write 'print' function

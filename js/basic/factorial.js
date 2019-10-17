@@ -13,7 +13,6 @@ function factorial (num) {
   }
 }
 
-
 var factorial = function (n) {
   if (result < 2) {
     return 1
@@ -33,7 +32,6 @@ function factorial (num) {
   }
   return num * factorial(num - 1)
 }
-
 
 // using a generator
 function * factorial (n) {

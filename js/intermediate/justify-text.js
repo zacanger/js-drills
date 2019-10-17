@@ -8,8 +8,7 @@ const words = 'This is an example of text justification.'.split(' ')
 console.log(justify(words, 16))
 
 const justify = (words, len) => {
-  const
-    lines = []
+  const lines = []
   let newLine = ''
   let i = 0
   let currentCount = 0

@@ -32,7 +32,7 @@ const recursively = array => {
 const inOneLine = a => Array.isArray(a) ? [].concat(...a.map(inOneLine)) : a
 
 // this is the old js version of the above one-liner
-function moreLines(a) {
+function moreLines (a) {
   var newArr
   if (Array.isArray(a)) {
     return (newArr = []).concat.apply(newArr, a.map(moreLines))
@@ -41,7 +41,7 @@ function moreLines(a) {
 }
 
 // don't do this even more than you shouldn't do that one up there
-function grossWay(input) {
+function grossWay (input) {
   var flattened = []
   for (var i = 0; i < input.length; ++i) {
     var current = input[i]
@@ -52,28 +52,27 @@ function grossWay(input) {
 }
 
 // this won't work all the way down
-function nah(input){
-  var flattened = input.reduce(function(a, b){
+function nah (input) {
+  var flattened = input.reduce(function (a, b) {
     return a.concat(b)
   }, [])
 }
 
 // neither will this
-function nope(input){
-  var res = Array.prototype.concat.apply([],input)
+function nope (input) {
+  var res = Array.prototype.concat.apply([], input)
   return res
 }
 
 //
 function flatten (arr) {
   const flat = [].concat(...arr)
-  return flat.some(Array.isArray) ? flatten(flat) : flat;
+  return flat.some(Array.isArray) ? flatten(flat) : flat
 }
 
 //
-function flatten(array) {
-  return array.reduce((previous, current) =>
-      Array.isArray(current)
+function flatten (array) {
+  return array.reduce((previous, current) => Array.isArray(current)
     ? [...previous, ...flatten(current)]
     : [...previous, current]
     , []
@@ -118,12 +117,12 @@ function flatten (array) {
 }
 
 // this way is ugly-looking but actually very fast
-module.exports = function flatten(arr) {
+module.exports = function flatten (arr) {
   return flat(arr, [])
 }
 function flat (arr, res) {
-  var len = arr.length
-    , i   = -1
+  var len = arr.length,
+    i = -1
   while (len--) {
     var cur = arr[++i]
     if (Array.isArray(cur)) {

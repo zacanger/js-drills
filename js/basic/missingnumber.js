@@ -4,8 +4,7 @@
 
 const oneMissingNumber = (arr) => {
   const sorted = arr.slice(0).sort((a, b) => a - b)
-  return sorted.filter((num, i) =>
-    sorted[i + 1] - num > 1
+  return sorted.filter((num, i) => sorted[i + 1] - num > 1
   ).map((a) => a + 1)
 }
 

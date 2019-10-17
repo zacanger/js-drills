@@ -12,8 +12,6 @@ const insertionSort = nums => {
   }
 }
 
-
-
 const insertionSort = array => {
   if (array.length === 0 || !Array.isArray(array)) {
     throw new Error()

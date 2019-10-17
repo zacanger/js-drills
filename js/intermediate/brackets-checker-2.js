@@ -45,9 +45,9 @@ console.log(brackets(funcFail))
 //
 const brackets = (b) => {
   const bs = {
-    ')':'(',
-    ']':'[',
-    '}':'{'
+    ')': '(',
+    ']': '[',
+    '}': '{'
   }
 
   const s = []

@@ -14,14 +14,14 @@
 // code goes here
 const iterable = {
   nums: [],
-  set (...nums) {
+  set(...nums) {
     this.nums = nums
   },
-  [Symbol.iterator] () {
+  [Symbol.iterator]() {
     let count = 0
     const self = this
     return {
-      next () {
+      next() {
         const ans = {
           done: count >= self.nums.length,
           value: count < self.nums.length ? self.nums[count] * self.nums[count] : undefined

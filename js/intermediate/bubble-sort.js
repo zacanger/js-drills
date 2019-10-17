@@ -1,25 +1,25 @@
 // implement a bubble sort
 // example usage: `bubbleSort([2, 1, 3])` // => [1, 2, 3]
 
-var randomArray = function(size){
+var randomArray = function (size) {
   var array = []
-  for(var i = 0; i < size; i++){
+  for (var i = 0; i < size; i++) {
     array.push(parseInt(Math.random() * 100))
   }
   return array
 }
-var bubbleSort = function(array){
+var bubbleSort = function (array) {
   var swapped = true
   while(swapped){
     swapped = false
-    for (var i = 0; i < array.length-1; i++){
-      if(array[i] > array[i+1]){
-        swap(i, i+1)
+    for (var i = 0; i < array.length - 1; i++) {
+      if (array[i] > array[i + 1]) {
+        swap(i, i + 1)
         swapped = true
       }
     }
   }
-  function swap(a, b){
+  function swap (a, b) {
     var tmp = array[a]
     array[a] = array[b]
     array[b] = tmp
@@ -60,7 +60,6 @@ var swap = function (array, i, j) {
   array[j] = temp
 }
 
-
 //
 //
 //
@@ -87,19 +86,19 @@ const bubbleSort = nums => {
     let swapped = false
     for (let i = 0; i < nums.length; i++) {
       snapshot(nums)
-      if (nums[i] > nums[i+1]) {
-        let temp  = nums[i]
-        nums[i]   = nums[i+1]
-        nums[i+1] = temp
-        swapped   = true
+      if (nums[i] > nums[i + 1]) {
+        let temp = nums[i]
+        nums[i] = nums[i + 1]
+        nums[i + 1] = temp
+        swapped = true
       }
     }
-  } while(swapped)
+  } while (swapped)
   snapshot(nums)
 }
 
 //
-function bubbleSort(arr) {
+function bubbleSort (arr) {
   for (let j = 0; j < arr.length; j++) {
     for (let i = 0; i < (arr.length - j); i++) {
       if (arr[i] > arr[i + 1]) {

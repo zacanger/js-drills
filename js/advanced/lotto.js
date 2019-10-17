@@ -15,9 +15,9 @@
 // you to be able to console.log each item in the lotto array without waiting
 // for the setTimeout.
 
-function lottoGenerator() {
+function lottoGenerator () {
   var arr = []
-  function rando(lot) {
+  function rando (lot) {
     var ran = Math.floor(Math.random() * (60 - 1 + 1)) + 1
     if (lot.indexOf(ran) !== -1) {
       return rando(lot)
@@ -32,13 +32,13 @@ function lottoGenerator() {
   return arr
 }
 
-function revealLotto(lottoArr, optOut) {
-  if (optOut){
+function revealLotto (lottoArr, optOut) {
+  if (optOut) {
     return lottoArr
   }
   var timeoutArr = []
-  lottoArr.forEach(function(val, i) {
-    var timeId = setTimeout(function(num) {
+  lottoArr.forEach(function (val, i) {
+    var timeId = setTimeout(function (num) {
       console.log(num)
     }, (i + 1) * 3000, val)
     timeoutArr.push(timeId)
@@ -46,7 +46,7 @@ function revealLotto(lottoArr, optOut) {
   return timeoutArr
 }
 
-function cancelReveal(arr) {
+function cancelReveal (arr) {
   for (var i = 0; i < arr.length; i++) {
     clearTimeout(arr[i])
   }
@@ -64,7 +64,7 @@ cancelReveal(timeoutIds)
 
 // Using this to make sure my lottoGenerator is producing arrays populated
 // with unique values
-function test() {
+function test () {
   for (var i = 0; i < 50000; i++) {
     var newArr = lottoGenerator()
     for (var j = 0; j < newArr.length; j++) {
@@ -75,4 +75,3 @@ function test() {
   }
   return true
 }
-

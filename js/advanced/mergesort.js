@@ -10,7 +10,6 @@ var mergebuffer = function (a, b, alast) {
   while ((bindex >= 0) && (aindex >= 0)) {
     if (b[bindex] >= a[aindex]) {
       a[endindex--] = b[bindex--]
-
     } else {
       a[endindex--] = a[aindex--]
     }
@@ -55,7 +54,6 @@ var merge = function (array, lo, mid, hi) {
     array[current++] = helper[i]
   }
 }
-
 
 //
 //
@@ -152,6 +150,6 @@ function mergeSort (arr) {
   if (arr.length < 2) return arr
   return merge(
     mergeSort(arr.slice(0, arr.length / 2))
-  , mergeSort(arr.slice(arr.length /2))
+    , mergeSort(arr.slice(arr.length / 2))
   )
 }

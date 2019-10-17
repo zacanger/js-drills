@@ -9,7 +9,7 @@ const foo = {
     'Steve Murphy': 'DEA Agent',
     'José Rodríguez Gacha': 'El Mexicano'
   },
-  getNamesAndTitles () {
+  getNamesAndTitles() {
     return Object.keys(this.names).map(name => `${name} : ${this.names[name]}`)
   }
 }

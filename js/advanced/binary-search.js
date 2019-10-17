@@ -58,18 +58,17 @@ const binarySearch = (haystack, needle, comparator, low, high) => {
 }
 
 // (simple solution)
-function binSearch(key, arr){
-  var low = 0
-    , hi  = arr.length - 1
+function binSearch (key, arr) {
+  var low = 0,
+    hi = arr.length - 1
 
   while(low <= hi){
+    var mid = ~~((low + hi) / 2),
+      val = arr[mid]
 
-    var mid = ~~((low + hi) / 2)
-      , val = arr[mid]
-
-    if(val < key){
+    if (val < key) {
       low = mid + 1
-    } else if(val > key){
+    } else if (val > key) {
       hi = mid - 1
     } else {
       return mid
@@ -92,7 +91,6 @@ function binarySearch (arr, el) {
   }
   inner(0, arr.length - 1)
 }
-
 
 //
 var binarySearch = function (array, searchValue) {
@@ -117,10 +115,9 @@ var binarySearch = function (array, searchValue) {
 
 //
 const binarySearch = (array, target) => {
-  let
-    startIndex = 0
-  , endIndex   = array.length - 1
-  , midIndex   = Math.floor((startIndex + endIndex) / 2)
+  let startIndex = 0,
+    endIndex = array.length - 1,
+    midIndex = Math.floor((startIndex + endIndex) / 2)
 
   while (array[midIndex] !== target && startIndex < endIndex) {
     if (target > array[midIndex]) {
@@ -132,7 +129,6 @@ const binarySearch = (array, target) => {
   }
   return (array[midIndex] !== target) ? null : midIndex
 }
-
 
 // from here down is one more solution. it's overkill.
 var binaryOps = {}

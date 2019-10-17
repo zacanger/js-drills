@@ -1,9 +1,8 @@
 // write a memoizing function
 
 export const memoizeSimple = fn => {
-  let
-    cachedArg
-  , cachedRes
+  let cachedArg
+  let cachedRes
   return arg => {
     if (cachedArg === arg) {
       return cachedRes
@@ -24,12 +23,12 @@ export const memoizeWithCache = fn => (arg, memoCache) => {
   return res
 }
 
-export function memoize = function(fn) {
+export function memoize (fn) {
   const cache = {}
-  const fnVal = function(val) {
+  const fnVal = function (val) {
     return val
   }
-  return function() {
+  return function () {
     const key = fnVal.apply(this, arguments)
     if (key in cache) {
       return cache[key]

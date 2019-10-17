@@ -6,8 +6,7 @@
 // usage : maxProfit([10, 7, 5, 8, 11, 9]) // {buyIndex : 2, sellIndex : 4, profit : 6}
 
 const maxProf = arr => {
-  let
-    buy = 0
+  let buy = 0
   let sell = 0
   let maxDiff = 0
   let min = 0
@@ -28,7 +27,7 @@ const maxProf = arr => {
       maxDiff = diff
     }
   }
-  return { buy, sell, maxDiff }
+  return { buy, sell, maxDiff}
 }
 console.log(maxProf([10, 7, 5, 8, 11, 9]))
 

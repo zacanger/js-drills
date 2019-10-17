@@ -13,5 +13,5 @@ function threeAndFive (limit) {
   return sum
 }
 
-// threeAndFive(1000);
+// threeAndFive(1000)
 // Should return 233168

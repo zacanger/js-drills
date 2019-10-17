@@ -16,47 +16,41 @@ count()
 // 3 (after 3 seconds)
 // 4 (after 4 seconds)
 
-
-
-function counter(){
+function counter () {
   var x = 0
-  return function(){
+  return function () {
     return ++x
   }
 }
 
-
-function counter(){
+function counter () {
   var count = 0
-  return function(){
+  return function () {
     count++
     var delay = count * 1000
-    setTimeout(function() {
+    setTimeout(function () {
       console.log(count)
       console.log('delay: ' + delay + ' ms')
     }, delay)
   }
 }
 
-
-function counter() {
+function counter () {
   var count = 0
-  return function() {
+  return function () {
     count++
-    setTimeout(function(i) {
+    setTimeout(function (i) {
       console.log(i)
     }, count * 1000, count)
   }
 }
 
-
-function counter() {
+function counter () {
   var count = 0
-  return function() {
+  return function () {
     count++
-    setTimeout(function(i) {
+    setTimeout(function (i) {
       console.log(i)
     }.bind(null, count), count * 1000)
   }
 }
-

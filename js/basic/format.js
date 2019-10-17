@@ -3,8 +3,7 @@
 // reimplement this (in ES5).
 
 function format () {
-  var
-    args = [].slice.call(arguments)
+  var args = [].slice.call(arguments)
   var initial = args.shift()
 
   function replacer (text, replacement) {

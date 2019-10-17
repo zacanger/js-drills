@@ -1,7 +1,6 @@
 // make a chess board!
 
-var
-  size = 5
+var size = 5
 var cb = ''
 
 for (var i = 1; i <= size; i++) {

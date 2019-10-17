@@ -11,7 +11,7 @@ module.exports = (array, order) => {
       order[i] = order[orderIndex]
       order[orderIndex] = orderIndex
 
-      ;[array[i], array[orderIndex]] = [array[orderIndex], array[i]]
+      ; [array[i], array[orderIndex]] = [array[orderIndex], array[i]]
     }
   }
   return array

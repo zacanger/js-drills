@@ -6,7 +6,7 @@
 // usage: run(counter())
 
 // the counter function
-function* counter (start = 0) {
+function * counter (start = 0) {
   const span = document.getElementById('#counter')
   while (true) {
     span.textContent = String(start)
@@ -16,13 +16,13 @@ function* counter (start = 0) {
 }
 
 // or, in two functions
-function* counter (start = 0) {
+function * counter (start = 0) {
   while (true) {
     start++
     yield* updater(start)
   }
 }
-function* updater (counter) {
+function * updater (counter) {
   const span = document.getElementById('#counter')
   span.textContent = String(counter)
   yield

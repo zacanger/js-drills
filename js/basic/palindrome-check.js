@@ -3,31 +3,31 @@
 const pal = str => str === str.split('').reverse.join('')
 
 // same as above, verbosely
-function palindrome(str){
+function palindrome (str) {
   return str === str.split('').reverse().join('')
 }
 
-function palindrome(str){
+function palindrome (str) {
   var result = true
   for (var i = 0; i < Math.floor(str.length / 2); i++) {
-    if (str[i] != str[str.length - 1 -i]) {
+    if (str[i] != str[str.length - 1 - i]) {
       return false
     }
   }
   return result
 }
 
-function palindrome(str) {
-  if (str.slice(0,1) != str.slice(-1)) {
+function palindrome (str) {
+  if (str.slice(0, 1) != str.slice(-1)) {
     return false
   }
   if (str.length == 0 || str.length == 1) {
     return true
   }
-  return palindrome(str.slice(1,-1))
+  return palindrome(str.slice(1, -1))
 }
 
-function palindrome(str) {
+function palindrome (str) {
   str = str.toLowerCase()
   str = str.replace(/[^a-z]/g, '')
   for (var i = 0; i <= Math.floor(str.length / 2); i++) {
@@ -52,7 +52,7 @@ palindrome('tacocat')
  * Tests whether or not a given string is a Palindrome
  * @param {string} stringToTest - the string to test.
  */
-function isPalindrome(stringToTest) {
+function isPalindrome (stringToTest) {
   var start = 0
   var end
 
