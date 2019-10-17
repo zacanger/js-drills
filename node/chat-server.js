@@ -79,11 +79,10 @@
 //
 #!/usr/bin/env node
 
-const
-  net     = require('net')
-, sockets = [] // connected people
-, port    = process.argv[2] || process.env.PORT || 5678
-, server = net.Server(socket => {
+const net = require('net')
+const sockets = [] // connected people
+const port = process.argv[2] || process.env.PORT || 5678
+const server = net.Server(socket => {
   sockets.push(socket) // connecting, announcing number of connections
   socket.write(`there are ${sockets.length} people chatting`)
 
@@ -104,6 +103,7 @@ const
       console.log('message sent')
     }
   })
+
   socket.on('end', () => { // remove disconnected peeps
     let i = sockets.indexOf(socket)
     sockets.splice(i, 1)
@@ -121,11 +121,11 @@ console.log(`chat server running on ${port}`)
 //
 // simpler version
 //
-const
-  net     = require('net')
-, sockets = []
-, port    = 5678
-, server = net.createServer(socket => {
+const net = require('net')
+const sockets = []
+const port = 5678
+
+const server = net.createServer(socket => {
   socket.write('welcome to the chat\n')
   sockets.push(socket)
 

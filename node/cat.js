@@ -60,21 +60,9 @@
  *
  */
 
-//
-// this is a really basic example; it doesn't handle errors, and only works for first file
-//
-#!/usr/bin/env node
-require('fs').createReadStream(process.argv[2]).pipe(process.stdout)
-
-
-//
-// this is better :)
-//
 #!/usr/bin/env node
 
-'use strict'
-
-const fs   = require('fs')
+const fs = require('fs')
 const args = process.argv.slice(2)
 
 if (!args[0]) {
