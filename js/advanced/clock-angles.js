@@ -10,10 +10,10 @@
 
 var timeAngle = function (time) {
   time = time.split(':')
-  var hour = Number(time[0]),
-    minute = Number(time[1]),
-    hourAngle = (hour * 30) + (minute * .5),
-    minuteAngle = (minute * 6)
+  var hour = Number(time[0])
+  var minute = Number(time[1])
+  var hourAngle = (hour * 30) + (minute * 0.5)
+  var minuteAngle = (minute * 6)
   if (hourAngle >= 360) hourAngle -= 360
   if (minuteAngle >= 360) minuteAngle -= 360
   if (hourAngle - minuteAngle > 180 || minuteAngle - hourAngle > 180) {
@@ -26,10 +26,10 @@ var timeAngle = function (time) {
 
 function clockFace (time) {
   time = time.split(':')
-  var hour = Number(time[0]),
-    min = Number(time[1]),
-    hrAng = (hour * 30) + (min * .5),
-    minAng = (min * 6)
+  var hour = Number(time[0])
+  var min = Number(time[1])
+  var hrAng = (hour * 30) + (min * 0.5)
+  var minAng = (min * 6)
   if (hrAng >= 360) {
     hrAng -= 360
   }

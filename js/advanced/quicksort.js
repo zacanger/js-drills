@@ -2,19 +2,19 @@
 // outputs to console
 // running time O(nlog(n))
 
-function quicksort(arr){
-  sort(arr, 0, arr.length -1)
-  function swap(arr, a, b){
+function quicksort (arr) {
+  sort(arr, 0, arr.length - 1)
+  function swap (arr, a, b) {
     var temp = arr[a]
     arr[a] = arr[b]
     arr[b] = temp
   }
-  function partition(arr, l, r){
-    var p = arr[r]
-      , i = l - 1
-      , j = l
+  function partition (arr, l, r) {
+    var p = arr[r],
+      i = l - 1,
+      j = l
     while(j < r){
-      if(arr[j] <= p){
+      if (arr[j] <= p) {
         swap(arr, ++i, j)
       }
       j++
@@ -22,42 +22,40 @@ function quicksort(arr){
     swap(arr, i + 1, r)
     return i + 1
   }
-  function sort(arr, l, r){
+  function sort (arr, l, r) {
     var p
-    if(l < r){
+    if (l < r) {
       p = partition(arr, l, r)
       sort(arr, l, p - 1)
       sort(arr, p + 1, r)
-    } else if(l === arr.length){
+    } else if (l === arr.length) {
       console.log(arr)
     }
   }
 }
 
 // or, much more concisely, from le wikipedia:
-function quickersort(a){
-  var left  = []
-    , right = []
-    , pivot = a[0]
-  if(a.length == 0){
+function quickersort (a) {
+  var left = [],
+    right = [],
+    pivot = a[0]
+  if (a.length == 0) {
     return []
   }
-  for(var i = 1; i < a.length; i++){
+  for (var i = 1; i < a.length; i++) {
     a[i] < pivot ? left.push(a[i]) : right.push(a[i])
   }
   return quickersort(left).concat(pivot, quickersort(right))
 }
 
-
 // basically the s ame, just different syntax
-function quicksort(arr) {
+function quicksort (arr) {
   if (arr.length === 0) {
     return []
   }
-  let
-    left  = []
-  , right = []
-  , pivot = arr[0]
+  let left = [],
+    right = [],
+    pivot = arr[0]
   for (let i = 1; i < arr.length; i++) {
     if (arr[i] < pivot) {
       left.push(arr[i])
@@ -73,10 +71,9 @@ const quickSort = nums => {
   if (nums.length <= 1) {
     return nums
   }
-  const
-    pivot = nums[nums.length - 1]
-  , left  = []
-  , right = []
+  const pivot = nums[nums.length - 1],
+    left = [],
+    right = []
 
   for (let i = 0; i < nums.length - 1; i++) {
     if (nums[i] < pivot) {
@@ -94,7 +91,7 @@ function quikSrt (a) {
   const l = []
   const r = []
   const b = [a[0]]
-  for (let i = 1; i < a.length; i ++) {
+  for (let i = 1; i < a.length; i++) {
     if (a[i] > a[0]) {
       r.push(a[i])
     } else if (a[i] < a[0]) {
@@ -113,22 +110,8 @@ const qs = (arr) => {
   if (arr.length === 0) {
     return []
   }
-  const [ x, ...xs ] = arr
+  const [x, ...xs] = arr
   const smallerOrEqual = filter.call(xs, lte(x))
   const larger = filter.call(xs, gt(x))
   return [ ...qs(smallerOrEqual), x, ...qs(larger) ]
 }
-
-export default (() => {
-  const sort = (xs, cmp) => {
-    if (xs.length < 1) return xs
-    const [ x, ...rest ] = xs
-    return [
-      ...sort(rest.filter((v) => cmp(v, x) < 0), cmp),
-      x,
-      ...sort(rest.filter((v) => cmp(v, x) >= 0), cmp)
-    ]
-  }
-
-  return (xs, cmp = (a, b) => a - b) => sort(xs, cmp)
-}())

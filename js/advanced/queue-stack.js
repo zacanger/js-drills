@@ -16,7 +16,6 @@ function Stack () {
       length--
       return result
     }
-    return
   }
   this.size = function () {
     return length

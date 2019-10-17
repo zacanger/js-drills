@@ -33,17 +33,17 @@ function triangle (n) {
 }
 
 function triangleBuilder (n) {
-  arr = []
+  let arr = []
   for (var i = n; i >= 0; i--) {
-    var lineArr = []
-    spaces = i
-    stars = n - i
-    spaceArr = []
+    let lineArr = []
+    const spaces = i
+    const stars = n - i
+    let spaceArr = []
     for (var j = 0; j < spaces; j++) {
       spaceArr.push(' ')
     }
     spaceArr = spaceArr.join('')
-    stArr = []
+    let stArr = []
     for (var k = 0; k < stars; k++) {
       stArr.push('* ')
     }
@@ -57,5 +57,5 @@ function triangleBuilder (n) {
   arr = arr.join('')
   return arr
 }
-console.log(triangleBuilder(5))
 
+console.log(triangleBuilder(5))

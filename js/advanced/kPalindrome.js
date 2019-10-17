@@ -7,9 +7,9 @@
 // calculate row by row of this matrix
 
 function kPalindrome (a, k) {
-  var n = a.length,
-    dp = new Array(n + 1),
-    diff
+  var n = a.length
+  var dp = new Array(n + 1)
+  var diff
 
   for (var i = 0; i < dp.length; i++) {
     dp[i] = new Array(n + 1)

@@ -7,23 +7,23 @@
 // call the function: `typer(id, text, time)`
 // see the bottom for html example
 
-function typer(el, txt, speed){
-  var txtBox    = document.getElementById(el)
-    , cursorTxt = document.createTextNode('_')
-    , cursorEl  = document.createElement('span')
-    , count     = 0
-    , opacity   = 0
+function typer (el, txt, speed) {
+  var txtBox = document.getElementById(el)
+  var cursorTxt = document.createTextNode('_')
+  var cursorEl = document.createElement('span')
+  var count = 0
+  var opacity = 0
   cursorEl.appendChild(cursorTxt)
   txtBox.parentNode.insertBefore(cursorEl, txtBox.nextSibling)
-  var timerId = setInterval(function(){
+  var timerId = setInterval(function () {
     txtBox.innerHTML += txt[count]
     count++
-    if(count >= txt.length){
+    if (count >= txt.length) {
       clearInterval(timerId)
     }
   }, speed)
-  setInterval(function(){
-    if(opacity === 0){
+  setInterval(function () {
+    if (opacity === 0) {
       cursorEl.style.opacity = 1
       opacity = 1
     } else {
@@ -38,4 +38,3 @@ function typer(el, txt, speed){
 // (include the script here, and assume opening and closing script tags)
 // typer('hspan', 'this is a heading, slowly', 1000)
 // typer('pspan', 'this is a paragraph and stuff, much quicker this time, huh?', 100)
-

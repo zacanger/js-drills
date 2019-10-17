@@ -2,10 +2,10 @@
 // of the last year from the current date
 
 function lastMonths () {
-  var dates = [],
-    d = new Date(),
-    y = d.getFullYear(),
-    m = d.getMonth()
+  var dates = []
+  var d = new Date()
+  var y = d.getFullYear()
+  var m = d.getMonth()
   function padMonth (month) {
     if (month < 10) {
       return '0' + month
