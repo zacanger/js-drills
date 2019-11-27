@@ -1,4 +1,4 @@
-// rewrite ajax in vanilla js (like $.ajax)
+// rewrite $.get (ajax) in vanilla js
 
 /*
  *
