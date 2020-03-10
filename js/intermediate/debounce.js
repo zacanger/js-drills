@@ -92,16 +92,16 @@ const inner3 = debounce(text, 3000, false)
  *
  */
 
-function debounce (cb, x, execute) {
-  var flag = true
-  var timeId
-  function resetFlag () {
-    timeId = setTimeout(function () {
+function debounce(cb, x, execute) {
+  let flag = true
+  let timeId
+  function resetFlag() {
+    timeId = setTimeout(function() {
       flag = true
     }, x)
   }
 
-  return function () {
+  return function() {
     if (execute) {
       return cb()
     }

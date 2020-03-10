@@ -1,6 +1,6 @@
 function fizzbuzz() {
   let i = 1
-  let result = []
+  const result = []
 
   ;(function loop() {
     let str = ''

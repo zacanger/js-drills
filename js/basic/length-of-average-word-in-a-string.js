@@ -57,12 +57,12 @@
  *
  */
 
-var lengthOfString = function (myString) {
-  var words = myString.split(' ')
-  var average = 0
-  var total = 0
-  for (var i = 0; i < words.length; i++) {
-    total = total + words[i].length
+const lengthOfString = function(myString) {
+  const words = myString.split(' ')
+  let average = 0
+  let total = 0
+  for (const element of words) {
+    total += element.length
   }
   average = total / words.length
   return average

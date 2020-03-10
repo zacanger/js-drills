@@ -71,7 +71,7 @@ const asyncMap = (tasks, callback) => {
   let resultsCount = 0
 
   for (let i = 0; i < tasks.length; i++) {
-    ;(i => {
+    ;((i) => {
       tasks[i]((val) => {
         resultsArray[i] = val
         resultsCount++

@@ -59,14 +59,14 @@
  *
  */
 
-function canMakeSum (array, targetSum) {
+function canMakeSum(array, targetSum) {
   array.sort()
 
-  var left = 0
-  var right = array.length - 1
+  let left = 0
+  let right = array.length - 1
 
   while (left < right) {
-    var currentSum = array[left] + array[right]
+    const currentSum = array[left] + array[right]
     if (currentSum < targetSum) {
       left++
     } else if (currentSum > targetSum) {

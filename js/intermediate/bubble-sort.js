@@ -53,16 +53,16 @@
  *
  */
 
-var randomArray = function (size) {
+var randomArray = function(size) {
   var array = []
   for (var i = 0; i < size; i++) {
     array.push(parseInt(Math.random() * 100))
   }
   return array
 }
-var bubbleSort = function (array) {
+var bubbleSort = function(array) {
   var swapped = true
-  while(swapped){
+  while (swapped) {
     swapped = false
     for (var i = 0; i < array.length - 1; i++) {
       if (array[i] > array[i + 1]) {
@@ -71,7 +71,7 @@ var bubbleSort = function (array) {
       }
     }
   }
-  function swap (a, b) {
+  function swap(a, b) {
     var tmp = array[a]
     array[a] = array[b]
     array[b] = tmp
@@ -89,7 +89,7 @@ console.log('\n#########################################\n')
 //
 //
 var i
-var bubbleSort = function (array) {
+var bubbleSort = function(array) {
   var len = array.length
   if (len <= 1) {
     return array
@@ -106,7 +106,7 @@ var bubbleSort = function (array) {
   }
   return array
 }
-var swap = function (array, i, j) {
+var swap = function(array, i, j) {
   var temp = array[i]
   array[i] = array[j]
   array[j] = temp
@@ -117,8 +117,9 @@ var swap = function (array, i, j) {
 //
 // swap adjacent elements if not in correct order
 // one pass without swaps then stop the algorithm
-var bubbleSort = function (array) {
-  var temp, isSwapped = true
+var bubbleSort = function(array) {
+  var temp,
+    isSwapped = true
   while (isSwapped) {
     isSwapped = false
     for (var j = 0; j < array.length - 1; j++) {
@@ -133,7 +134,7 @@ var bubbleSort = function (array) {
   return array
 }
 
-const bubbleSort = nums => {
+const bubbleSort = (nums) => {
   do {
     let swapped = false
     for (let i = 0; i < nums.length; i++) {
@@ -150,9 +151,9 @@ const bubbleSort = nums => {
 }
 
 //
-function bubbleSort (arr) {
+function bubbleSort(arr) {
   for (let j = 0; j < arr.length; j++) {
-    for (let i = 0; i < (arr.length - j); i++) {
+    for (let i = 0; i < arr.length - j; i++) {
       if (arr[i] > arr[i + 1]) {
         let a = arr[i]
         let b = arr[i + 1]
@@ -170,7 +171,7 @@ const bubbleSort = (array) => {
     throw new Error()
   }
   let hasSwapped = true
-  while(hasSwapped) {
+  while (hasSwapped) {
     hasSwapped = false
     for (let i = 0; i < array.length - 1; i++) {
       let temp = array[i]

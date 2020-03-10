@@ -52,9 +52,9 @@
  *
  */
 
-function reverseString (str) {
-  var newStr = ''
-  for (var i = str.length - 1; i >= 0; i--) {
+function reverseString(str) {
+  let newStr = ''
+  for (let i = str.length - 1; i >= 0; i--) {
     newStr += str[i]
   }
   return newStr
@@ -62,8 +62,11 @@ function reverseString (str) {
 
 reverseString('hello')
 
-function reverseStringShort (str) {
-  return str.split('').reverse().join('')
+function reverseStringShort(str) {
+  return str
+    .split('')
+    .reverse()
+    .join('')
 }
 
 reverseStringShort('hello')

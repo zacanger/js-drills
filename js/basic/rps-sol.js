@@ -75,14 +75,14 @@
  *
  */
 
-function rps () {
-  var rounds = 3
-  var combinations = 0
-  var result = []
-  var options = ['rock', 'paper', 'scissors']
-  for (var i = 0; i < rounds; i++) {
-    for (var j = 0; j < rounds; j++) {
-      for (var k = 0; k < options.length; k++) {
+function rps() {
+  const rounds = 3
+  let combinations = 0
+  const result = []
+  const options = ['rock', 'paper', 'scissors']
+  for (let i = 0; i < rounds; i++) {
+    for (let j = 0; j < rounds; j++) {
+      for (let k = 0; k < options.length; k++) {
         result.push([options[i], options[j], options[k]])
         combinations++
       }
@@ -90,7 +90,7 @@ function rps () {
   }
   console.log('combinations:', combinations)
   console.log(result)
-  return (result)
+  return result
 }
 
 rps()

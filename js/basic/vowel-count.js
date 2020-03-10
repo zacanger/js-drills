@@ -65,7 +65,7 @@
  *
  */
 
-function vowels (str) {
+function vowels(str) {
   var vowels = 0
   for (var i = 0; i < str.length; i++) {
     switch (str[i].toLowerCase()) {

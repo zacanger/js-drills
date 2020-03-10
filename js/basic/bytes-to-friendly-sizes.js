@@ -48,29 +48,33 @@
  *
  */
 
-function bytesToSize (bytes) {
-  var size = ['Bytes', 'KB', 'MB', 'GB', 'TB']
-  if (bytes === 0) { return '0 Bytes' }
-  var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)))
+function bytesToSize(bytes) {
+  const size = ['Bytes', 'KB', 'MB', 'GB', 'TB']
+  if (bytes === 0) {
+    return '0 Bytes'
+  }
+  const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)))
   return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes
 }
 
-function formatBytes (bytes, decimals) {
-  if (bytes === 0) { return '0 Bytes' }
-  var k = 1000
-  var dm = decimals + 1 || 3
-  var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
-  var i = Math.floor(Math.log(bytes) / Math.log(k))
+function formatBytes(bytes, decimals) {
+  if (bytes === 0) {
+    return '0 Bytes'
+  }
+  const k = 1000
+  const dm = decimals + 1 || 3
+  const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
+  const i = Math.floor(Math.log(bytes) / Math.log(k))
   return (bytes / Math.pow(k, i)).toPrecision(dm) + ' ' + sizes[i]
 }
 
-function convertBytes (input, precision) {
-  var suffixes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
-  var index = 0
-  var factor = Math.pow(10, precision > 0 ? precision : 2)
+function convertBytes(input, precision) {
+  const suffixes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
+  let index = 0
+  const factor = Math.pow(10, precision > 0 ? precision : 2)
 
   while (input >= 1024 && suffixes[++index]) {
     input /= 1024
   }
-  return (Math.round(input * factor) / factor) + ' ' + suffixes[index]
+  return Math.round(input * factor) / factor + ' ' + suffixes[index]
 }

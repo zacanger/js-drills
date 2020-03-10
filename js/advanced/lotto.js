@@ -70,45 +70,49 @@
  *
  */
 
-function lottoGenerator () {
-  var arr = []
-  function rando (lot) {
-    var ran = Math.floor(Math.random() * (60 - 1 + 1)) + 1
-    if (lot.indexOf(ran) !== -1) {
+function lottoGenerator() {
+  const arr = []
+  function rando(lot) {
+    const ran = Math.floor(Math.random() * (60 - 1 + 1)) + 1
+    if (lot.includes(ran)) {
       return rando(lot)
     } else {
       return ran
     }
   }
-  for (var i = 0; i < 6; i++) {
-    var ran = rando(arr)
+  for (let i = 0; i < 6; i++) {
+    const ran = rando(arr)
     arr.push(ran)
   }
   return arr
 }
 
-function revealLotto (lottoArr, optOut) {
+function revealLotto(lottoArr, optOut) {
   if (optOut) {
     return lottoArr
   }
-  var timeoutArr = []
-  lottoArr.forEach(function (val, i) {
-    var timeId = setTimeout(function (num) {
-      console.log(num)
-    }, (i + 1) * 3000, val)
+  const timeoutArr = []
+  lottoArr.forEach(function(val, i) {
+    const timeId = setTimeout(
+      function(num) {
+        console.log(num)
+      },
+      (i + 1) * 3000,
+      val
+    )
     timeoutArr.push(timeId)
   })
   return timeoutArr
 }
 
-function cancelReveal (arr) {
-  for (var i = 0; i < arr.length; i++) {
-    clearTimeout(arr[i])
+function cancelReveal(arr) {
+  for (const element of arr) {
+    clearTimeout(element)
   }
 }
 
-var currentLotto = lottoGenerator
-var timeoutIds = revealLotto(currentLotto)
+const currentLotto = lottoGenerator
+const timeoutIds = revealLotto(currentLotto)
 
 // Pass true as the second argument to bypass the setTimout, and just
 // return the currentLotto.
@@ -119,10 +123,10 @@ cancelReveal(timeoutIds)
 
 // Using this to make sure my lottoGenerator is producing arrays populated
 // with unique values
-function test () {
-  for (var i = 0; i < 50000; i++) {
-    var newArr = lottoGenerator()
-    for (var j = 0; j < newArr.length; j++) {
+function test() {
+  for (let i = 0; i < 50000; i++) {
+    const newArr = lottoGenerator()
+    for (let j = 0; j < newArr.length; j++) {
       if (newArr.indexOf(newArr[j]) !== j) {
         return 'error'
       }

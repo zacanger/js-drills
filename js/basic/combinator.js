@@ -55,7 +55,7 @@
  *
  */
 
-function combinator (arr1, arr2) {
+function combinator(arr1, arr2) {
   var newArr = []
   for (var i = 0; i < arr1.length; i++) {
     for (var j = 0; j < arr2.length; j++) {
@@ -68,7 +68,7 @@ function combinator (arr1, arr2) {
   return newArr
 }
 
-function combinator (arr1, arr2) {
+function combinator(arr1, arr2) {
   var newArr = []
   for (var i = 0; i < arr1.length; i++) {
     newArr.push(arr1[i] + ' ' + arr2[i])
@@ -77,10 +77,11 @@ function combinator (arr1, arr2) {
   return newArr
 }
 
-function combinator (arr1, arr2) {
-  return arr1.map(function (val, i, arr) {
+function combinator(arr1, arr2) {
+  return arr1.map(function(val, i, arr) {
     return val + ' ' + arr2[i]
   })
 }
 
-const combinator = (first, last) => first.map((item, index) => `${item} ${last[index]}`)
+const combinator = (first, last) =>
+  first.map((item, index) => `${item} ${last[index]}`)

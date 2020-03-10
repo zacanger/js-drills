@@ -52,17 +52,17 @@
  *
  */
 
-Function.prototype.newBind = function () {
-  var _this = this
-  var context = arguments[0]
-  var args = []
-  for (var i = 1; i < arguments.length; i++) {
+Function.prototype.newBind = function() {
+  const _this = this
+  const context = arguments[0]
+  const args = []
+  for (let i = 1; i < arguments.length; i++) {
     args.push(arguments[i])
   }
 
-  return function () {
-    var innArgs = []
-    for (var i = 1; i < arguments.length; i++) {
+  return function() {
+    const innArgs = []
+    for (let i = 1; i < arguments.length; i++) {
       innerArgs.push(arguments[i])
     }
 

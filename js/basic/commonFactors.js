@@ -55,16 +55,16 @@
  *
  */
 
-function commonFactors (num1, num2) {
-  var factors = []
-  var max
+function commonFactors(num1, num2) {
+  const factors = []
+  let max
   if (num1 > num2) {
     max = num1
   } else {
     max = num2
   }
-  for (var i = max; i >= 1; i--) {
-    if ((num1 % i) === (num2 % i)) {
+  for (let i = max; i >= 1; i--) {
+    if (num1 % i === num2 % i) {
       factors.push(i)
     }
   }

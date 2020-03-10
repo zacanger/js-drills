@@ -57,7 +57,7 @@
  *
  */
 
-function titleCase (str) {
+function titleCase(str) {
   str = str.toLowerCase()
   str = str.split(' ')
   var newStr = ''
@@ -68,7 +68,7 @@ function titleCase (str) {
   return newStr.trim()
 }
 
-function titleCase (str) {
+function titleCase(str) {
   var words = str.split(' ')
   for (var i = 0; i < words.length; i++) {
     var capitalized = words[i].charAt(0).toUpperCase()
@@ -76,4 +76,3 @@ function titleCase (str) {
   }
   return words.join(' ')
 }
-

@@ -54,4 +54,4 @@
  *
  */
 
-const f = a => a[0] ? Math.max(...a.map(f)) + 1 : 0
+const f = (a) => (a[0] ? Math.max(...a.map(f)) + 1 : 0)

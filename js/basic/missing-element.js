@@ -55,9 +55,9 @@
  *
  */
 
-function findMissing (arr1, arr2) {
-  var hash1 = {}
-  var hash2 = {}
+function findMissing(arr1, arr2) {
+  const hash1 = {}
+  const hash2 = {}
   for (var i = 0; i < arr1.length; i++) {
     hash1[arr1[i]] = true
   }
@@ -66,7 +66,7 @@ function findMissing (arr1, arr2) {
     hash2[arr2[i]] = true
   }
 
-  for (var key in hash1) {
+  for (const key in hash1) {
     if (!hash2[key]) {
       return key
     }

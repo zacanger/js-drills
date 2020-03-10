@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // this is super advanced, but...
 // see if you can write a server for a chat
 // something you could connect to using
@@ -77,24 +79,26 @@
 //
 // complex one
 //
-#!/usr/bin/env node
 
 const net = require('net')
 const sockets = [] // connected people
 const port = process.argv[2] || process.env.PORT || 5678
-const server = net.Server(socket => {
+const server = net.Server((socket) => {
   sockets.push(socket) // connecting, announcing number of connections
   socket.write(`there are ${sockets.length} people chatting`)
 
-  for (let i = 0; i < sockets.length; i++) { // announcing newbie
+  for (let i = 0; i < sockets.length; i++) {
+    // announcing newbie
     console.log('new user; total of ' + sockets.length)
-    if (sockets[i] == socket) { // except to newbie
+    if (sockets[i] == socket) {
+      // except to newbie
       continue
     }
     sockets[i].write('one user joined\n')
   }
 
-  socket.on('data', (d) => { // the chat
+  socket.on('data', (d) => {
+    // the chat
     for (let i = 0; i < sockets.length; i++) {
       if (sockets[i] == socket) {
         continue // don't send message to sender
@@ -104,11 +108,13 @@ const server = net.Server(socket => {
     }
   })
 
-  socket.on('end', () => { // remove disconnected peeps
+  socket.on('end', () => {
+    // remove disconnected peeps
     let i = sockets.indexOf(socket)
     sockets.splice(i, 1)
 
-    for (let i = 0; i < sockets.length; i++) { // tell people when people leave
+    for (let i = 0; i < sockets.length; i++) {
+      // tell people when people leave
       sockets[i].write('one user left\n')
       console.log(`user left; total of ${sockets.length}`)
     }
@@ -117,7 +123,6 @@ const server = net.Server(socket => {
 server.listen(port)
 console.log(`chat server running on ${port}`)
 
-
 //
 // simpler version
 //
@@ -125,12 +130,12 @@ const net = require('net')
 const sockets = []
 const port = 5678
 
-const server = net.createServer(socket => {
+const server = net.createServer((socket) => {
   socket.write('welcome to the chat\n')
   sockets.push(socket)
 
-  socket.on('data', data => {
-    sockets.forEach(s => {
+  socket.on('data', (data) => {
+    sockets.forEach((s) => {
       if (s != socket) {
         s.write(data)
       }
@@ -140,7 +145,7 @@ const server = net.createServer(socket => {
   socket.on('end', () => {
     sockets.forEach((s, i) => {
       if (s == socket) {
-        sockets.slice(i,1)
+        sockets.slice(i, 1)
       }
     })
   })

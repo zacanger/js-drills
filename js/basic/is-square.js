@@ -59,6 +59,6 @@
  *
  */
 
-const isSquare = n => Number.isInteger(Math.sqrt(n))
+const isSquare = (n) => Number.isInteger(Math.sqrt(n))
 
-const isSquare = n => n > 0 && Math.sqrt(n) % 1 === 0
+const isSquare = (n) => n > 0 && Math.sqrt(n) % 1 === 0

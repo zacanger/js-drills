@@ -48,7 +48,7 @@
  *
  */
 
-function binarySort (collection, target, cb, min, max) {
+function binarySort(collection, target, cb, min, max) {
   min = min || 0
   max = max || collection.length
   const median = Math.floor((min + max) / 2)

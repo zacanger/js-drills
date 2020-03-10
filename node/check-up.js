@@ -67,15 +67,17 @@ const host = process.argv[2]
 const opts = {
   host,
   port: 80,
-  path: '/'
+  path: '/',
 }
 
-http.get(opts, (res) => {
-  if (res.statusCode === 200) {
-    console.log(`${host} is up`)
-  } else {
-    console.log(`${host} is down`)
-  }
-}).on('error', (err) => {
-  console.warn(`Error: ${err.message}`)
-})
+http
+  .get(opts, (res) => {
+    if (res.statusCode === 200) {
+      console.log(`${host} is up`)
+    } else {
+      console.log(`${host} is down`)
+    }
+  })
+  .on('error', (err) => {
+    console.warn(`Error: ${err.message}`)
+  })

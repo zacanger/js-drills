@@ -76,17 +76,17 @@
  *
  */
 
-const Stack = function () {
+const Stack = function() {
   this.storage = {}
   this.currentSize = 0
 }
 
-Stack.prototype.push = function (val) {
+Stack.prototype.push = function(val) {
   this.storage[this.currentSize] = val
   this.currentSize++
 }
 
-Stack.prototype.pop = function () {
+Stack.prototype.pop = function() {
   if (this.currentSize > 0) {
     this.currentSize--
   }
@@ -95,7 +95,7 @@ Stack.prototype.pop = function () {
   return res
 }
 
-Stack.prototype.size = function () {
+Stack.prototype.size = function() {
   return this.currentSize
 }
 
@@ -124,23 +124,23 @@ const Stack = () => {
 
 // using a class
 class Stack {
-  constructor () {
+  constructor() {
     this.list = []
     this.length = 0
   }
 
-  push (val) {
+  push(val) {
     this.length++
     this.list.push(val)
   }
 
-  pop () {
+  pop() {
     if (this.length === 0) return
     this.length--
     return this.list.pop()
   }
 
-  peek () {
+  peek() {
     return this.list[this.length - 1]
   }
 }

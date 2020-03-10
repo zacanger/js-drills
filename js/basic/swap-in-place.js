@@ -61,7 +61,8 @@ a = a + b
 // alternatively
 a = a + b
 b = a - b
-a = a - b
-
-// or with es2015
-[ b, a ] = [ a, b ]
+a = a -
+b[
+  // or with es2015
+  (b, a)
+] = [a, b]

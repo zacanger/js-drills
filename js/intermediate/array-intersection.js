@@ -74,13 +74,11 @@
 module.exports = (firstArray, secondArray) => {
   const hash = {}
 
-  firstArray.forEach(item => {
+  firstArray.forEach((item) => {
     hash[item] = true
   })
 
-  const intersection = secondArray.filter(item => {
-    return hash[item]
-  })
+  const intersection = secondArray.filter((item) => hash[item])
 
   return intersection
 }

@@ -70,7 +70,8 @@ const equiTri = (size = 10) => {
   const hash = ' #'
   const space = ' '
   for (let i = 0; i < size; i++) {
-    const temp = space.repeat(size - 1) + hash.repeat(i) + space.repeat(size - i)
+    const temp =
+      space.repeat(size - 1) + hash.repeat(i) + space.repeat(size - i)
     console.log(temp)
   }
 }

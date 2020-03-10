@@ -70,9 +70,9 @@
  */
 
 // iterative
-function fibIt (n) {
-  var arr = [0, 1]
-  for (var i = 2; i <= n + 1; i++) {
+function fibIt(n) {
+  const arr = [0, 1]
+  for (let i = 2; i <= n + 1; i++) {
     arr.push(arr[i - 1] + arr[i - 2])
     if (i === n + 1) {
       return arr[i]
@@ -82,7 +82,7 @@ function fibIt (n) {
 }
 
 // recursive
-function fibRec (n) {
+function fibRec(n) {
   if (n < 2) {
     return n
   } else {

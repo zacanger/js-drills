@@ -75,22 +75,22 @@
  */
 
 export class Tree {
-  constructor () {
+  constructor() {
     this.root = null
   }
 
-  traverse (cb) {
-    function walk (node) {
+  traverse(cb) {
+    function walk(node) {
       cb(node)
       node.children.forEach(walk)
     }
     walk(this.root)
   }
 
-  add (val, parentVal) {
+  add(val, parentVal) {
     const newNode = {
       value: val,
-      children: []
+      children: [],
     }
     if (this.root === null) {
       this.root = newNode

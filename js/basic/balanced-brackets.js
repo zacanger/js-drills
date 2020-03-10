@@ -50,13 +50,13 @@
  *
  */
 
-function balance (str) {
+function balance(str) {
   str = str.split('')
-  var parens = ['(', ')']
-  var square = ['[', ']']
-  var curly = ['{', '}']
+  const parens = ['(', ')']
+  const square = ['[', ']']
+  const curly = ['{', '}']
 
-  for (var i = 0; i < str.length; i++) {
+  for (let i = 0; i < str.length; i++) {
     if (str[i] === parens[0]) {
       if (str[i + 1] !== parens[1]) {
       }

@@ -64,22 +64,24 @@
  */
 
 export default class List {
-  constructor () {
+  constructor() {
     this.memory = []
     this.length = 0
   }
 
-  get (addr) {
+  get(addr) {
     return this.memory[addr]
   }
 
-  push (val) {
+  push(val) {
     this.memory[this.length] = val
     this.length++
   }
 
-  pop () {
-    if (this.length === 0) return
+  pop() {
+    if (this.length === 0) {
+      return
+    }
     const last = this.length - 1
     const val = this.memory[last]
     delete this.memory[last]
@@ -87,7 +89,7 @@ export default class List {
     return val
   }
 
-  unshift (val) {
+  unshift(val) {
     let prev = val
     for (let addr = 0; addr < this.length; addr++) {
       const curr = this.memory[addr]
@@ -98,8 +100,10 @@ export default class List {
     this.length++
   }
 
-  shift () {
-    if (this.length === 0) return
+  shift() {
+    if (this.length === 0) {
+      return
+    }
     const val = this.memory[0]
     for (let addr = 0; addr < this.length; addr++) {
       this.memory[addr] = this.memory[addr + 1]

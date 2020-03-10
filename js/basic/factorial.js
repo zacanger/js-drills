@@ -65,18 +65,18 @@
  *
  */
 
-function factorial (num) {
+function factorial(num) {
   if (num < 0) {
     return -1
   } else if (num === 0) {
     return 1
   } else {
     console.log(num)
-    return (num * factorial(num - 1))
+    return num * factorial(num - 1)
   }
 }
 
-var factorial = function (n) {
+var factorial = function(n) {
   if (result < 2) {
     return 1
   }
@@ -87,7 +87,7 @@ var factorial = function (n) {
   return result
 }
 
-function factorial (num) {
+function factorial(num) {
   if (num === 1) {
     return 1
   } else if (num === 0 || num < 0) {
@@ -97,7 +97,7 @@ function factorial (num) {
 }
 
 // using a generator
-function * factorial (n) {
+function* factorial(n) {
   let result = 1
   for (let i = 1; i <= n; i++) {
     result *= i
@@ -110,4 +110,4 @@ for (let f of factorial(number)) {
 }
 
 // pure lambda expression
-((f) => f(f))((f) => (n) => n === 0 ? 1 : n * f(f)(n - 1))
+;((f) => f(f))((f) => (n) => (n === 0 ? 1 : n * f(f)(n - 1)))

@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // write an interactive tic-tac-toe game that runs in the terminal!
 
 /*
@@ -70,8 +72,6 @@
  *
  */
 
-#!/usr/bin/env node
-
 const proc = process
 const input = proc.stdin
 const output = proc.stdout
@@ -85,13 +85,31 @@ input.setRawMode(1)
 input.resume()
 input.setEncoding('utf8')
 
-function draw () {
-  output.write('\033c' + block[0] + '|' + block[1] + '|' + block[2] + '\n' +
-    block[3] + '|' + block[4] + '|' + block[5] + '\n' + block[6] + '|' +
-    block[7] + '|' + block[8] + '\n')
+function draw() {
+  output.write(
+    '\033c' +
+      block[0] +
+      '|' +
+      block[1] +
+      '|' +
+      block[2] +
+      '\n' +
+      block[3] +
+      '|' +
+      block[4] +
+      '|' +
+      block[5] +
+      '\n' +
+      block[6] +
+      '|' +
+      block[7] +
+      '|' +
+      block[8] +
+      '\n'
+  )
 }
 
-function tic (first) {
+function tic(first) {
   if (typeof block[first - 1] == 'number') {
     block[first - 1] = player
     if (player == 'X') {
@@ -105,16 +123,18 @@ function tic (first) {
   }
 }
 
-function win () {
-  if ((block[0] == block[4] && block[4] == block[8]) ||
-      (block[2] == block[4] && block[4] == block[6]) ||
-      (block[0] == block[1] && block[1] == block[2]) ||
-      (block[3] == block[4] && block[4] == block[5]) ||
-      (block[6] == block[7] && block[7] == block[8]) ||
-      (block[0] == block[3] && block[3] == block[6]) ||
-      (block[1] == block[4] && block[4] == block[7]) ||
-      (block[2] == block[5] && block[5] == block[8])) {
-  return 1
+function win() {
+  if (
+    (block[0] == block[4] && block[4] == block[8]) ||
+    (block[2] == block[4] && block[4] == block[6]) ||
+    (block[0] == block[1] && block[1] == block[2]) ||
+    (block[3] == block[4] && block[4] == block[5]) ||
+    (block[6] == block[7] && block[7] == block[8]) ||
+    (block[0] == block[3] && block[3] == block[6]) ||
+    (block[1] == block[4] && block[4] == block[7]) ||
+    (block[2] == block[5] && block[5] == block[8])
+  ) {
+    return 1
   }
 }
 
@@ -131,7 +151,7 @@ input.on('data', (key) => {
     proc.exit()
   }
   if (count > 8) {
-    output.write('it\'s a draw!\n')
+    output.write("it's a draw!\n")
     proc.exit()
   }
 })

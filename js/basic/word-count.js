@@ -55,6 +55,6 @@
  *
  */
 
-function countWords (str) {
+function countWords(str) {
   return str.split(' ').length
 }

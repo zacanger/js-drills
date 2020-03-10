@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // you've all seen a REPL, now. pretty cool stuff, right?
 // it's really useful. why bother running chrome, opening up a new tab,
 // opening devtools, and opening the console, when you can just run
@@ -63,20 +65,19 @@
  *
  */
 
-#!/usr/bin/env node
-
 const net = require('net')
 const repl = require('repl')
 const port = 5100
 
-net.createServer((socket) => {
-  let remote = repl.start(' |> ', socket)
-}).listen(port)
+net
+  .createServer((socket) => {
+    let remote = repl.start(' |> ', socket)
+  })
+  .listen(port)
 
 console.log(`remote repl available on ${port}`)
 
 let local = repl.start(' |> ')
-
 
 // or
 const net = require('net')
@@ -88,42 +89,47 @@ let connections = 0
 repl.start({
   prompt: 'stdrepl|> ',
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 })
 
-net.createServer(socket => {
-  connections += 1
-  repl.start({
-    prompt: 'nixsockrepl|> ',
-    input: socket,
-    output: socket
-  }).on('exit', () => {
-    socket.end()
+net
+  .createServer((socket) => {
+    connections += 1
+    repl
+      .start({
+        prompt: 'nixsockrepl|> ',
+        input: socket,
+        output: socket,
+      })
+      .on('exit', () => {
+        socket.end()
+      })
   })
-}).listen('/tmp/node-repl-sock')
+  .listen('/tmp/node-repl-sock')
 
-net.createServer((socket) => {
-  connections += 1
-  repl.start({
-    prompt: 'tcpsockrepl|> ',
-    input: socket,
-    output: socket
-  }).on('exit', () => {
-    socket.end()
+net
+  .createServer((socket) => {
+    connections += 1
+    repl
+      .start({
+        prompt: 'tcpsockrepl|> ',
+        input: socket,
+        output: socket,
+      })
+      .on('exit', () => {
+        socket.end()
+      })
   })
-}).listen(port)
-
-
+  .listen(port)
 
 // this one lets you load in files
-const
-  fs   = require('fs')
-, vm   = require('vm')
-, path = require('path')
-, repl = require('repl')
+const fs = require('fs'),
+  vm = require('vm'),
+  path = require('path'),
+  repl = require('repl')
 
 // let repl source files
-repl.REPLServer.prototype.source = function(file){
+repl.REPLServer.prototype.source = function(file) {
   if (!~file.indexOf('.')) {
     file += '.js'
   }
@@ -139,18 +145,16 @@ const server = repl.start()
 
 // `./ filename` will source `./filename.js`
 server.defineCommand('/', {
-  help   : 'source file'
-, action : function(file){
+  help: 'source file',
+  action: function(file) {
     this.source(file)
-  }
+  },
 })
 
 // from command args
-for (let i = 2; i < process.argv.length; i++){
+for (let i = 2; i < process.argv.length; i++) {
   server.source(process.argv[i])
 }
-
-
 
 // so does this one
 // npm i -S temp

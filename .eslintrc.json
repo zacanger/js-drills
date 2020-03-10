@@ -1,0 +1,21 @@
+{
+  "root": true,
+  "plugins": [
+    "zacanger"
+  ],
+  "extends": [
+    "plugin:zacanger/recommended",
+    "plugin:zacanger/node",
+    "plugin:zacanger/prettier"
+  ],
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "no-console": 0,
+    "fp/no-nil": 0,
+    "fp/no-unused-expression": 0,
+    "fp/no-mutation": 0,
+    "fp/no-let": 0
+  }
+}

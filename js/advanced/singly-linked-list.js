@@ -69,13 +69,13 @@ const createNode = (val) => {
   return node
 }
 
-const SinglyLinkedList = function () {
+const SinglyLinkedList = function() {
   this.head = null
   this.tail = null
   this.currentSize = 0
 }
 
-SinglyLinkedList.prototype.addToTail = function (val) {
+SinglyLinkedList.prototype.addToTail = function(val) {
   const node = createNode(val)
   if (!this.head) {
     this.head = node
@@ -87,27 +87,37 @@ SinglyLinkedList.prototype.addToTail = function (val) {
   }
 }
 
-SinglyLinkedList.prototype.removeHead = function () {
-  if (!this.head) return null
-  if (this.currentSize > 0) this.currentSize--
+SinglyLinkedList.prototype.removeHead = function() {
+  if (!this.head) {
+    return null
+  }
+  if (this.currentSize > 0) {
+    this.currentSize--
+  }
   const removedHead = this.head
-  if (this.head === this.tail) this.tail = null
+  if (this.head === this.tail) {
+    this.tail = null
+  }
   delete this.head
   this.head = removedHead.next
   return removedHead.next
 }
 
-SinglyLinkedList.prototype.contains = function (tar) {
+SinglyLinkedList.prototype.contains = function(tar) {
   let node = this.head
-  if (node.value === tar) return node
+  if (node.value === tar) {
+    return node
+  }
   while (node.next) {
     node = node.next
-    if (node.value === tar) return node
+    if (node.value === tar) {
+      return node
+    }
   }
   return false
 }
 
-SinglyLinkedList.prototype.size = function () {
+SinglyLinkedList.prototype.size = function() {
   return this.currentSize
 }
 
@@ -143,7 +153,9 @@ const LL = () => {
     let cur = list.head
 
     while (cur) {
-      if (cur.value === tgt) return true
+      if (cur.value === tgt) {
+        return true
+      }
       cur = cur.next
     }
     return false
@@ -153,12 +165,12 @@ const LL = () => {
 
 //
 class LinkedList {
-  constructor () {
+  constructor() {
     this.head = null
     this.length = 0
   }
 
-  get (pos) {
+  get(pos) {
     if (pos >= this.length) {
       throw new Error('Position outside range.')
     }
@@ -169,10 +181,10 @@ class LinkedList {
     return curr
   }
 
-  add (val, pos) {
+  add(val, pos) {
     const node = {
       value: val,
-      next: null
+      next: null,
     }
     if (pos === 0) {
       node.next = this.head
@@ -186,7 +198,7 @@ class LinkedList {
     this.length++
   }
 
-  remove (pos) {
+  remove(pos) {
     if (!this.head) {
       throw new Error('Empty.')
     }
@@ -202,21 +214,21 @@ class LinkedList {
 
 //
 class List {
-  constructor () {
+  constructor() {
     this.memory = []
     this.length = 0
   }
 
-  get (addr) {
+  get(addr) {
     return this.memory[addr]
   }
 
-  push (val) {
+  push(val) {
     this.memory[this.length] = val
     this.length++
   }
 
-  pop () {
+  pop() {
     if (this.length === 0) {
       return
     }
@@ -227,10 +239,10 @@ class List {
     return val
   }
 
-  unshift (val) {
+  unshift(val) {
     let prev = val
     for (let addr = 0; addr < this.length; addr++) {
-      let curr = this.memory[addr]
+      const curr = this.memory[addr]
       this.memory[addr] = prev
       prev = curr
     }
@@ -238,7 +250,7 @@ class List {
     this.length++
   }
 
-  shift () {
+  shift() {
     if (this.length === 0) {
       return
     }

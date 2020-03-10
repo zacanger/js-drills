@@ -63,4 +63,4 @@
  *
  */
 
-const isBool = a => typeof a === 'boolean'
+const isBool = (a) => typeof a === 'boolean'

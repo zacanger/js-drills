@@ -58,28 +58,40 @@
  *
  */
 
-var timeAngle = function (time) {
+const timeAngle = function(time) {
   time = time.split(':')
-  var hour = Number(time[0])
-  var minute = Number(time[1])
-  var hourAngle = (hour * 30) + (minute * 0.5)
-  var minuteAngle = (minute * 6)
-  if (hourAngle >= 360) hourAngle -= 360
-  if (minuteAngle >= 360) minuteAngle -= 360
-  if (hourAngle - minuteAngle > 180 || minuteAngle - hourAngle > 180) {
-    if (hourAngle >= minuteAngle) return 180 - ((hourAngle - minuteAngle) - 180)
-    if (minuteAngle > hourAngle) return 180 - ((minuteAngle - hourAngle) - 180)
+  const hour = Number(time[0])
+  const minute = Number(time[1])
+  let hourAngle = hour * 30 + minute * 0.5
+  let minuteAngle = minute * 6
+  if (hourAngle >= 360) {
+    hourAngle -= 360
   }
-  if (hourAngle >= minuteAngle) return hourAngle - minuteAngle
-  if (minuteAngle > hourAngle) return minuteAngle - hourAngle
+  if (minuteAngle >= 360) {
+    minuteAngle -= 360
+  }
+  if (hourAngle - minuteAngle > 180 || minuteAngle - hourAngle > 180) {
+    if (hourAngle >= minuteAngle) {
+      return 180 - (hourAngle - minuteAngle - 180)
+    }
+    if (minuteAngle > hourAngle) {
+      return 180 - (minuteAngle - hourAngle - 180)
+    }
+  }
+  if (hourAngle >= minuteAngle) {
+    return hourAngle - minuteAngle
+  }
+  if (minuteAngle > hourAngle) {
+    return minuteAngle - hourAngle
+  }
 }
 
-function clockFace (time) {
+function clockFace(time) {
   time = time.split(':')
-  var hour = Number(time[0])
-  var min = Number(time[1])
-  var hrAng = (hour * 30) + (min * 0.5)
-  var minAng = (min * 6)
+  const hour = Number(time[0])
+  const min = Number(time[1])
+  let hrAng = hour * 30 + min * 0.5
+  let minAng = min * 6
   if (hrAng >= 360) {
     hrAng -= 360
   }
@@ -88,14 +100,16 @@ function clockFace (time) {
   }
   if (hrAng - minAng > 180 || minAng - hrAng > 180) {
     if (hrAng >= minAng) {
-      return 180 - ((hrAng - minAng) - 180)
+      return 180 - (hrAng - minAng - 180)
     }
     if (minAng > hrAng) {
-      return 180 - ((minAng - hrAng) - 180)
+      return 180 - (minAng - hrAng - 180)
     }
   }
   if (hrAng >= minAng) {
     return hrAng - minAng
   }
-  if (minANg > hrAng) return minAng - hrAng
+  if (minANg > hrAng) {
+    return minAng - hrAng
+  }
 }

@@ -73,7 +73,7 @@
  *
  */
 
-function primeFinder (num) {
+function primeFinder(num) {
   for (let i = 2; i < num; i++) {
     if (num % i === 0 && i !== num) {
       return false
@@ -82,7 +82,7 @@ function primeFinder (num) {
   return true
 }
 
-function primeFinder (num) {
+function primeFinder(num) {
   if (num % 2 === 0) {
     return false
   }
@@ -95,7 +95,7 @@ function primeFinder (num) {
   return true
 }
 
-function primeFinder (num) {
+function primeFinder(num) {
   if (num === 2) {
     return true
   }

@@ -73,18 +73,18 @@
  *
  */
 
-function quicksort (arr) {
+function quicksort(arr) {
   sort(arr, 0, arr.length - 1)
-  function swap (arr, a, b) {
+  function swap(arr, a, b) {
     var temp = arr[a]
     arr[a] = arr[b]
     arr[b] = temp
   }
-  function partition (arr, l, r) {
+  function partition(arr, l, r) {
     var p = arr[r],
       i = l - 1,
       j = l
-    while(j < r){
+    while (j < r) {
       if (arr[j] <= p) {
         swap(arr, ++i, j)
       }
@@ -93,7 +93,7 @@ function quicksort (arr) {
     swap(arr, i + 1, r)
     return i + 1
   }
-  function sort (arr, l, r) {
+  function sort(arr, l, r) {
     var p
     if (l < r) {
       p = partition(arr, l, r)
@@ -106,7 +106,7 @@ function quicksort (arr) {
 }
 
 // or, much more concisely, from le wikipedia:
-function quickersort (a) {
+function quickersort(a) {
   var left = [],
     right = [],
     pivot = a[0]
@@ -120,7 +120,7 @@ function quickersort (a) {
 }
 
 // basically the s ame, just different syntax
-function quicksort (arr) {
+function quicksort(arr) {
   if (arr.length === 0) {
     return []
   }
@@ -138,7 +138,7 @@ function quicksort (arr) {
 }
 
 // similarly
-const quickSort = nums => {
+const quickSort = (nums) => {
   if (nums.length <= 1) {
     return nums
   }
@@ -157,7 +157,7 @@ const quickSort = nums => {
 }
 
 //
-function quikSrt (a) {
+function quikSrt(a) {
   if (a.length < 2) return a
   const l = []
   const r = []
@@ -171,7 +171,9 @@ function quikSrt (a) {
       b.push(a[0])
     }
   }
-  return quikSrt(l).concat(b).concat(quikSrt(r))
+  return quikSrt(l)
+    .concat(b)
+    .concat(quikSrt(r))
 }
 
 const qs = (arr) => {
@@ -184,5 +186,5 @@ const qs = (arr) => {
   const [x, ...xs] = arr
   const smallerOrEqual = filter.call(xs, lte(x))
   const larger = filter.call(xs, gt(x))
-  return [ ...qs(smallerOrEqual), x, ...qs(larger) ]
+  return [...qs(smallerOrEqual), x, ...qs(larger)]
 }

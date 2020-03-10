@@ -74,13 +74,13 @@
 const xor = (a, b) => !a != !b
 
 // the above, just in more words
-function xor (x, y) {
-  return (!x != !y)
+function xor(x, y) {
+  return !x != !y
 }
 
 // verbosely
 const xor = (val1, val2) => {
-  if (val1 && val2 || !val1 && val2) {
+  if ((val1 && val2) || (!val1 && val2)) {
     return false
   } else {
     return true
@@ -100,6 +100,6 @@ const xor = (thingOne, thingTwo) => {
 }
 
 // using the bitwise XOR
-function XOR (x, y) {
+function XOR(x, y) {
   return (x ? 1 : 0) ^ (y ? 1 : 0)
 }

@@ -72,11 +72,11 @@
 // a has large enough buffer at end to hold b
 // a and b are sorted
 // alast is the index of the last item
-var mergebuffer = function (a, b, alast) {
+var mergebuffer = function(a, b, alast) {
   var bindex = b.length - 1,
     aindex = alast
   endindex = a.length - 1
-  while ((bindex >= 0) && (aindex >= 0)) {
+  while (bindex >= 0 && aindex >= 0) {
     if (b[bindex] >= a[aindex]) {
       a[endindex--] = b[bindex--]
     } else {
@@ -89,7 +89,7 @@ var mergebuffer = function (a, b, alast) {
   return a
 }
 
-var mergesort = function (array, lo, hi) {
+var mergesort = function(array, lo, hi) {
   if (lo === undefined) {
     lo = 0
     hi = array.length - 1
@@ -102,7 +102,7 @@ var mergesort = function (array, lo, hi) {
   }
 }
 
-var merge = function (array, lo, mid, hi) {
+var merge = function(array, lo, mid, hi) {
   var helper = [],
     hLeft = lo
   hRight = mid + 1
@@ -126,7 +126,7 @@ var merge = function (array, lo, mid, hi) {
 
 //
 //
-var mergeSort = function (array) {
+var mergeSort = function(array) {
   var lists = []
   // Split array into sublists
   // Natural variant: split array into pre-sorted sublists
@@ -156,7 +156,7 @@ var mergeSort = function (array) {
   return lists[0]
 }
 
-var merge = function (left, right) {
+var merge = function(left, right) {
   var merged = []
   var iL = 0
   var iR = 0
@@ -183,15 +183,15 @@ const merge = (left, right) => {
       results.push(right.shift())
     }
   }
-  while(left.length) {
+  while (left.length) {
     results.push(left.shift())
   }
-  while(right.length) {
+  while (right.length) {
     results.push(right.shift())
   }
   return results
 }
-const mergeSort = nums => {
+const mergeSort = (nums) => {
   if (nums.length < 2) {
     return nums
   }
@@ -203,8 +203,8 @@ const mergeSort = nums => {
 }
 
 //
-function mergeSort (arr) {
-  function merge (a, b) {
+function mergeSort(arr) {
+  function merge(a, b) {
     let r = []
     while (a.length && b.length) {
       if (a[0] < b[0]) {
@@ -218,7 +218,7 @@ function mergeSort (arr) {
   }
   if (arr.length < 2) return arr
   return merge(
-    mergeSort(arr.slice(0, arr.length / 2))
-    , mergeSort(arr.slice(arr.length / 2))
+    mergeSort(arr.slice(0, arr.length / 2)),
+    mergeSort(arr.slice(arr.length / 2))
   )
 }

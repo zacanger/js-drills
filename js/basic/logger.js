@@ -76,5 +76,5 @@ const logger = {
 
   error(err) {
     console.error(`ERROR: ${err}`)
-  }
+  },
 }

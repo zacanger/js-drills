@@ -67,7 +67,7 @@
  *
  */
 
-const thenable = a => {
+const thenable = (a) => {
   if (typeof a.then === 'function') {
     return true
   }

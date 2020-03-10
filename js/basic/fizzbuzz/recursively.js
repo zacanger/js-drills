@@ -1,4 +1,4 @@
-const fizzBuzz = num => {
+const fizzBuzz = (num) => {
   if (num % 3 === 0 && num % 5 === 0) {
     console.log('FizzBuzz')
   } else if (num % 3 === 0) {
@@ -10,7 +10,7 @@ const fizzBuzz = num => {
   }
 
   if (num < 100) {
-    let newNum = num + 1
+    const newNum = num + 1
     fizzBuzz(newNum)
   }
 }

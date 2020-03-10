@@ -79,21 +79,22 @@
  */
 
 export default class Graph {
-  constructor () {
+  constructor() {
     this.nodes = []
   }
 
-  addNode (value) {
+  addNode(value) {
     this.nodes.push({
-      value, lines: []
+      value,
+      lines: [],
     })
   }
 
-  find (value) {
+  find(value) {
     return this.nodes.find((node) => node.value === value)
   }
 
-  addLine (start, end) {
+  addLine(start, end) {
     const startNode = this.find(start)
     const endNode = this.find(end)
     if (!startNode || !endNode) {

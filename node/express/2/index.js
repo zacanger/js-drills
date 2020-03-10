@@ -66,7 +66,7 @@
 
 const express = require('express')
 const bodyparser = require('body-parser')
-const items = ['this thing', 'that thing', 'the other thing', '\'sup?']
+const items = ['this thing', 'that thing', 'the other thing', "'sup?"]
 const app = express()
 const port = process.env.PORT || 9999
 
@@ -84,7 +84,7 @@ app.post('/items', (req, res) => {
 })
 
 app.put('/items', (req, res) => {
-  let newPosition = req.body.position
+  const newPosition = req.body.position
   items[newPosition] = req.body.newName
   res.send(items)
 })

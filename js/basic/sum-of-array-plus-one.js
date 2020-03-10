@@ -61,24 +61,24 @@
  *
  */
 
-var plusOneSum = function (arr) {
+var plusOneSum = function(arr) {
   var newArr = arr.slice()
   var sum = 0
   for (var i = 0; i < newArr.length; i++) {
-    sum += (newArr[i] + 1)
+    sum += newArr[i] + 1
   }
   return sum
 }
 
-var plus = function (arr) {
-  var total = arr.reduce(function (a, b) {
+var plus = function(arr) {
+  var total = arr.reduce(function(a, b) {
     return a + b
   })
-  return total += arr.length
+  return (total += arr.length)
 }
 
-function plusOneSum (arr) {
-  return arr.reduce(function (a, b) {
+function plusOneSum(arr) {
+  return arr.reduce(function(a, b) {
     return a + ++b
   }, 0)
 }

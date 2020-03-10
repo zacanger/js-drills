@@ -58,9 +58,9 @@
  *
  */
 
-function translate (str) {
-  var strArr = str.split('')
-  var vowel = /[aeiou]/
+function translate(str) {
+  const strArr = str.split('')
+  const vowel = /[aeiou]/
   if (vowel.test(strArr[0])) {
     return str + 'way'
   }
@@ -76,9 +76,9 @@ function translate (str) {
 
 console.log(translate('consonant'))
 
-const pigLatin = str => {
+const pigLatin = (str) => {
   const a = []
-  str.split(' ').map(w => {
+  str.split(' ').map((w) => {
     const b = w.split('')
     b.shift()
     const s = b.join('')

@@ -60,7 +60,7 @@
  *
  */
 
-function truncate (str, num) {
+function truncate(str, num) {
   if (str.length <= num) {
     return str
   } else {

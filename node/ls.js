@@ -66,8 +66,8 @@ fs.readdir(dirPath, (err, list) => {
   if (err) {
     throw err
   }
-  for (let i = 0; i < list.length; i++) {
-    console.log(list[i])
+  for (const [i, element] of list.entries()) {
+    console.log(element)
     files.push[i]
   }
 })

@@ -79,14 +79,10 @@ const deepEqual = (a, b) => {
     return false
   }
   if (Array.isArray(a)) {
-    return a.every((item, i) => {
-      return deepEqual(item, b[i])
-    })
+    return a.every((item, i) => deepEqual(item, b[i]))
   }
   if (typeof a === 'object') {
-    return Object.keys(a).every(key => {
-      return deepEqual(a[key], b[key])
-    })
+    return Object.keys(a).every((key) => deepEqual(a[key], b[key]))
   }
   return false
 }

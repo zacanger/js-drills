@@ -62,40 +62,37 @@
  *
  */
 
-var something = (function () {
+var something = (function() {
   var executed = false
-  return function () {
+  return function() {
     if (!executed) {
       executed = true
-    // do something
+      // do something
     }
   }
 })()
 
-var a = (function () {
+var a = (function() {
   var randomValue
-  return function (flagForceNewValue) {
+  return function(flagForceNewValue) {
     if (randomValue === undefined || flagForceNewValue) {
       randomValue = Math.floor(Math.random() * (10 - 1) + 1)
     }
     return randomValue
   }
-}())
+})()
 
-function once (func) {
-  return function () {
+function once(func) {
+  return function() {
     var f = func
     func = null
-    return f.apply(
-      this,
-      arguments
-    )
+    return f.apply(this, arguments)
   }
 }
 
-function once (fn, context) {
+function once(fn, context) {
   var result
-  return function () {
+  return function() {
     if (fn) {
       result = fn.apply(context || this, arguments)
       fn = null
@@ -104,20 +101,20 @@ function once (fn, context) {
   }
 }
 
-export default function once (fn) {
-  var f = function () {
+export default function once(fn) {
+  var f = function() {
     if (f.called) {
       return f.value
     }
     f.called = true
-    return f.value = fn.apply(this, arguments)
+    return (f.value = fn.apply(this, arguments))
   }
   f.called = false
   return f
 }
 // and
 import once from 'once'
-function foo (cb) {
+function foo(cb) {
   cb = once(cb)
   if (!cb.called) {
     // do things

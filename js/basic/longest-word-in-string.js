@@ -54,16 +54,20 @@
  *
  */
 
-var longest = function (str) {
+const longest = function(str) {
   str = str.toLowerCase().split(' ')
-  var longestLength = 0
-  var longestWord = []
-  for (var i = 0; i < str.length; i++) {
+  let longestLength = 0
+  const longestWord = []
+  for (let i = 0; i < str.length; i++) {
     str[i] = str[i].trim()
     if (str[i].length > longestLength) {
       longestWord.splice(0, longestLength - 1, str[i])
       longestLength = str[i].length
-    } else if (str[i].length === longestLength && longestWord.indexOf(str[i]) === -1 && str[i] !== '') {
+    } else if (
+      str[i].length === longestLength &&
+      !longestWord.includes(str[i]) &&
+      str[i] !== ''
+    ) {
       longestWord.push(str[i])
     }
   }
@@ -72,9 +76,9 @@ var longest = function (str) {
 
 console.log(longest('I gave a present to my parents'))
 
-function findLongestWord (str) {
+function findLongestWord(str) {
   str = str.split(' ')
-  var longest = str.reduce(function (a, b) {
+  const longest = str.reduce(function(a, b) {
     return a.length >= b.length ? a : b
   })
   return longest.length

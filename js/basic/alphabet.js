@@ -67,6 +67,9 @@
  *
  */
 
-function alphabet (str) {
-  return str.split('').sort().join('')
+function alphabet(str) {
+  return str
+    .split('')
+    .sort()
+    .join('')
 }

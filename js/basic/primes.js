@@ -76,14 +76,14 @@
  *
  */
 
-var numPrimes = 1
-var sumPrimes = 2
-var i = 3
-function isPrime (num) {
+let numPrimes = 1
+let sumPrimes = 2
+let i = 3
+function isPrime(num) {
   if (num % 2 === 0) {
     return false
   }
-  for (var x = 3; x <= Math.round(num / 2); x += 2) {
+  for (let x = 3; x <= Math.round(num / 2); x += 2) {
     if (num % x === 0) {
       return false
     }

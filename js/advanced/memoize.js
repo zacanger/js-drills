@@ -50,10 +50,10 @@
  *
  */
 
-export const memoizeSimple = fn => {
+export const memoizeSimple = (fn) => {
   let cachedArg
   let cachedRes
-  return arg => {
+  return (arg) => {
     if (cachedArg === arg) {
       return cachedRes
     }
@@ -63,7 +63,7 @@ export const memoizeSimple = fn => {
   }
 }
 
-export const memoizeWithCache = fn => (arg, memoCache) => {
+export const memoizeWithCache = (fn) => (arg, memoCache) => {
   if (memoCache.arg === arg) {
     return memoCache.res
   }
@@ -73,12 +73,12 @@ export const memoizeWithCache = fn => (arg, memoCache) => {
   return res
 }
 
-export function memoize (fn) {
+export function memoize(fn) {
   const cache = {}
-  const fnVal = function (val) {
+  const fnVal = function(val) {
     return val
   }
-  return function () {
+  return function() {
     const key = fnVal.apply(this, arguments)
     if (key in cache) {
       return cache[key]
@@ -90,9 +90,9 @@ export function memoize (fn) {
   }
 }
 
-function memoize (fn) {
+function memoize(fn) {
   var cache = {}
-  return function (n) {
+  return function(n) {
     var key = JSON.stringify([].slice.call(arguments))
     if (!(key in cache)) {
       cache[key] = fn.apply(null, arguments)

@@ -76,33 +76,33 @@
  *
  */
 
-function Y (X) {
-  return (function (procedure) {
-    return X(function (arg) {
+function Y(X) {
+  return (function(procedure) {
+    return X(function(arg) {
       return procedure(procedure)(arg)
     })
-  })(function (procedure) {
-    return X(function (arg) {
+  })(function(procedure) {
+    return X(function(arg) {
       return procedure(procedure)(arg)
     })
   })
 }
 
 // or
-const Y = f => (p => f(a => p(p)(a)))(p => f(a => p(p)(a)))
+const Y = (f) => ((p) => f((a) => p(p)(a)))((p) => f((a) => p(p)(a)))
 
 // or
-const Y = function (f) {
-  return (function (g) {
+const Y = function(f) {
+  return (function(g) {
     return g(g)
-  })(function (h) {
-    return function () {
+  })(function(h) {
+    return function() {
       return f(h(h)).apply(null, arguments)
     }
   })
 }
 
-const factorial = Y((a) => (x) => x === 0 ? 1 : x * a(x - 1))
+const factorial = Y((a) => (x) => (x === 0 ? 1 : x * a(x - 1)))
 
 //
 const Y = (f) => ((x) => x(x))((x) => f((y) => x(x)(y)))

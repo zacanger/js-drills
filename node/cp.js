@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // node's `fs` is really swell. check out the API docs on
 // it's `createReadStream()` and `createWriteStream()` methods.
 // here we're going to rewrite `cp` (the copy utility) using `fs`.
@@ -59,8 +61,6 @@
  *
  */
 
-#!/usr/bin/env node
-
 const fs = require('fs')
 const from = process.argv[2]
 const to = process.argv[3]
@@ -69,7 +69,15 @@ const writeTo = fs.createWriteStream(to)
 
 console.log(from, '===>', to)
 
-readFrom.on('data', (chunk) => { writeTo.write(chunk) })
-readFrom.on('end', () => { writeTo.end() })
-readFrom.on('error', (err) => { console.log('error!', err) })
-writeTo.on('error', (err) => { console.log('error!', err) })
+readFrom.on('data', (chunk) => {
+  writeTo.write(chunk)
+})
+readFrom.on('end', () => {
+  writeTo.end()
+})
+readFrom.on('error', (err) => {
+  console.log('error!', err)
+})
+writeTo.on('error', (err) => {
+  console.log('error!', err)
+})

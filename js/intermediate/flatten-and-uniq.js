@@ -2,7 +2,7 @@
 const original = [
   { a: 'foo', b: 10 },
   { a: 'bar', b: 100 },
-  { a: 'foo', b: 101 }
+  { a: 'foo', b: 101 },
 ]
 
 // result should be: [ 'foo', 'bar' ]

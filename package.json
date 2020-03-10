@@ -1,0 +1,42 @@
+{
+  "name": "js-drills",
+  "description": "Small code challenges.",
+  "version": "0.0.1",
+  "private": true,
+  "author": "Zac Anger <zac@zacanger.com> (https://zacanger.com)",
+  "license": "LGPL-3.0",
+  "main": "index.js",
+  "scripts": {
+    "test:lint": "eslint -c .eslintrc.json js node"
+  },
+  "homepage": "https://github.com/zacanger/js-drills#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zacanger/js-drills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zacanger/js-drills/issues"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-zacanger": "^1.1.0",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
+    "prettier": "^1.19.1",
+    "sortpack": "^2.1.1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write"
+    ],
+    "package.json": [
+      "sortpack"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
