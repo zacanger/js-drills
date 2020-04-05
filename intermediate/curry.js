@@ -118,7 +118,7 @@ function curry(fn) {
     if (args.length >= fn.length) {
       return fn.apply(null, args)
     } else {
-      return function() {
+      return function () {
         return innerCurry(args.concat([].slice.call(arguments)))
       }
     }
@@ -126,19 +126,19 @@ function curry(fn) {
 }
 
 // Prototype's version?
-Function.prototype.curry = function() {
+Function.prototype.curry = function () {
   var fn = this,
     args = Array.prototype.slice.call(arguments)
-  return function() {
+  return function () {
     return fn.apply(this, args.concat(Array.prototype.slice.call(arguments)))
   }
 }
 
 // Functional's version?
-Function.prototype.partial = function() {
+Function.prototype.partial = function () {
   var fn = this,
     args = Array.prototype.slice.call(arguments)
-  return function() {
+  return function () {
     var arg = 0
     for (var i = 0; i < args.length && arg < arguments.length; i++) {
       if (args[i] === undefined) {
@@ -150,18 +150,18 @@ Function.prototype.partial = function() {
 }
 
 //
-Function.prototype.curry = function() {
+Function.prototype.curry = function () {
   if (arguments.length < 1) {
     return this
   }
   var __method = this,
     args = toArray(arguments)
-  return function() {
+  return function () {
     return __method.apply(this, args.concat(toArray(arguments)))
   }
 }
 
-Function.prototype.curry = function() {
+Function.prototype.curry = function () {
   var method = this,
     i = 0,
     len = this.length,
@@ -200,7 +200,7 @@ const newCurry = (fn, n) => {
   if (n === args.length - 2) {
     return fn.apply(undefined, args.slice(2))
   }
-  return function() {
+  return function () {
     return newCurry.apply(undefined, args.concat(argsArr(arguments)))
   }
 }
@@ -228,19 +228,19 @@ function curry(fx) {
         args.concat(Array.prototype.slice.call(arguments, 0))
       )
     }
-    f2.toString = function() {
+    f2.toString = function () {
       return fToString(fx) + '(' + args.join(', ') + ')'
     }
     return f2
   }
-  f1.toString = function() {
+  f1.toString = function () {
     return fToString(fx)
   }
   return f1
 }
 
 // this is approximately the same as wu.js's .autoCurry() (which has been removed??)
-var autoCurry = (function() {
+var autoCurry = (function () {
   var toArray = function toArray(arr, from) {
       return Array.prototype.slice.call(arr, from || 0)
     },

@@ -62,9 +62,9 @@
  *
  */
 
-var something = (function() {
+var something = (function () {
   var executed = false
-  return function() {
+  return function () {
     if (!executed) {
       executed = true
       // do something
@@ -72,9 +72,9 @@ var something = (function() {
   }
 })()
 
-var a = (function() {
+var a = (function () {
   var randomValue
-  return function(flagForceNewValue) {
+  return function (flagForceNewValue) {
     if (randomValue === undefined || flagForceNewValue) {
       randomValue = Math.floor(Math.random() * (10 - 1) + 1)
     }
@@ -83,7 +83,7 @@ var a = (function() {
 })()
 
 function once(func) {
-  return function() {
+  return function () {
     var f = func
     func = null
     return f.apply(this, arguments)
@@ -92,7 +92,7 @@ function once(func) {
 
 function once(fn, context) {
   var result
-  return function() {
+  return function () {
     if (fn) {
       result = fn.apply(context || this, arguments)
       fn = null
@@ -102,7 +102,7 @@ function once(fn, context) {
 }
 
 export default function once(fn) {
-  var f = function() {
+  var f = function () {
     if (f.called) {
       return f.value
     }

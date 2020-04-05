@@ -64,7 +64,7 @@ function firstNonRepeatedCharacter(str) {
   return 'no unique characters'
 }
 
-var firstNon = function(str) {
+var firstNon = function (str) {
   for (var i = 0; i < str.length; i++) {
     if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) {
       return str[i]
@@ -73,7 +73,7 @@ var firstNon = function(str) {
   return 'nothing, ya big dumb'
 }
 
-var firstNon2 = function(str) {
+var firstNon2 = function (str) {
   for (var i = 0; i < str.length; i++) {
     var c = str.charAt(i)
     if (str.indexOf(c) === i && str.indexOf(c, i + 1) === -1) {
@@ -103,7 +103,7 @@ function firstNonRepeatedCharacter(str) {
   return 'no unique characters'
 }
 
-var firstNonRepeatedCharacter = function(string) {
+var firstNonRepeatedCharacter = function (string) {
   if (string === undefined || string.length === 0) {
     return false
   }

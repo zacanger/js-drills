@@ -83,7 +83,7 @@ function funcArray(nums) {
   var newArr = []
   for (var i = 0; i < nums; i++) {
     newArr.push(
-      function(num) {
+      function (num) {
         return num
       }.bind(null, i)
     )
@@ -95,8 +95,8 @@ function funcArray(nums) {
   var newArr = []
   for (var i = 0; i < nums; i++) {
     newArr.push(
-      (function(num) {
-        return function() {
+      (function (num) {
+        return function () {
           return num
         }
       })(i)

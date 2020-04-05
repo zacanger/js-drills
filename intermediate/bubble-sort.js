@@ -53,14 +53,14 @@
  *
  */
 
-var randomArray = function(size) {
+var randomArray = function (size) {
   var array = []
   for (var i = 0; i < size; i++) {
     array.push(parseInt(Math.random() * 100))
   }
   return array
 }
-var bubbleSort = function(array) {
+var bubbleSort = function (array) {
   var swapped = true
   while (swapped) {
     swapped = false
@@ -89,7 +89,7 @@ console.log('\n#########################################\n')
 //
 //
 var i
-var bubbleSort = function(array) {
+var bubbleSort = function (array) {
   var len = array.length
   if (len <= 1) {
     return array
@@ -106,7 +106,7 @@ var bubbleSort = function(array) {
   }
   return array
 }
-var swap = function(array, i, j) {
+var swap = function (array, i, j) {
   var temp = array[i]
   array[i] = array[j]
   array[j] = temp
@@ -117,7 +117,7 @@ var swap = function(array, i, j) {
 //
 // swap adjacent elements if not in correct order
 // one pass without swaps then stop the algorithm
-var bubbleSort = function(array) {
+var bubbleSort = function (array) {
   var temp,
     isSwapped = true
   while (isSwapped) {

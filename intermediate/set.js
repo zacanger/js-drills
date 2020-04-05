@@ -73,23 +73,23 @@
 
 const setPrototype = {}
 
-const Set = function() {
+const Set = function () {
   const set = Object.create(setPrototype)
   set._storage = []
   return set
 }
 
-setPrototype.add = function(a) {
+setPrototype.add = function (a) {
   if (!this._storage.includes(a)) {
     this._storage.push(a)
   }
 }
 
-setPrototype.contains = function(a) {
+setPrototype.contains = function (a) {
   return this._storage.indexOf(a) > -1
 }
 
-setPrototype.remove = function(a) {
+setPrototype.remove = function (a) {
   const i = this._storage.indexOf(a)
   this._storage.splice(i, 1)
 }
@@ -130,23 +130,23 @@ function Set() {
   this.items = []
 }
 
-Set.prototype.add = function(item) {
+Set.prototype.add = function (item) {
   this.items[this.size] = item
   this.size++
 }
 
-Set.prototype.isEmpty = function() {
+Set.prototype.isEmpty = function () {
   return this.size <= 0
 }
 
-Set.prototype.contains = function(item) {
+Set.prototype.contains = function (item) {
   if (findIndex(this.items, this.size, item)) {
     return true
   }
   return false
 }
 
-Set.prototype.remove = function(item) {
+Set.prototype.remove = function (item) {
   let index = findIndex(this.items, this.size, item)
   let tempSet = []
 

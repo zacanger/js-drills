@@ -2,9 +2,10 @@
 
 Small code challenges.
 
-Plain JS problems are under the `js` directory. Node and Express problems are in
-the `node` directory. Possible solutions are included in the same files as the questions,
-after long empty comments. Don't jump to the bottom and cheat!
+Plan JS problems are in the `basic`, `intermediate`, and `advanced`
+directories. Node problems are in the `node` directory.
+Possible solutions are included in the same files as the questions, after
+long empty comments. Don't jump to the bottom and cheat!
 
 Have fun!
 

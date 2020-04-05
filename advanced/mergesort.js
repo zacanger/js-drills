@@ -72,7 +72,7 @@
 // a has large enough buffer at end to hold b
 // a and b are sorted
 // alast is the index of the last item
-var mergebuffer = function(a, b, alast) {
+var mergebuffer = function (a, b, alast) {
   var bindex = b.length - 1,
     aindex = alast
   endindex = a.length - 1
@@ -89,7 +89,7 @@ var mergebuffer = function(a, b, alast) {
   return a
 }
 
-var mergesort = function(array, lo, hi) {
+var mergesort = function (array, lo, hi) {
   if (lo === undefined) {
     lo = 0
     hi = array.length - 1
@@ -102,7 +102,7 @@ var mergesort = function(array, lo, hi) {
   }
 }
 
-var merge = function(array, lo, mid, hi) {
+var merge = function (array, lo, mid, hi) {
   var helper = [],
     hLeft = lo
   hRight = mid + 1
@@ -126,7 +126,7 @@ var merge = function(array, lo, mid, hi) {
 
 //
 //
-var mergeSort = function(array) {
+var mergeSort = function (array) {
   var lists = []
   // Split array into sublists
   // Natural variant: split array into pre-sorted sublists
@@ -156,7 +156,7 @@ var mergeSort = function(array) {
   return lists[0]
 }
 
-var merge = function(left, right) {
+var merge = function (left, right) {
   var merged = []
   var iL = 0
   var iR = 0

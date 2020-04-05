@@ -131,7 +131,7 @@ function binarySearch(arr, el) {
 }
 
 //
-var binarySearch = function(array, searchValue) {
+var binarySearch = function (array, searchValue) {
   var len = array.length
   if (len <= 0) {
     return null
@@ -171,7 +171,7 @@ const binarySearch = (array, target) => {
 // from here down is one more solution. it's overkill.
 var binaryOps = {}
 
-binaryOps.upsert = function(array, item, compare, update) {
+binaryOps.upsert = function (array, item, compare, update) {
   var index = binaryOps.findAny(array, item, compare)
   if (typeof index === 'undefined') throw new Error('und')
   if (typeof index === 'undefined') throw new Error('und')
@@ -183,12 +183,12 @@ binaryOps.upsert = function(array, item, compare, update) {
   }
 }
 
-binaryOps.insert = function(array, item, compare) {
+binaryOps.insert = function (array, item, compare) {
   var index = binaryOps.findAny(array, item, compare)
   return binaryOps.insertAtIndex(array, index, item)
 }
 
-binaryOps.findAny = function(array, item, compare, minIndex, maxIndex) {
+binaryOps.findAny = function (array, item, compare, minIndex, maxIndex) {
   if (array.length === 0) return Number.POSITIVE_INFINITY
   if (array.length === 1) return binaryOps.easySingle(array[0], item, compare)
   var currentCompare
@@ -221,7 +221,7 @@ binaryOps.findAny = function(array, item, compare, minIndex, maxIndex) {
   return -minIndex
 }
 
-binaryOps.findRange = function(array, item, compare, minIndex, maxIndex) {
+binaryOps.findRange = function (array, item, compare, minIndex, maxIndex) {
   if (array.length === 0) return Number.POSITIVE_INFINITY
   if (array.length === 1) return binaryOps.easySingle(array[0], item, compare)
   var currentCompare
@@ -277,7 +277,7 @@ binaryOps.findRange = function(array, item, compare, minIndex, maxIndex) {
   return bounds
 }
 
-binaryOps.findFirst = function(array, item, compare, minIndex, maxIndex) {
+binaryOps.findFirst = function (array, item, compare, minIndex, maxIndex) {
   if (array.length === 0) return Number.POSITIVE_INFINITY
   if (array.length === 1) return binaryOps.easySingle(array[0], item, compare)
   var ret = binaryOps.easyOut(array, item, compare)
@@ -330,7 +330,7 @@ binaryOps.findFirst = function(array, item, compare, minIndex, maxIndex) {
   return -minIndex
 }
 
-binaryOps.findLast = function(array, item, compare, minIndex, maxIndex) {
+binaryOps.findLast = function (array, item, compare, minIndex, maxIndex) {
   if (array.length === 0) return Number.POSITIVE_INFINITY
   if (array.length === 1) return binaryOps.easySingle(array[0], item, compare)
   var currentCompare
@@ -373,7 +373,7 @@ binaryOps.findLast = function(array, item, compare, minIndex, maxIndex) {
   return -minIndex
 }
 
-binaryOps.easyMin = function(array, item, compare) {
+binaryOps.easyMin = function (array, item, compare) {
   var i = 0,
     c = compare(array[i], item)
   if (c > 0) return Number.NEGATIVE_INFINITY
@@ -381,7 +381,7 @@ binaryOps.easyMin = function(array, item, compare) {
   return false
 }
 
-binaryOps.easyMax = function(array, item, compare) {
+binaryOps.easyMax = function (array, item, compare) {
   var i = array.length - 1,
     c = compare(array[i], item)
   if (c < 0) return Number.POSITIVE_INFINITY
@@ -389,20 +389,20 @@ binaryOps.easyMax = function(array, item, compare) {
   return false
 }
 
-binaryOps.easySingle = function(aitem, item, compare) {
+binaryOps.easySingle = function (aitem, item, compare) {
   var currentCompare = compare(aitem, item)
   if (currentCompare > 0) return Number.NEGATIVE_INFINITY
   if (currentCompare < 0) return Number.POSITIVE_INFINITY
   return 0
 }
 
-binaryOps.isFound = function(index) {
+binaryOps.isFound = function (index) {
   if (index < 0) return false
   if (index === Number.POSITIVE_INFINITY) return false
   return true
 }
 
-binaryOps.insertAtIndex = function(array, index, item) {
+binaryOps.insertAtIndex = function (array, index, item) {
   if (binaryOps.isFound(index))
     throw new Error('cannot overwrite what already exists')
   if (index === Number.POSITIVE_INFINITY) {

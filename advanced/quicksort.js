@@ -171,9 +171,7 @@ function quikSrt(a) {
       b.push(a[0])
     }
   }
-  return quikSrt(l)
-    .concat(b)
-    .concat(quikSrt(r))
+  return quikSrt(l).concat(b).concat(quikSrt(r))
 }
 
 const qs = (arr) => {

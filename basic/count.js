@@ -18,17 +18,17 @@ count()
 
 function counter() {
   var x = 0
-  return function() {
+  return function () {
     return ++x
   }
 }
 
 function counter() {
   var count = 0
-  return function() {
+  return function () {
     count++
     var delay = count * 1000
-    setTimeout(function() {
+    setTimeout(function () {
       console.log(count)
       console.log('delay: ' + delay + ' ms')
     }, delay)
@@ -37,10 +37,10 @@ function counter() {
 
 function counter() {
   var count = 0
-  return function() {
+  return function () {
     count++
     setTimeout(
-      function(i) {
+      function (i) {
         console.log(i)
       },
       count * 1000,
@@ -51,10 +51,10 @@ function counter() {
 
 function counter() {
   var count = 0
-  return function() {
+  return function () {
     count++
     setTimeout(
-      function(i) {
+      function (i) {
         console.log(i)
       }.bind(null, count),
       count * 1000

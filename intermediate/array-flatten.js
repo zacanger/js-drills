@@ -113,7 +113,7 @@ function grossWay(input) {
 
 // this won't work all the way down
 function nah(input) {
-  var flattened = input.reduce(function(a, b) {
+  var flattened = input.reduce(function (a, b) {
     return a.concat(b)
   }, [])
 }

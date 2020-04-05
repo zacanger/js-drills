@@ -7,7 +7,7 @@
   "license": "LGPL-3.0",
   "main": "index.js",
   "scripts": {
-    "test:lint": "eslint -c .eslintrc.json js node"
+    "test:lint": "eslint -c .eslintrc.json ."
   },
   "homepage": "https://github.com/zacanger/js-drills#readme",
   "repository": {

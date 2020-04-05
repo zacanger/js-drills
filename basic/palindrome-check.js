@@ -93,13 +93,7 @@ const pal = (str) => str === str.split('').reverse.join('')
 
 // same as above, verbosely
 function palindrome(str) {
-  return (
-    str ===
-    str
-      .split('')
-      .reverse()
-      .join('')
-  )
+  return str === str.split('').reverse().join('')
 }
 
 function palindrome(str) {
@@ -136,9 +130,6 @@ function palindrome(str) {
 function palindrome(str) {
   const re = /[\W_]/g
   const low = str.toLowerCase().replace(re, '')
-  const rev = lowRegSgtr
-    .split('')
-    .reverse()
-    .join('')
+  const rev = lowRegSgtr.split('').reverse().join('')
   return low === rev
 }

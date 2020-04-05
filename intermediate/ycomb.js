@@ -77,12 +77,12 @@
  */
 
 function Y(X) {
-  return (function(procedure) {
-    return X(function(arg) {
+  return (function (procedure) {
+    return X(function (arg) {
       return procedure(procedure)(arg)
     })
-  })(function(procedure) {
-    return X(function(arg) {
+  })(function (procedure) {
+    return X(function (arg) {
       return procedure(procedure)(arg)
     })
   })
@@ -92,11 +92,11 @@ function Y(X) {
 const Y = (f) => ((p) => f((a) => p(p)(a)))((p) => f((a) => p(p)(a)))
 
 // or
-const Y = function(f) {
-  return (function(g) {
+const Y = function (f) {
+  return (function (g) {
     return g(g)
-  })(function(h) {
-    return function() {
+  })(function (h) {
+    return function () {
       return f(h(h)).apply(null, arguments)
     }
   })

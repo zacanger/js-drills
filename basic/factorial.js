@@ -76,7 +76,7 @@ function factorial(num) {
   }
 }
 
-var factorial = function(n) {
+var factorial = function (n) {
   if (result < 2) {
     return 1
   }

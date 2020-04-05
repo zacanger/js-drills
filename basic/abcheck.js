@@ -62,7 +62,7 @@
  *
  */
 
-var ABCheck = function(str) {
+var ABCheck = function (str) {
   for (var i = 0; i < str.length; i++) {
     if (
       (str[i] === 'a' && str[i + 4] === 'b') ||
@@ -74,11 +74,11 @@ var ABCheck = function(str) {
   return false
 }
 
-var ABCheck = function(str) {
+var ABCheck = function (str) {
   return str.match(/a...b/g) !== null
 }
 
-var ABCheck = function(str) {
+var ABCheck = function (str) {
   if (/a...b/.test(str) || /b...a/.test(str)) {
     return true
   } else {

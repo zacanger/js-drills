@@ -78,7 +78,7 @@ function combinator(arr1, arr2) {
 }
 
 function combinator(arr1, arr2) {
-  return arr1.map(function(val, i, arr) {
+  return arr1.map(function (val, i, arr) {
     return val + ' ' + arr2[i]
   })
 }
