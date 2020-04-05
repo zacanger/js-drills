@@ -68,14 +68,14 @@
  */
 
 // document.ready w/o jq
-document.onreadystatechange = function() {
+document.onreadystatechange = function () {
   if (document.readyState == 'complete') {
     // do all the stuff here
   }
 }
 
 // or
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // do all the stuff here
 })
 

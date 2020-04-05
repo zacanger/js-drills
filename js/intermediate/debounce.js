@@ -96,12 +96,12 @@ function debounce(cb, x, execute) {
   let flag = true
   let timeId
   function resetFlag() {
-    timeId = setTimeout(function() {
+    timeId = setTimeout(function () {
       flag = true
     }, x)
   }
 
-  return function() {
+  return function () {
     if (execute) {
       return cb()
     }

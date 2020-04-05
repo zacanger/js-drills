@@ -51,14 +51,14 @@
  *
  */
 
-const randomArray = function(size) {
+const randomArray = function (size) {
   const array = []
   for (let i = 0; i < size; i++) {
     array.push(parseInt(Math.random() * 100))
   }
   return array
 }
-const bucketSort = function(array) {
+const bucketSort = function (array) {
   const buckets = []
   for (var i = 0; i < 100; i++) {
     buckets[i] = 0

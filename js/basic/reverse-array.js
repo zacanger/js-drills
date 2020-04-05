@@ -85,7 +85,7 @@
 const reverse = (a) => a.reverse()
 
 //
-var reverseArray = function(array) {
+var reverseArray = function (array) {
   const result = []
   while (array.length > 0) {
     result.push(array.pop())
@@ -94,7 +94,7 @@ var reverseArray = function(array) {
 }
 
 //
-var reverseArray = function(array) {
+var reverseArray = function (array) {
   let start = 0
   let end = array.length - 1
   while (start < end) {
@@ -105,7 +105,7 @@ var reverseArray = function(array) {
   return array
 }
 
-var swap = function(array, i, j) {
+var swap = function (array, i, j) {
   const temp = array[i]
   array[i] = array[j]
   array[j] = temp

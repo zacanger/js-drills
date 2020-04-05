@@ -63,10 +63,7 @@ function reverseString(str) {
 reverseString('hello')
 
 function reverseStringShort(str) {
-  return str
-    .split('')
-    .reverse()
-    .join('')
+  return str.split('').reverse().join('')
 }
 
 reverseStringShort('hello')

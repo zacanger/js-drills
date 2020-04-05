@@ -99,7 +99,7 @@ const mixEvents = (obj) => {
   obj.trigger = (eventName) => {
     const args = Array.prototype.slice.call(arguments, 1)
     const arrayOfCb = eventsMap[eventName] || []
-    arrayOfCb.forEach(function(cb) {
+    arrayOfCb.forEach(function (cb) {
       cb.apply(obj, args)
     })
   }

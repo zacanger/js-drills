@@ -2,7 +2,7 @@
 
 const max = process.argv[2] || 100
 
-const FizzBuzz = (function*() {
+const FizzBuzz = (function* () {
   let num = 1
   while (num <= max) {
     let value = num

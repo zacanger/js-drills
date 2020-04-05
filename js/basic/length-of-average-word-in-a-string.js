@@ -57,7 +57,7 @@
  *
  */
 
-const lengthOfString = function(myString) {
+const lengthOfString = function (myString) {
   const words = myString.split(' ')
   let average = 0
   let total = 0

@@ -52,7 +52,7 @@
  *
  */
 
-Function.prototype.newBind = function() {
+Function.prototype.newBind = function () {
   const _this = this
   const context = arguments[0]
   const args = []
@@ -60,7 +60,7 @@ Function.prototype.newBind = function() {
     args.push(arguments[i])
   }
 
-  return function() {
+  return function () {
     const innArgs = []
     for (let i = 1; i < arguments.length; i++) {
       innerArgs.push(arguments[i])

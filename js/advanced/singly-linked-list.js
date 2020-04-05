@@ -69,13 +69,13 @@ const createNode = (val) => {
   return node
 }
 
-const SinglyLinkedList = function() {
+const SinglyLinkedList = function () {
   this.head = null
   this.tail = null
   this.currentSize = 0
 }
 
-SinglyLinkedList.prototype.addToTail = function(val) {
+SinglyLinkedList.prototype.addToTail = function (val) {
   const node = createNode(val)
   if (!this.head) {
     this.head = node
@@ -87,7 +87,7 @@ SinglyLinkedList.prototype.addToTail = function(val) {
   }
 }
 
-SinglyLinkedList.prototype.removeHead = function() {
+SinglyLinkedList.prototype.removeHead = function () {
   if (!this.head) {
     return null
   }
@@ -103,7 +103,7 @@ SinglyLinkedList.prototype.removeHead = function() {
   return removedHead.next
 }
 
-SinglyLinkedList.prototype.contains = function(tar) {
+SinglyLinkedList.prototype.contains = function (tar) {
   let node = this.head
   if (node.value === tar) {
     return node
@@ -117,7 +117,7 @@ SinglyLinkedList.prototype.contains = function(tar) {
   return false
 }
 
-SinglyLinkedList.prototype.size = function() {
+SinglyLinkedList.prototype.size = function () {
   return this.currentSize
 }
 

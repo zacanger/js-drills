@@ -54,7 +54,7 @@
  *
  */
 
-const longest = function(str) {
+const longest = function (str) {
   str = str.toLowerCase().split(' ')
   let longestLength = 0
   const longestWord = []
@@ -78,7 +78,7 @@ console.log(longest('I gave a present to my parents'))
 
 function findLongestWord(str) {
   str = str.split(' ')
-  const longest = str.reduce(function(a, b) {
+  const longest = str.reduce(function (a, b) {
     return a.length >= b.length ? a : b
   })
   return longest.length

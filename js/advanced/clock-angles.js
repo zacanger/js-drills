@@ -58,7 +58,7 @@
  *
  */
 
-const timeAngle = function(time) {
+const timeAngle = function (time) {
   time = time.split(':')
   const hour = Number(time[0])
   const minute = Number(time[1])

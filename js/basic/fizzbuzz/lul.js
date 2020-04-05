@@ -1,21 +1,21 @@
-;(function(window) {
+;(function (window) {
   let counter = 1,
     limit = 100,
     options = {
       '3': 'Fizz',
       '5': 'Buzz',
-      default: function(input) {
+      default: function (input) {
         return input
       },
     }
 
-  const noop = function() {
+  const noop = function () {
     return
   }
 
-  const print = function(input) {
+  const print = function (input) {
     const output = []
-    Object.keys(options).map(function(key) {
+    Object.keys(options).map(function (key) {
       ;(typeof options[key] !== 'function' &&
       parseInt(input, 10) % parseInt(key, 10) === 0
         ? Array.prototype.push

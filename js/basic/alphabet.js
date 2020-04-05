@@ -68,8 +68,5 @@
  */
 
 function alphabet(str) {
-  return str
-    .split('')
-    .sort()
-    .join('')
+  return str.split('').sort().join('')
 }

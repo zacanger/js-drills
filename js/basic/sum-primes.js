@@ -78,7 +78,7 @@ function sumPrimes(num) {
       arr.push(i)
     }
   }
-  return arr.reduce(function(a, b) {
+  return arr.reduce(function (a, b) {
     return a + b
   })
 }

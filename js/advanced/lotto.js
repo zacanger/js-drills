@@ -92,9 +92,9 @@ function revealLotto(lottoArr, optOut) {
     return lottoArr
   }
   const timeoutArr = []
-  lottoArr.forEach(function(val, i) {
+  lottoArr.forEach(function (val, i) {
     const timeId = setTimeout(
-      function(num) {
+      function (num) {
         console.log(num)
       },
       (i + 1) * 3000,
