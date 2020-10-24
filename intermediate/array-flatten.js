@@ -60,6 +60,12 @@
  *
  */
 
+// single line code
+function flatten(arr) {
+  if(!Array.isArray(arr)) return Error("please input an array")
+  return (arr+"").split(',').map(Number);
+}
+
 // this is gross don't ever do this
 const iteratively = (array) => {
   for (let i = 0, l = array.length; i < l; i += 1) {
