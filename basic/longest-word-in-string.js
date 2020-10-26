@@ -83,3 +83,20 @@ function findLongestWord(str) {
   })
   return longest.length
 }
+
+// Every sentence contain spaces, I'll consider a space to break words
+// TimeComplexity O(N), Space Complexity: O(1)
+function findLongestWord(input) {
+		let currentCount = 0, result = 0;
+		for(let i=0;i<input.length;i++) {
+        // Until I find space incrementing count
+    		if(input[i] !== ' ') {
+        		currentCount++;
+        } else {
+        	result = Math.max(result, currentCount)
+        	currentCount = 0;
+        }
+    }
+    return result;
+}
+
