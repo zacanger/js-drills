@@ -129,7 +129,7 @@ const fs = require('fs'),
   repl = require('repl')
 
 // let repl source files
-repl.REPLServer.prototype.source = function(file) {
+repl.REPLServer.prototype.source = function (file) {
   if (!~file.indexOf('.')) {
     file += '.js'
   }
@@ -146,7 +146,7 @@ const server = repl.start()
 // `./ filename` will source `./filename.js`
 server.defineCommand('/', {
   help: 'source file',
-  action: function(file) {
+  action: function (file) {
     this.source(file)
   },
 })

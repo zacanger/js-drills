@@ -2,8 +2,8 @@
   let counter = 1,
     limit = 100,
     options = {
-      '3': 'Fizz',
-      '5': 'Buzz',
+      3: 'Fizz',
+      5: 'Buzz',
       default: function (input) {
         return input
       },

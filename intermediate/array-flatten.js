@@ -63,8 +63,8 @@
 // Using type coercion;
 // works as long as elements are all numbers and no arrays are empty
 function flatten(arr) {
-  if(!Array.isArray(arr)) return Error("please input an array")
-  return (arr+"").split(',').map(Number);
+  if (!Array.isArray(arr)) return Error('please input an array')
+  return (arr + '').split(',').map(Number)
 }
 
 // this is gross don't ever do this
