@@ -20,7 +20,7 @@
     "email": "zac@zacanger.com",
     "url": "http://zacanger.com"
   },
-  "license": "WTFPL",
+  "license": "0BSD",
   "dependencies": {
     "express": "^4.13.4"
   },

@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "author": "Zac Anger <zac@zacanger.com> (https://zacanger.com)",
-  "license": "LGPL-3.0",
+  "license": "0BSD",
   "main": "index.js",
   "scripts": {
     "format": "sortpack && prettier --write \"**/*.js\"",
