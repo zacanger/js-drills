@@ -61,9 +61,5 @@
  */
 
 function truncate(str, num) {
-  if (str.length <= num) {
-    return str
-  } else {
-    return str.substr(0, num - 3) + '…'
-  }
+  return str.length <= num ? str : str.substr(0, num - 3) + '…'
 }

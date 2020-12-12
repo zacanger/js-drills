@@ -76,6 +76,6 @@ const file = process.argv[2] || 'something.js'
 
 try {
   fs.statSync(file)
-} catch (e) {
+} catch {
   fs.writeFileSync(file, "'use strict'")
 }

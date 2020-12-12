@@ -74,11 +74,7 @@ function lottoGenerator() {
   const arr = []
   function rando(lot) {
     const ran = Math.floor(Math.random() * (60 - 1 + 1)) + 1
-    if (lot.includes(ran)) {
-      return rando(lot)
-    } else {
-      return ran
-    }
+    return lot.includes(ran) ? rando(lot) : ran
   }
   for (let i = 0; i < 6; i++) {
     const ran = rando(arr)
@@ -124,7 +120,7 @@ cancelReveal(timeoutIds)
 // Using this to make sure my lottoGenerator is producing arrays populated
 // with unique values
 function test() {
-  for (let i = 0; i < 50000; i++) {
+  for (let i = 0; i < 50_000; i++) {
     const newArr = lottoGenerator()
     for (let j = 0; j < newArr.length; j++) {
       if (newArr.indexOf(newArr[j]) !== j) {

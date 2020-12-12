@@ -83,9 +83,5 @@ function fibIt(n) {
 
 // recursive
 function fibRec(n) {
-  if (n < 2) {
-    return n
-  } else {
-    return fibRec(n - 2) + fibRec(n - 1)
-  }
+  return n < 2 ? n : fibRec(n - 2) + fibRec(n - 1)
 }

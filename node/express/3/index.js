@@ -75,11 +75,10 @@ app.post('/play', (req, res) => {
   const computerChoice = options[index]
   let result
 
-  if (req.body.choice === computerChoice) {
-    result = 'tie'
-  } else {
-    result = determineWinner(humanChoice, computerChoice)
-  }
+  result =
+    req.body.choice === computerChoice
+      ? 'tie'
+      : determineWinner(humanChoice, computerChoice)
   console.log(computerChoice)
   res.json(result)
 })
